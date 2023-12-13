@@ -9,15 +9,15 @@ This repository holds the source for this Specification, part of the family of [
 
 ### What does it do?
 
-- x
+Describes the specification for the NMOS Configuration API.
 
 ### Why does it matter?
 
-- x
+Sets out the rules and requirements for implementing the NMOS Device Configuration API in devices and controllers.
 
 ### How does it work?
 
-- x
+Describes a standard way of exposing [MS-05-02](https://specs.amwa.tv/ms-05-02/) models when using an HTTP API.
 
 <!-- INTRO-END -->
 

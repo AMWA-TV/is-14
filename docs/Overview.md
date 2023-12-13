@@ -10,12 +10,14 @@ _(c) AMWA 2023, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)_
 
 ## Introduction
 
-> Provide an overview of the Specification.
+This document aims to give a general description of the NMOS Device Configuration API. This API defines how NMOS Control models (described in the NMOS Control Framework) can be exposed and consumed in a standardized way when using HTTP.
 
-Familiarity with the [JT-NM Reference Architecture](https://jt-nm.org/reference-architecture/) is assumed.
+This document relies on previous familiarity with the following existing documents:
 
-See also the [NMOS Technical Overview](https://specs.amwa.tv/nmos/main/docs/Technical_Overview.html).
+* [AMWA MS-05-01 NMOS Control Architecture](https://specs.amwa.tv/ms-05-01)
+* [AMWA MS-05-02 NMOS Control Framework](https://specs.amwa.tv/ms-05-02)
 
+This API does not support subscriptions and notifications. For subscriptions and notifications support see [AMWA IS-12](https://specs.amwa.tv/is-12/).
 
 ## Use of Normative Language
 
@@ -24,9 +26,7 @@ and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119]
 
 ## Definitions
 
-The NMOS terms 'Node', ... are used as defined in the [NMOS Glossary](https://specs.amwa.tv/nmos/main/docs/Glossary.html).
-
-> List as appropriate
+The NMOS term 'Device' is used as defined in the [NMOS Glossary](https://specs.amwa.tv/nmos/main/docs/Glossary.html).
 
 This specification also defines the following terms.
 
