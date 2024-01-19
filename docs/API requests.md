@@ -187,6 +187,23 @@ The following table explains the HTTP status and NcMethodStatus codes and the re
 
 `TODO`: Figure out how we map deprecation statuses for properties and methods.
 
+## HTTP and NcMethodStatus codes
+
+The following table describes the overall status code mapping for representative scenarios.
+
+| Scenario                                                                                                            | NcMethodStatus code | HTTP status code |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------- | ---------------- |
+| Request is successful                                                                                               | 200                 | 200              |
+| Object cannot be found using the offered baseUrl, rolePath and any query parameters                                 | 404                 | 404              |
+| The property and object are located successfully but the value cannot be set because it is readonly                 | 405                 | 500              |
+| The property and object are located successfully but the value cannot be set because it is not valid                | 417                 | 500              |
+| The method and object are located successfully but the method cannot be invoked because the arguments are not valid | 417                 | 500              |
+| The property and object are located successfully but the value cannot be retrieved for any reason                   | 500                 | 500              |
+| The property and object are located successfully but the value cannot be set for any other reason                   | 500                 | 500              |
+| The method and object are located successfully but the method cannot be invoked because of any other reason         | 500                 | 500              |
+| Object is located successfully but the desired method does not exist                                                | 501                 | 404              |
+| Object is located successfully but the desired property does not exist                                              | 502                 | 404              |
+
 ## Error response messages
 
 When any request encounters an error, the response MUST be [NcMethodResultError](https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresulterror) or a derived datatype.
