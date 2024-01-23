@@ -195,12 +195,9 @@ The following table describes the overall status code mapping for representative
 | ------------------------------------------------------------------------------------------------------------------- | ------------------- | ---------------- |
 | Request is successful                                                                                               | 200                 | 200              |
 | Object cannot be found using the offered baseUrl, rolePath and any query parameters                                 | 404                 | 404              |
-| The property and object are located successfully but the value cannot be set because it is readonly                 | 405                 | 500              |
-| The property and object are located successfully but the value cannot be set because it is not valid                | 417                 | 500              |
-| The method and object are located successfully but the method cannot be invoked because the arguments are not valid | 417                 | 500              |
-| The property and object are located successfully but the value cannot be retrieved for any reason                   | 500                 | 500              |
-| The property and object are located successfully but the value cannot be set for any other reason                   | 500                 | 500              |
-| The method and object are located successfully but the method cannot be invoked because of any other reason         | 500                 | 500              |
+| The property and object are located successfully but the value cannot be set because it is readonly                 | 405                 | 405              |
+| The property or method of the object located successfully but the payload is not valid                              | 417                 | 400              |
+| The request has been validated but a response cannot be returned for any reason                                     | 500                 | 500              |
 | Object is located successfully but the desired method does not exist                                                | 501                 | 404              |
 | Object is located successfully but the desired property does not exist                                              | 502                 | 404              |
 
