@@ -197,7 +197,7 @@ The following table describes the overall status code mapping for representative
 | Object cannot be found using the offered baseUrl, rolePath and any query parameters                                 | 404                 | 404              |
 | The property and object are located successfully but the value cannot be set because it is readonly                 | 405                 | 405              |
 | The property or method of the object located successfully but the payload is not valid                              | 417                 | 400              |
-| The request has been validated but a response cannot be returned for any reason                                     | 500                 | 500              |
+| The request has been validated but a response cannot be returned due to server restrictions                         | 500                 | 500              |
 | Object is located successfully but the desired method does not exist                                                | 501                 | 404              |
 | Object is located successfully but the desired property does not exist                                              | 502                 | 404              |
 
