@@ -85,9 +85,9 @@ This is equivalent to invoking the `GetPropertiesByPath` method on the [Bulk pro
 
 Retrieving properties through the `bulkProperties` endpoint allows a user to perform a `full backup` or a `partial backup`.
 
-A `full backup` is a [backup data set](Backup%20&%20restore.md#definitions) returned by a `GET` operation on the `/bulkProperties` endpoint of the root block with the `recurse` parameter set to true.
+A `full backup` [backup data set](Backup%20&%20restore.md#definitions) is returned by invoking a `GET` operation on the `/bulkProperties` endpoint of the root block with the `recurse` parameter set to true.
 
-A `partial backup` is a [backup data set](Backup%20&%20restore.md#definitions) returned by a `GET` operation on the `/bulkProperties` endpoint of any object of the device model, other than the root block. A partial backup can also be obtained by a `GET` operation on the `/bulkProperties` endpoint of the root block with the `recurse` query parameter set to false; however this will only result in a backup of the root block only.
+A `partial backup` [backup data set](Backup%20&%20restore.md#definitions) is returned by involing a `GET` operation on the `/bulkProperties` endpoint with a role path other than the root block and/or the `recurse` query parameter set to false (Note, the latter will only result in a backup of the root block only).
 
 ## PUT
 
@@ -140,9 +140,9 @@ This is equivalent to invoking the `SetPropertiesByPath` method inside the [Bulk
 
 Setting properties through the `bulkProperties` endpoint allows a user to perform a restore or a `selective restore`. The restore action can result in a `complete restore` or an `incomplete restore`.
 
-A `complete restore` occurs when a [full backup](Backup%20&%20restore.md#definitions) is applied as a `PUT` to the `/bulkProperties` endpoint of the root block with the `recurse` argument set to true, and all the properties of all role paths in the data set are applied successfully (their returned validation status is `Ok`). A `complete restore` can also occur when a [partial backup](Backup%20&%20restore.md#definitions) is applied and all the properties of all role paths in the data set are applied successfully (their returned validation status is `Ok`). An [incomplete restore](Backup%20&%20restore.md#definitions) occurs when any of the properties restored returns a validation status other than `Ok`.
+A `complete restore` of a [full backup](Backup%20&%20restore.md#definitions) or a [partial backup](Backup%20&%20restore.md#definitions) is invoked by applying a `PUT` to the `/bulkProperties` endpoint of the root block with the `recurse` argument set to true and the `allowPartial/allowIncomplete` flag set to false.  A `complete restore` is successful if and only if all the properties of all role paths in the data set are applied successfully (their returned validation status is `Ok`). 
 
-A `selective restore` is a restore in which a [full backup](Backup%20&%20restore.md#definitions) or a [partial backup](Backup%20&%20restore.md#definitions) is applied as a `PUT` to the `/bulkProperties` endpoint of a role path which is not the root block. A selective restore can also be achieved by a `PUT` operation to the `/bulkProperties` endpoint of the root block with the `recurse` query parameter set to false which will result in restoring the properties of the root block only.
+An [incomplete restore](Backup%20&%20restore.md#definitions) of a [full backup](Backup%20&%20restore.md#definitions) or a [partial backup](Backup%20&%20restore.md#definitions) is invoked by applying a `PUT` to the `/bulkProperties` endpoint of the root block with the `recurse` argument set to true and the `allowPartial/allowIncomplete` flag set to true.  An `incomplete restore` is successful even if some of the role paths return a validation status other than `Ok`.
 
 
 
