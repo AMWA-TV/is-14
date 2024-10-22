@@ -55,7 +55,6 @@
         }
       ]
     },
-    "recurse": true,
-    "allowPartial": true
+    "recurse": true
   }
 }
