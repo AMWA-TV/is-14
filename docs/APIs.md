@@ -57,8 +57,8 @@ Human-readable information can be provided, for example, via the IS-04 Device `l
 All public APIs are versioned as follows:
 
 * Requesting the API base resource (such as http(s)://&lt;ip address or hostname&gt;:&lt;port&gt;/x-nmos/configuration/) will provide a list containing the versions of the API present on the Node.
-* A versioned API response must include only resources which match the schema for that API version.
-* Data which is held for mismatched minor API versions may be returned if it can be conformed to the correct schema (see example below). Data must never be conformed between major API versions.
+* A versioned API response MUST include only resources which match the schema for that API version.
+* Data which is held for mismatched minor API versions may be returned if it can be conformed to the correct schema (see example below). Data MUST never be conformed between major API versions.
 
 #### Versioning Example
 
@@ -107,4 +107,4 @@ In order to overcome shortcomings in some common libraries, the following requir
 
 The NMOS APIs use HTTP status codes to indicate success, failure and other cases to clients as per [RFC 7231](https://tools.ietf.org/html/rfc7231) and related standards.
 Where the RAML specification of an API specifies explicit response codes it is expected that a client will handle these cases in a particular way.
-As explicit handling of every possible HTTP response code is not expected, clients must instead implement more generic handling for ranges of response codes (1xx, 2xx, 3xx, 4xx and 5xx).
+As explicit handling of every possible HTTP response code is not expected, clients MUST instead implement more generic handling for ranges of response codes (1xx, 2xx, 3xx, 4xx and 5xx).
