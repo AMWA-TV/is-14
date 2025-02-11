@@ -1,6 +1,16 @@
 # IS-04 interactions
 
-The API availability MUST be advertised through existing IS-04 practices inside the controls array of an NMOS Device. Devices MUST include the `urn:x-nmos:control:configuration` control type.
+The NMOS Device Configuration specification shares a data model with the NMOS IS-04 specification, and as a result is designed to be used alongside it.
+The following implementation notes identify correct behavior for doing this.
+
+When this API is used alongside IS-04 in a deployment, the IS-04 APIs SHOULD operate at version 1.1 or greater in order to ensure full interoperability.
+
+## Discovery
+The Configuration API MUST be advertised as a ‘control’ endpoint when publishing a compliant NMOS Device.
+Control interfaces MUST use the URN `urn:x-nmos:control:configuration` to identify all Devices which implement the Configuration API, and the URLs required to access them.
+For more details see [NMOS Device Control Types](https://specs.amwa.tv/nmos-parameter-registers/branches/main/device-control-types/).
+
+**Example 1**: The ‘controls’ attribute of the NMOS Device of a simple Node with a single Configuration API instance.
 
 ```json
 { 
@@ -30,11 +40,19 @@ The API availability MUST be advertised through existing IS-04 practices inside 
 }
 ```
 
-A given instance of the Configuration API MAY offer control of multiple Devices in a Node from a single URI. Alternatively there MAY be multiple instances of the API on one Node, for example, each corresponding to one Device.
-In either case, the ‘control’ endpoint for each Device’s Configuration API instance MUST be advertised, even if the URI is the same.
+**Example 2:** The 'controls' attribute of an NMOS Device of a Node which advertises a different Configuration API instance for each device.
 
-This flexibility is to accommodate different relationships between Devices and Nodes. For example, some Devices may be loosely coupled to the Node, for example cards in a card frame.
-These Devices are more likely to have an instance of the API for each card.
-Others may be tightly coupled, for example a media processing pipeline on a server, where it is likely to be preferable to have one instance of the API that is advertised for each pipeline.
+```json
+...
+"controls": [
+  {
+    "type": "urn:x-nmos:control:configuration/v1.0",
+    "href": "http://192.168.10.3/x-nmos/configuration/v1.0/slot2B/"
+  }
+]
+...
+```
+In example 2, the path segment 'slot2B' is an `<api selector>` identifier as defined in [API Paths](APIs.md#api-paths).
 
-`TODO`: decide on `href` format and trailing slashes
+**Note**: the API version is included in both the 'type', and in the 'href'.
+As new versions of the Configuration API are published, further control endpoints may be advertised for Devices which support multiple versions simultaneously.
