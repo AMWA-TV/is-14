@@ -44,11 +44,9 @@ A `modified backup` is a `full backup` or `partial backup` where the backup data
 
 Role path objects within a backup data set contain a boolean property called `isRebuildable`.  
 If the object is a non-block object `isRebuildable` means the object's readonly properties can be modified.  
-If the object is a block, `isRebuildable` depicts it can be modified as mentioned before but also that its members can be added or removed (new instances of rebuildable objects can be created in a rebuildable parent block).  
+If the object is a block, `isRebuildable` determines it can be modified as mentioned before but also that its members can be added or removed (new instances of rebuildable objects can be created in a rebuildable parent block).  
 When a parent block object is not rebuildable but a member child is rebuildable the implication is that the child cannot change its role within that block when being rebuilt through a restore.  
 Members of a rebuildable block which are not rebuildable cannot be removed.
-
-and new instances of that object can be created in a rebuildable parent block.
 
 The restore mechanism achieved by [Setting bulk properties for a role path](https://specs.amwa.tv/is-14/branches/v1.0-dev/docs/API_requests.html#setting-bulk-properties-for-a-role-path) affects the device model by either rebuilding it or modifying it.
 
@@ -104,7 +102,7 @@ In order to validate applying the full backup data set against the device model,
 
 The request body MUST include:
 
-- the backup dataSet
+- the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Modify` in order to only allow changes to writeable properties)
 
@@ -114,7 +112,7 @@ In order to restore the full backup data set to the device model, the request MU
 
 The request body MUST include:
 
-- the backup dataSet
+- the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Modify` in order to only allow changes to writeable properties)
 
@@ -138,7 +136,7 @@ In order to validate applying the full backup data set against the device model,
 
 The request body MUST include:
 
-- the backup dataSet
+- the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Rebuild` in order to allow blocks to be repopulated with the same members as per the original device)
 
@@ -148,7 +146,7 @@ In order to restore the full backup data set to the device model, requests MUST 
 
 The request body MUST include:
 
-- the backup dataSet
+- the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Rebuild` in order to allow blocks to be repopulated with the same members as per the original device)
 
