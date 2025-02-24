@@ -92,6 +92,8 @@ Partial backups can be created by choosing other role paths. The scope of backup
 
 Devices are RECOMMENDED to populate `dependencyPaths` for objects which have dependencies on other role path objects when returning a backup data set ([see NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder)).
 
+Devices are RECOMMENDED to populate `allowedMembersClasses` for rebuildable blocks when returning a backup data set ([see NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder)). This allows potential clients to determine which class ids can be used when modifying the members of these particular rebuildable blocks.
+
 ## Performing a Modify restore
 
 The following sections describe how a `Modify` restore can be performed using a backup data set as detailed in [performing a backup](#performing-a-backup).
