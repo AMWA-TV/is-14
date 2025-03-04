@@ -52,6 +52,12 @@ The restore mechanism achieved by [Setting bulk properties for a role path](http
 
 Validating a restore operation before applying it is achieved by [Validating bulk properties for a role path](https://specs.amwa.tv/is-14/branches/v1.0-dev/docs/API_requests.html#validating-bulk-properties-for-a-role-path). Implementations MUST perform the same checks and offer the same response as if the restore was being applied without actually performing changes to the device model objects.
 
+A restore operation or validating a restore operation creates a `restore scope`. The restore scope consists of the intersection of objects contained in the role path targeted and any nested role paths if the `recurse` flag is set to true, and the objects offered in the backup data set. If an existing device model object isn't included in the restore data set it is excluded from the `restore scope`, but will remain in the device model without any changes. If an object is added or modified indirectly by the device as a consequence of a modification to an object already in the `restore scope`, then this object also becomes part of the `restore scope`. If the restore operation includes structural block changes which add new object members, these also become part of the `restore scope`. A restore operation or validating a restore operation MUST always generate [ObjectPropertiesSetValidation](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder) entries for each object which is part of the `restore scope`.
+
+| ![Restore scope](images/restore-scope.png) |
+|:--:|
+| _**Restore scope**_ |
+
 A restore with the restore mode set to `Modify` MUST only be allowed to make changes to existing writeable properties of existing device model objects and MUST NOT modify the device model in a structural way (cannot cause the addition or removal of objects from blocks). Furthermore, devices are RECOMMENDED to evaluate a `Modify` restore (validate if the restore can happen) even when the backup data set contains readonly properties since writeable properties might result in the desired changes being applied and the readonly properties will result in notices in the response returned.
 
 A restore with the restore mode set to `Rebuild` MUST allow the following actions:
@@ -118,7 +124,7 @@ The request body MUST include:
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Modify` in order to only allow changes to writeable properties)
 
-If a device requires a system reboot in order to apply the restore then it MUST perform this immediately after responding to the restore request.
+Devices MUST make the necessary changes to all objects in the `restore scope` which have a validation restore status of `Ok`. If a device requires a system reboot in order to apply the restore then it MUST perform this immediately after responding to the restore request.
 
 The diagram below captures how the `Modify` restore uses the backup data set to transition the device from its current device model to a changed state.
 
@@ -152,7 +158,7 @@ The request body MUST include:
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Rebuild` in order to allow blocks to be repopulated with the same members as per the original device)
 
-If a device requires a system reboot in order to apply the restore then it MUST perform this immediately after responding to the restore request.
+Devices MUST make the necessary changes to all objects in the `restore scope` which have a validation restore status of `Ok`. If a device requires a system reboot in order to apply the restore then it MUST perform this immediately after responding to the restore request.
 
 The diagram below captures how the `Rebuild` restore uses the backup data set to transition the device from its current device model to a changed state. In this case the operation makes a structural change to the device model.
 
