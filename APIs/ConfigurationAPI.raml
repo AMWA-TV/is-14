@@ -45,7 +45,7 @@ documentation:
             example: !include ../examples/rolePath-get-200.json
             type: !include schemas/rolePath.json
         404:
-          description: 'Returned when the requested Role Path does not exist. Corresponds to NcMethodStatus code 404.'
+          description: 'Returned when the requested Role Path does not exist.'
           body:
             type: !include schemas/ms05-error.json
     /bulkProperties:
@@ -61,6 +61,14 @@ documentation:
             body:
               type: !include schemas/bulkProperties-get-response.json
               example: !include ../examples/bulkProperties-get-200.json
+          400:
+            description: 'Returned when encountering request validation issues due to client-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
+          500:
+            description: 'Returned when the request cannot be processed due to server-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
       options:
         description: A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes
         responses:
@@ -76,6 +84,14 @@ documentation:
             body:
               type: !include schemas/bulkProperties-validate-response.json
               example: !include ../examples/bulkProperties-validate-200.json
+          400:
+            description: 'Returned when encountering request validation issues due to client-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
+          500:
+            description: 'Returned when the request cannot be processed due to server-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
       put:
         description: 'Set a Bulk Properties object on the Device Model'
         body:
@@ -86,6 +102,14 @@ documentation:
             body:
               type: !include schemas/bulkProperties-set-response.json
               example: !include ../examples/bulkProperties-set-200.json
+          400:
+            description: 'Returned when encountering request validation issues due to client-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
+          500:
+            description: 'Returned when the request cannot be processed due to server-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
     /descriptor:
       displayName: 'Class Descriptor'
       get:
@@ -96,7 +120,7 @@ documentation:
               example: !include ../examples/class-descriptor-get-200.json
               type: !include schemas/descriptor-get.json
           500:
-            description: 'Returned when the Class Descriptor of this object was unable to be retrieved. Corresponds to NcMethodStatus code 500.'
+            description: 'Returned when the request cannot be processed due to server-side errors.'
             body:
               type: !include schemas/ms05-error.json
     /methods:
@@ -108,6 +132,10 @@ documentation:
             body:
               example: !include ../examples/methods-base-get-200.json
               type: !include schemas/methods-base.json
+          500:
+            description: 'Returned when the request cannot be processed due to server-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
       /{methodId}:
         uriParameters:
             methodId:
@@ -129,15 +157,15 @@ documentation:
                 example: !include ../examples/method-patch-200.json
                 type: !include schemas/method-patch-response.json
             400:
-              description: 'Returned when the method arguments are invalid. Corresponds to NcMethodStatus code 417.'
+              description: 'Returned when encountering request validation issues due to client-side errors.'
               body:
                 type: !include schemas/ms05-error.json
             404:
-              description: 'Returned when the requested Method does not exist. Corresponds to NcMethodStatus code 501.'
+              description: 'Returned when the requested Method does not exist.'
               body:
                 type: !include schemas/ms05-error.json
             500:
-              description: 'Returned when the Method was unable to be invoked. Corresponds to NcMethodStatus code 500.'
+              description: 'Returned when the request cannot be processed due to server-side errors.'
               body:
                 type: !include schemas/ms05-error.json
     /properties:
@@ -149,6 +177,10 @@ documentation:
             body:
               example: !include ../examples/properties-base-get-200.json
               type: !include schemas/properties-base.json
+          500:
+            description: 'Returned when the request cannot be processed due to server-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
       /{propertyId}:
         uriParameters:
             propertyId:
@@ -162,7 +194,11 @@ documentation:
                 example: !include ../examples/property-get-200.json
                 type: !include schemas/property.json
             404:
-              description: 'Returned when the requested Property does not exist. Corresponds to NcMethodStatus code 502.'
+              description: 'Returned when the requested Property does not exist.'
+              body:
+                type: !include schemas/ms05-error.json
+            500:
+              description: 'Returned when the request cannot be processed due to server-side errors.'
               body:
                 type: !include schemas/ms05-error.json
         /descriptor:
@@ -175,7 +211,7 @@ documentation:
                   example: !include ../examples/property-descriptor-get-200.json
                   type: !include schemas/property-descriptor.json
               500:
-                description: 'Returned when the Datatype Descriptor of this object was unable to be retrieved. Corresponds to NcMethodStatus code 500.'
+                description: 'Returned when the request cannot be processed due to server-side errors.'
                 body:
                   type: !include schemas/ms05-error.json
         /value:
@@ -188,7 +224,7 @@ documentation:
                   example: !include ../examples/property-value-get-200.json
                   type: !include schemas/property-value-get.json
               500:
-                description: 'Returned when the Property was unable to be retrieved. Corresponds to NcMethodStatus code 500.'
+                description: 'Returned when the request cannot be processed due to server-side errors.'
                 body:
                   type: !include schemas/ms05-error.json
           options:
@@ -206,7 +242,11 @@ documentation:
                 body:
                   example: !include ../examples/property-value-put-200.json
                   type: !include schemas/property-value-put-response.json
+              400:
+                description: 'Returned when encountering request validation issues due to client-side errors.'
+                body:
+                  type: !include schemas/ms05-error.json
               500:
-                description: 'Returned when the Property was unable to be set. Corresponds to the following NcMethodStatus codes: 405 if Property is read only, 417 if the value being PUT is invalid, 500 for all other reasons.'
+                description: 'Returned when the request cannot be processed due to server-side errors.'
                 body:
                   type: !include schemas/ms05-error.json
