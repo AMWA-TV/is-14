@@ -108,3 +108,5 @@ In order to overcome shortcomings in some common libraries, the following requir
 The NMOS APIs use HTTP status codes to indicate success, failure and other cases to clients as per [RFC 7231](https://tools.ietf.org/html/rfc7231) and related standards.
 Where the RAML specification of an API specifies explicit response codes it is expected that a client will handle these cases in a particular way.
 As explicit handling of every possible HTTP response code is not expected, clients MUST instead implement more generic handling for ranges of response codes (1xx, 2xx, 3xx, 4xx and 5xx).
+If requests encounter an error then the response result returned MUST be of type [NcMethodResultError](https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresulterror) or a derived datatype and include a status and an error message.
+A client MUST be able to handle these error responses appropriately.
