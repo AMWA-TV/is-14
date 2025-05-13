@@ -14,7 +14,7 @@ These mechanisms are used for enabling backup and restore functionality and this
 - Performing a [Modify restore](#performing-a-modify-restore)
 - Performing a [Rebuild restore](#performing-a-rebuild-restore)
 
-`Note`: This does not mean that the backup & restore functionality can only be used in these scenarios.
+Note that this does not mean that the backup & restore functionality can only be used in these scenarios.
 
 ## Definitions
 

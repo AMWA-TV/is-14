@@ -1,6 +1,6 @@
 # Datatype marshalling
 
-The following MS-05-02 datatypes MUST map to the corresponding JSON representations.
+Clients and devices MUST map the following MS-05-02 datatypes to the corresponding JSON representations when sending requests and responses.
 
 | Datatype type                | JSON representation                      |
 | ---------------------------- | ---------------------------------------- |

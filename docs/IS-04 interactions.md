@@ -6,11 +6,12 @@ The following implementation notes identify correct behavior for doing this.
 When this API is used alongside IS-04 in a deployment, the IS-04 APIs SHOULD operate at version 1.1 or greater in order to ensure full interoperability.
 
 ## Discovery
-The Configuration API MUST be advertised as a ‘control’ endpoint when publishing a compliant NMOS Device.
-Control interfaces MUST use the URN `urn:x-nmos:control:configuration` to identify all Devices which implement the Configuration API, and the URLs required to access them.
+
+Devices MUST advertise the Configuration API as a control endpoint when publishing a compliant NMOS Device.
+Control endpoints MUST use the URN `urn:x-nmos:control:configuration` to identify all Devices which implement the Configuration API, and the URLs required to access them.
 For more details see [NMOS Device Control Types](https://specs.amwa.tv/nmos-parameter-registers/branches/main/device-control-types/).
 
-**Example 1**: The ‘controls’ attribute of the NMOS Device of a simple Node with a single Configuration API instance.
+**Example 1**: The `controls` attribute of the NMOS Device of a simple Node with a single Configuration API endpoint.
 
 ```json
 { 
@@ -40,7 +41,7 @@ For more details see [NMOS Device Control Types](https://specs.amwa.tv/nmos-para
 }
 ```
 
-**Example 2:** The 'controls' attribute of an NMOS Device of a Node which advertises a different Configuration API instance for each device.
+**Example 2:** The `controls` attribute of an NMOS Device of a Node which advertises a different Configuration API endpoint for each device.
 
 ```json
 ...
@@ -52,7 +53,8 @@ For more details see [NMOS Device Control Types](https://specs.amwa.tv/nmos-para
 ]
 ...
 ```
+
 In example 2, the path segment 'slot2B' is an `<api selector>` identifier as defined in [API Paths](APIs.md#api-paths).
 
-**Note**: the API version is included in both the 'type', and in the 'href'.
-As new versions of the Configuration API are published, further control endpoints may be advertised for Devices which support multiple versions simultaneously.
+Note that the API version is included in both the 'type', and in the 'href'.
+As new versions of the Configuration API are published, Devices MAY advertise further control endpoints which support multiple versions simultaneously.
