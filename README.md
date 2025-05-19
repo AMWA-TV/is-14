@@ -9,18 +9,26 @@ This repository holds the source for this Specification, part of the family of [
 
 ### What does it do?
 
-Describes the specification for the NMOS Configuration API.
+Enables the configuration of an NMOS Nodes' [MS-05-02](https://specs.amwa.tv/ms-05-02/) model using a backup and restore API.
 
 ### Why does it matter?
 
-Sets out the rules and requirements for implementing the NMOS Device Configuration API in devices and controllers.
+Defines a standard way of backing up and restoring [MS-05-02](https://specs.amwa.tv/ms-05-02/) models, as well as defining a way to manage dynamically configurable Device Models.
 
 ### How does it work?
 
-Describes a standard way of exposing [MS-05-02](https://specs.amwa.tv/ms-05-02/) models when using an HTTP API.
+- It specifies an HTTP API for backing up an NMOS Nodes' [MS-05-02](https://specs.amwa.tv/ms-05-02/) model as a backup dataset (JSON description).
+- The API can be used to restore that backup dataset to the NMOS Node.
+- The API can be used to change the structure of 'rebuildable' parts of the [MS-05-02](https://specs.amwa.tv/ms-05-02/) model dynamically, if the NMOS Node allows.
 
 <!-- INTRO-END -->
 
 ## Getting started
 
-There is more information about the NMOS Specifications and their GitHub repos at <https://specs.amwa.tv/nmos>.
+To quickly start your journey an implementation guide is available for [NMOS Control](https://specs.amwa.tv/info-006/).  
+An open source media node framework is available in the form of [nmos-cpp](https://github.com/sony/nmos-cpp).  
+An example mock application is available in the form of the [NMOS Device Control Mock Application](https://github.com/AMWA-TV/nmos-device-control-mock).  
+A testing tool is available in the form of the [NMOS API Testing Tool](https://github.com/AMWA-TV/nmos-testing).
+
+
+
