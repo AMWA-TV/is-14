@@ -43,38 +43,43 @@ A `modified backup` is a `full backup` or `partial backup` where the backup data
 ## General concepts
 
 Role path objects within a backup data set contain a boolean property called `isRebuildable`.  
-If the object is a non-block object `isRebuildable` means the object's readonly properties can be modified.  
+If the object is a non-block object, `isRebuildable` means the object's readonly properties can be modified. However, structural properties such as `classId`, `role`, `owner` can only be changed when the containing parent block object is rebuildable.  
 If the object is a block, `isRebuildable` determines it can be modified as mentioned before but also that its members can be added or removed (new instances of rebuildable objects can be created in a rebuildable parent block).  
 When a parent block object is not rebuildable but a member child is rebuildable the implication is that the child cannot change its role within that block when being rebuilt through a restore.  
 Members of a rebuildable block which are not rebuildable cannot be removed.
 
 The restore mechanism achieved by [Setting bulk properties for a role path](https://specs.amwa.tv/is-14/branches/v1.0-dev/docs/API_requests.html#setting-bulk-properties-for-a-role-path) affects the device model by either rebuilding it or modifying it.
 
-Validating a restore operation before applying it is achieved by [Validating bulk properties for a role path](https://specs.amwa.tv/is-14/branches/v1.0-dev/docs/API_requests.html#validating-bulk-properties-for-a-role-path). Implementations MUST perform the same checks and offer the same response as if the restore was being applied without actually performing changes to the device model objects.
+Validating a restore operation before applying it is achieved by [Validating bulk properties for a role path](https://specs.amwa.tv/is-14/branches/v1.0-dev/docs/API_requests.html#validating-bulk-properties-for-a-role-path). Devices MUST perform the same checks and offer the same response as if the restore was being applied without actually performing changes to the device model objects.
 
-A restore operation or validating a restore operation creates a `restore scope`. The `restore scope` consists of the intersection of objects contained in the role path targeted and any nested role paths if the `recurse` flag is set to true, and the objects offered in the backup data set. If an existing device model object isn't included in the restore data set it is excluded from the `restore scope`, but will remain in the device model without any changes. If an object is added or modified indirectly by the device as a consequence of a modification to an object already in the `restore scope`, then this object also becomes part of the `restore scope`. If the restore operation includes structural block changes which add new object members, these also become part of the `restore scope`. A restore operation or validating a restore operation MUST always generate [ObjectPropertiesSetValidation](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder) entries for each object which is part of the `restore scope`.
+A restore operation or validating a restore operation creates a `restore scope`.  
+The `restore scope` consists of the intersection of objects contained in the role path targeted and any nested role paths if the `recurse` flag is set to true, and the objects offered in the backup data set.  
+If an existing device model object isn't included in the restore data set it is excluded from the `restore scope`, but will remain in the device model without any changes.  
+If an object is added or modified indirectly by the device as a consequence of a modification to an object already in the `restore scope`, then this object also becomes part of the `restore scope`.  
+If the restore operation includes structural block changes which add new object members, these also become part of the `restore scope`.  
+When performing a restore operation or validating a restore operation, devices MUST always generate [ObjectPropertiesSetValidation](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder) entries for each object which is part of the `restore scope`.
 
 | ![Restore scope](images/restore-scope.png) |
 |:--:|
 | _**Restore scope**_ |
 
-A restore with the restore mode set to `Modify` MUST only be allowed to make changes to existing writeable properties of existing device model objects and MUST NOT modify the device model in a structural way (cannot cause the addition or removal of objects from blocks). Furthermore, devices are RECOMMENDED to evaluate a `Modify` restore (validate if the restore can happen) even when the backup data set contains readonly properties since writeable properties might result in the desired changes being applied and the readonly properties will result in notices in the response returned.
+When performing a restore with the restore mode set to `Modify`, devices MUST only be allowed to make changes to existing writeable properties of existing device model objects and MUST NOT modify the device model in a structural way (cannot cause the addition or removal of objects from blocks). Furthermore, devices are RECOMMENDED to evaluate a `Modify` restore (validate if the restore can happen) even when the backup data set contains readonly properties, since writeable properties might result in the desired changes being applied, and the readonly properties will result in notices in the response returned.
 
-A restore with the restore mode set to `Rebuild` MUST allow the following actions:
+When performing a restore with the restore mode set to `Rebuild`, devices MUST allow the following operations:
 
 - make changes to existing writeable properties of existing device model objects
-- add new members to rebuildable block objects by constructing new member objects (structural changes)
-- remove existing members from rebuildable block objects by deconstructing the member objects (structural changes)
+- add new members to rebuildable block objects by constructing new member objects (perform structural changes)
+- remove existing members from rebuildable block objects by deconstructing the member objects (perform structural changes)
 - reconstruct existing rebuildable objects (constructing fresh objects which can accept changes even to its readonly properties)
 
-`Rebuild` restores can perform structural changes against rebuildable device models in the following ways:
+`Rebuild` restores can alter the structure of rebuildable device models in the following ways:
 
 - an object can be removed from a rebuildable block when the backup data set used in the restore offers a collection of members for the block which does not include the object (the success of this operation MAY depend on the internal constraints of the device - some devices might have have some members which cannot be removed or a minimum number of members).
-- an object can be added to a rebuildable block when the backup data set used in the restore offers a collection of members for the block which includes the new object and also includes a new entry for the role path of the new object with its properties (the success of this operation MAY depend on the internal constraints of the device - devices are likely to check whether the new object class and role can be added to the block, whether they have all the necessary information to construct the new object, and might even check against a maximum number of members).
+- an object can be added to a rebuildable block when the backup data set used in the restore offers a collection of members for the block which includes the new object and also includes a new entry for the role path of the new object with its properties (the success of this operation depends on the internal constraints of the device - devices are likely to check whether the new object class and role can be added to the block, whether they have all the necessary information to construct the new object, and might even check against a maximum number of members).
 
-In the interest of interoperability even devices with no `rebuildable` device model objects MUST accept `Rebuild` restores but only perform changes to writeable properties of device model objects whilst including notices for any other changes not supported by the device.
+In the interest of interoperability even devices with no `rebuildable` device model objects MUST accept `Rebuild` restores only performing changes to writeable properties of device model objects whilst including notices for any other changes not supported by the device.
 
-The rules for devices implementing the restore workflow are:
+Devices implementing the restore workflow MUST follow these rules:
 
 - after a restore operation devices MUST always contain valid objects (objects which have suitable values for each property within the current operating context) in their device models
 - a restore operation modifying/rebuilding an object can use information from the backup data set provided or from an internal knowledge store
