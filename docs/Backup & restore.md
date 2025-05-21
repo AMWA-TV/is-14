@@ -20,7 +20,7 @@ Note that this does not mean that the backup & restore functionality can only be
 
 A `device`, for the purposes of this section, is a physical or logical entity that can be backed up and restored using the procedures described. It may or may not correspond to an IS-04 Device or IS-04 Node.
 
-`Backup data set` is the set of data retrieved from a device using the backup procedures described. This is represented as an [NcBulkValuesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncbulkvaluesholder) object.
+`Backup data set` is the set of data retrieved from a device using the backup procedures described. This is represented as an [NcBulkValuesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncbulkvaluesholder) object.
 
 `Backup validation fingerprint` is an optional string in a `backup data set` that can be used to capture the various versions of the hardware, software and/or firmware that made up a device at the time the backup was performed. The format of the string is defined by the vendor and is opaque to other systems. This could contain information such as:
 
@@ -57,7 +57,7 @@ The `restore scope` consists of the intersection of objects contained in the rol
 If an existing device model object isn't included in the restore data set it is excluded from the `restore scope`, but will remain in the device model without any changes.  
 If an object is added or modified indirectly by the device as a consequence of a modification to an object already in the `restore scope`, then this object also becomes part of the `restore scope`.  
 If the restore operation includes structural block changes which add new object members, these also become part of the `restore scope`.  
-When performing a restore operation or validating a restore operation, devices MUST always generate [ObjectPropertiesSetValidation](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder) entries for each object which is part of the `restore scope`.
+When performing a restore operation or validating a restore operation, devices MUST always generate [ObjectPropertiesSetValidation](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder) entries for each object which is part of the `restore scope`.
 
 | ![Restore scope](images/restore-scope.png) |
 |:--:|
@@ -84,10 +84,10 @@ Devices implementing the restore workflow MUST follow these rules:
 - after a restore operation devices MUST always contain valid objects (objects which have suitable values for each property within the current operating context) in their device models
 - a restore operation modifying/rebuilding an object can use information from the backup data set provided or from an internal knowledge store
 - a restore operation successfully modifying/rebuilding an object which uses only the backup data set information MUST report the validation restore status of the object as `Ok`
-- a restore operation successfully modifying/rebuilding an object which uses internal knowledge store information MUST report the validation restore status of the object as `Ok` and list properties which have benefited from internal knowledge store data in the [notices](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncpropertyrestorenotice) property as `Warning` notices
-- if devices cannot find the required information for modifying/rebuilding a particular object in either the backup data set provided or an internal knowledge store, then they MUST report the validation restore status of the object as `Failed` and also MUST populate the `statusMessage` property with details of why the operation failed. Devices MAY also populate [notices](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncpropertyrestorenotice) for the object properties which have contributed to the operation failing.
-- a restore operation modifying/rebuilding an object resulting in at least one error [notice](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncpropertyrestorenotice) MUST report the validation restore status of the object as `Failed`
-- a restore operation modifying/rebuilding an object resulting only in warning [notices](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncpropertyrestorenotice) MUST report the validation restore status of the object as `Ok`
+- a restore operation successfully modifying/rebuilding an object which uses internal knowledge store information MUST report the validation restore status of the object as `Ok` and list properties which have benefited from internal knowledge store data in the [notices](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyrestorenotice) property as `Warning` notices
+- if devices cannot find the required information for modifying/rebuilding a particular object in either the backup data set provided or an internal knowledge store, then they MUST report the validation restore status of the object as `Failed` and also MUST populate the `statusMessage` property with details of why the operation failed. Devices MAY also populate [notices](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyrestorenotice) for the object properties which have contributed to the operation failing.
+- a restore operation modifying/rebuilding an object resulting in at least one error [notice](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyrestorenotice) MUST report the validation restore status of the object as `Failed`
+- a restore operation modifying/rebuilding an object resulting only in warning [notices](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyrestorenotice) MUST report the validation restore status of the object as `Ok`
 
 ## Performing a backup
 
@@ -101,9 +101,9 @@ In order to retrieve the whole device model (full backup), requests MUST use `ro
 
 Partial backups can be created by choosing other role paths. The scope of backups can further be restricted by using a query parameter of `recurse=false` which will only include the properties of the targeted role path.
 
-Devices are RECOMMENDED to populate `dependencyPaths` for objects which have dependencies on other role path objects when returning a backup data set ([see NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder)).
+Devices are RECOMMENDED to populate `dependencyPaths` for objects which have dependencies on other role path objects when returning a backup data set ([see NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder)).
 
-Devices are RECOMMENDED to populate `allowedMembersClasses` for rebuildable blocks when returning a backup data set ([see NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder)). This allows potential clients to determine which class ids can be used when modifying the members of these particular rebuildable blocks.
+Devices are RECOMMENDED to populate `allowedMembersClasses` for rebuildable blocks when returning a backup data set ([see NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder)). This allows potential clients to determine which class ids can be used when modifying the members of these particular rebuildable blocks.
 
 ## Performing a Modify restore
 
@@ -115,7 +115,7 @@ In order to validate applying the full backup data set against the device model,
 
 The request body MUST include:
 
-- the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
+- the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Modify` in order to only allow changes to writeable properties)
 
@@ -125,7 +125,7 @@ In order to restore the full backup data set to the device model, the request MU
 
 The request body MUST include:
 
-- the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
+- the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Modify` in order to only allow changes to writeable properties)
 
@@ -149,7 +149,7 @@ In order to validate applying the full backup data set against the device model,
 
 The request body MUST include:
 
-- the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
+- the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Rebuild` in order to allow blocks to be repopulated with the same members as per the original device)
 
@@ -159,7 +159,7 @@ In order to restore the full backup data set to the device model, requests MUST 
 
 The request body MUST include:
 
-- the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/publish-device-configuration/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
+- the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Rebuild` in order to allow blocks to be repopulated with the same members as per the original device)
 
