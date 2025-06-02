@@ -17,7 +17,7 @@ Defines a standard way of backing up and restoring [MS-05-02](https://specs.amwa
 
 ### How does it work?
 
-- It specifies an HTTP API for backing up an NMOS Nodes' [MS-05-02](https://specs.amwa.tv/ms-05-02/) model as a backup dataset (JSON description).
+- It specifies an HTTP API for backing up an NMOS Nodes' [MS-05-02](https://specs.amwa.tv/ms-05-02/) model as a JSON backup dataset.
 - The API can be used to restore that backup dataset to the NMOS Node.
 - The API can be used to change the structure of 'rebuildable' parts of the [MS-05-02](https://specs.amwa.tv/ms-05-02/) model dynamically, if the NMOS Node allows.
 
