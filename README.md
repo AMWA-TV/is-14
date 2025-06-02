@@ -13,7 +13,7 @@ Enables the configuration of an NMOS Nodes' [MS-05-02](https://specs.amwa.tv/ms-
 
 ### Why does it matter?
 
-Defines a standard way of backing up and restoring [MS-05-02](https://specs.amwa.tv/ms-05-02/) models, as well as defining a way to manage dynamically configurable Device Models.
+Defines a standard way of backing up and restoring [MS-05-02](https://specs.amwa.tv/ms-05-02/) models, as well as defining a way to manage dynamically configurable [MS-05-02](https://specs.amwa.tv/ms-05-02/) models.
 
 ### How does it work?
 
@@ -25,7 +25,6 @@ Defines a standard way of backing up and restoring [MS-05-02](https://specs.amwa
 
 ## Getting started
 
-To quickly start your journey an implementation guide is available for [NMOS Control](https://specs.amwa.tv/info-006/).  
 An open source media node framework is available in the form of [nmos-cpp](https://github.com/sony/nmos-cpp).  
 An example mock application is available in the form of the [NMOS Device Control Mock Application](https://github.com/AMWA-TV/nmos-device-control-mock).  
 A testing tool is available in the form of the [NMOS API Testing Tool](https://github.com/AMWA-TV/nmos-testing).
