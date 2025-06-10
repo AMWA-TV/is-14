@@ -83,23 +83,23 @@ Devices implementing the restore workflow MUST follow these rules:
 
 - after a restore operation devices MUST always contain valid objects (objects which have suitable values for each property within the current operating context) in their device models
 - a restore operation modifying/rebuilding an object can use information from the backup data set provided or from an internal knowledge store
-- a restore operation successfully modifying/rebuilding an object which uses only the backup data set information MUST report the validation restore status of the object as `Ok`
-- a restore operation successfully modifying/rebuilding an object which uses internal knowledge store information MUST report the validation restore status of the object as `Ok` and list properties which have benefited from internal knowledge store data in the [notices](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyrestorenotice) property as `Warning` notices
-- if devices cannot find the required information for modifying/rebuilding a particular object in either the backup data set provided or an internal knowledge store, then they MUST report the validation restore status of the object as `Failed` and also MUST populate the `statusMessage` property with details of why the operation failed. Devices MAY also populate [notices](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyrestorenotice) for the object properties which have contributed to the operation failing.
-- a restore operation modifying/rebuilding an object resulting in at least one error [notice](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyrestorenotice) MUST report the validation restore status of the object as `Failed`
-- a restore operation modifying/rebuilding an object resulting only in warning [notices](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyrestorenotice) MUST report the validation restore status of the object as `Ok`
+- devices MUST report the validation restore status of an object as `Ok` when a restore operation modifying/rebuilding the object using only the backup data set information is successful
+- devices MUST report the validation restore status of an object as `Ok` and MUST list properties which have benefited from internal knowledge store data in the [notices](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyrestorenotice) property as `Warning` notices when a restore operation modifying/rebuilding the object using internal knowledge store information is successful
+- if devices cannot find the required information for modifying/rebuilding a particular object in either the backup data set provided or an internal knowledge store, then they MUST report the validation restore status of the object as `Failed` and also MUST populate the `statusMessage` property with details of why the operation failed. Devices MAY also populate [notices](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyrestorenotice) for the object properties which have contributed to the operation failing
+- devices MUST report the validation restore status of an object as `Failed` when a restore operation modifying/rebuilding the object results in at least one error [notice](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyrestorenotice)
+- devices MUST report the validation restore status of an object as `Ok` when a restore operation modifying/rebuilding an object results only in warning [notices](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyrestorenotice)
 
 ## Performing a backup
 
 Creating a backup is performed by using the `bulkProperties` endpoint of a device alongside the [Get verb](https://specs.amwa.tv/is-14/branches/v1.0-dev/docs/API_requests.html#getting-all-the-properties-of-a-role-path).
 
-In order to retrieve the whole device model (full backup), requests MUST use `root` as the `rolePath` and a `recurse` parameter with a value of `true`. The response contains a `validationFingerprint` and the `values` of all the role paths in the device model.
+Clients MUST issue requests using `root` as the `rolePath` and a `recurse` parameter with a value of `true`, in order to retrieve the whole device model (full backup). Devices MUST produce a response which contains a `validationFingerprint` and the `values` of all the role paths in the device model.
 
 | ![Performing a full backup](images/performing-full-backup.png) |
 |:--:|
 | _**Performing a full backup**_ |
 
-Partial backups can be created by choosing other role paths. The scope of backups can further be restricted by using a query parameter of `recurse=false` which will only include the properties of the targeted role path.
+Clients MAY retrieve partial backups by choosing other role paths. The scope of backups MAY further be restricted by using a query parameter of `recurse=false` which will only include the properties of the targeted role path.
 
 Devices are RECOMMENDED to populate `dependencyPaths` for objects which have dependencies on other role path objects when returning a backup data set ([see NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder)).
 
@@ -111,9 +111,9 @@ The following sections describe how a `Modify` restore can be performed using a 
 
 Clients are RECOMMENDED to [Validate the restore operation](https://specs.amwa.tv/is-14/branches/v1.0-dev/docs/API_requests.html#validating-bulk-properties-for-a-role-path) before attempting to apply the changes.
 
-In order to validate applying the full backup data set against the device model, requests MUST use `root` as the `rolePath`.
+Clients MUST issue requests using `root` as the `rolePath` when attempting to validate applying the full backup data set against the device model.
 
-The request body MUST include:
+Clients MUST include the following in the request body:
 
 - the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
@@ -121,21 +121,27 @@ The request body MUST include:
 
 A restore operation is performed through a [Set request](https://specs.amwa.tv/is-14/branches/v1.0-dev/docs/API_requests.html#setting-bulk-properties-for-a-role-path) to restore a backup data set.
 
-In order to restore the full backup data set to the device model, the request MUST use `root` as the `rolePath`.
+Clients MUST issue requests using `root` as the `rolePath` in order to restore the full backup data set to the device model.
 
-The request body MUST include:
+Clients MUST include the following in the request body:
 
 - the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Modify` in order to only allow changes to writeable properties)
 
-Devices MUST make the necessary changes to all objects in the `restore scope` which have a validation restore status of `Ok`. If a device requires a system reboot in order to apply the restore then it MUST perform this immediately after responding to the restore request.
+Devices MUST make the necessary changes to all objects in the `restore scope` which have a validation restore status of `Ok`. If a device requires a system reboot in order to apply the restore, then it MUST perform this immediately after responding to the restore request.
 
 The diagram below captures how the `Modify` restore uses the backup data set to transition the device from its current device model to a changed state.
 
 | ![Modify restore](images/modify-restore.png) |
 |:--:|
 | _**Modify restore**_ |
+
+Clients MAY perform a partial restore in the following ways:
+
+- issuing a request where the `rolePath` isn't `root`, resulting in targeting a subset of the device model
+- using a `recurse` argument set to `false` in the request body, resulting in targeting a single role path of the device model
+- removing role paths from the dataSet before using it in the request body, resulting in targeting a subset of the device model without the removed role paths
 
 ## Performing a Rebuild restore
 
@@ -145,9 +151,9 @@ The following sections describe how a `Rebuild` restore can be performed using a
 
 Clients are RECOMMENDED to [Validate the restore operation](https://specs.amwa.tv/is-14/branches/v1.0-dev/docs/API_requests.html#validating-bulk-properties-for-a-role-path) before attempting to apply the changes.
 
-In order to validate applying the full backup data set against the device model, the request MUST use `root` as the `rolePath`.
+Clients MUST issue requests using `root` as the `rolePath` in order to validate applying the full backup data set against the device model.
 
-The request body MUST include:
+Clients MUST include the following in the request body:
 
 - the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
@@ -155,18 +161,24 @@ The request body MUST include:
 
 A restore operation is performed through a [Set request](https://specs.amwa.tv/is-14/branches/v1.0-dev/docs/API_requests.html#setting-bulk-properties-for-a-role-path) to restore a backup data set.
 
-In order to restore the full backup data set to the device model, requests MUST use `root` as the `rolePath`.
+Clients MUST issue requests using `root` as the `rolePath` in order to restore the full backup data set to the device model.
 
-The request body MUST include:
+Clients MUST include the following in the request body:
 
 - the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Rebuild` in order to allow blocks to be repopulated with the same members as per the original device)
 
-Devices MUST make the necessary changes to all objects in the `restore scope` which have a validation restore status of `Ok`. If a device requires a system reboot in order to apply the restore then it MUST perform this immediately after responding to the restore request.
+Devices MUST make the necessary changes to all objects in the `restore scope` which have a validation restore status of `Ok`. If a device requires a system reboot in order to apply the restore, then it MUST perform this immediately after responding to the restore request.
 
 The diagram below captures how the `Rebuild` restore uses the backup data set to transition the device from its current device model to a changed state. In this case the operation makes a structural change to the device model.
 
 | ![Rebuild restore](images/rebuild-restore.png) |
 |:--:|
 | _**Rebuild restore**_ |
+
+Clients MAY perform a partial restore in the following ways:
+
+- issuing a request where the `rolePath` isn't `root`, resulting in targeting a subset of the device model
+- using a `recurse` argument set to `false` in the request body, resulting in targeting a single role path of the device model
+- removing role paths from the dataSet before using it in the request body, resulting in targeting a subset of the device model without the removed role paths
