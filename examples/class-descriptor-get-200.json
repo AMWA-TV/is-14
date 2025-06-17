@@ -1,133 +1,234 @@
 {
   "status": 200,
   "value": {
-    "description": "NcObject class descriptor",
-    "classId": [
-      1
-    ],
-    "name": "NcObject",
+    "description": "NcBlock class descriptor",
+    "classId": [1, 1],
+    "name": "NcBlock",
     "fixedRole": null,
     "properties": [
       {
+        "description": "TRUE if block is functional",
+        "id": {"level": 2, "index": 1},
+        "name": "enabled",
+        "typeName": "NcBoolean",
+        "isReadOnly": true,
+        "isNullable": false,
+        "isSequence": false,
+        "constraints": null,
+        "isDeprecated": false
+      },
+      {
+        "description": "Descriptors of this block's members",
+        "id": {"level": 2, "index": 2},
+        "name": "members",
+        "typeName": "NcBlockMemberDescriptor",
+        "isReadOnly": true,
+        "isNullable": false,
+        "isSequence": true,
+        "constraints": null,
+        "isDeprecated": false
+      },
+      {
         "description": "Static value. All instances of the same class will have the same identity value",
-        "id": {
-          "level": 1,
-          "index": 1
-        },
+        "id": {"level": 1, "index": 1},
         "name": "classId",
         "typeName": "NcClassId",
         "isReadOnly": true,
         "isNullable": false,
         "isSequence": false,
-        "isDeprecated": false,
-        "constraints": null
+        "constraints": null,
+        "isDeprecated": false
       },
       {
         "description": "Object identifier",
-        "id": {
-          "level": 1,
-          "index": 2
-        },
+        "id": {"level": 1, "index": 2},
         "name": "oid",
         "typeName": "NcOid",
         "isReadOnly": true,
         "isNullable": false,
         "isSequence": false,
-        "isDeprecated": false,
-        "constraints": null
+        "constraints": null,
+        "isDeprecated": false
       },
       {
         "description": "TRUE iff OID is hardwired into device",
-        "id": {
-          "level": 1,
-          "index": 3
-        },
+        "id": {"level": 1, "index": 3},
         "name": "constantOid",
         "typeName": "NcBoolean",
         "isReadOnly": true,
         "isNullable": false,
         "isSequence": false,
-        "isDeprecated": false,
-        "constraints": null
+        "constraints": null,
+        "isDeprecated": false
       },
       {
         "description": "OID of containing block. Can only ever be null for the root block",
-        "id": {
-          "level": 1,
-          "index": 4
-        },
+        "id": {"level": 1, "index": 4},
         "name": "owner",
         "typeName": "NcOid",
         "isReadOnly": true,
         "isNullable": true,
         "isSequence": false,
-        "isDeprecated": false,
-        "constraints": null
+        "constraints": null,
+        "isDeprecated": false
       },
       {
-        "description": "Role of object in the containing block",
-        "id": {
-          "level": 1,
-          "index": 5
-        },
+        "description": "role of obj in containing block",
+        "id": {"level": 1, "index": 5},
         "name": "role",
         "typeName": "NcString",
         "isReadOnly": true,
         "isNullable": false,
         "isSequence": false,
-        "isDeprecated": false,
-        "constraints": null
+        "constraints": null,
+        "isDeprecated": false
       },
       {
         "description": "Scribble strip",
-        "id": {
-          "level": 1,
-          "index": 6
-        },
+        "id": {"level": 1, "index": 6},
         "name": "userLabel",
         "typeName": "NcString",
         "isReadOnly": false,
         "isNullable": true,
         "isSequence": false,
-        "isDeprecated": false,
-        "constraints": null
+        "constraints": null,
+        "isDeprecated": false
       },
       {
         "description": "Touchpoints to other contexts",
-        "id": {
-          "level": 1,
-          "index": 7
-        },
+        "id": {"level": 1, "index": 7},
         "name": "touchpoints",
         "typeName": "NcTouchpoint",
         "isReadOnly": true,
         "isNullable": true,
         "isSequence": true,
-        "isDeprecated": false,
-        "constraints": null
+        "constraints": null,
+        "isDeprecated": false
       },
       {
         "description": "Runtime property constraints",
-        "id": {
-          "level": 1,
-          "index": 8
-        },
+        "id": {"level": 1, "index": 8},
         "name": "runtimePropertyConstraints",
         "typeName": "NcPropertyConstraints",
         "isReadOnly": true,
         "isNullable": true,
         "isSequence": true,
-        "isDeprecated": false,
-        "constraints": null
+        "constraints": null,
+        "isDeprecated": false
       }
     ],
     "methods": [
       {
+        "description": "Gets descriptors of members of the block",
+        "id": {"level": 2, "index": 1},
+        "name": "GetMemberDescriptors",
+        "resultDatatype": "NcMethodResultBlockMemberDescriptors",
+        "parameters": [
+          {
+            "description": "If recurse is set to true, nested members can be retrieved",
+            "name": "recurse",
+            "typeName": "NcBoolean",
+            "isNullable": false,
+            "isSequence": false,
+            "constraints": null
+          }
+        ],
+        "isDeprecated": false
+      },
+      {
+        "description": "Finds member(s) by path",
+        "id": {"level": 2, "index": 2},
+        "name": "FindMembersByPath",
+        "resultDatatype": "NcMethodResultBlockMemberDescriptors",
+        "parameters": [
+          {
+            "description": "Relative path to search for (MUST not include the role of the block targeted by oid)",
+            "name": "path",
+            "typeName": "NcRolePath",
+            "isNullable": false,
+            "isSequence": false,
+            "constraints": null
+          }
+        ],
+        "isDeprecated": false
+      },
+      {
+        "description": "Finds members with given role name or fragment",
+        "id": {"level": 2, "index": 3},
+        "name": "FindMembersByRole",
+        "resultDatatype": "NcMethodResultBlockMemberDescriptors",
+        "parameters": [
+          {
+            "description": "Role text to search for",
+            "name": "role",
+            "typeName": "NcString",
+            "isNullable": false,
+            "isSequence": false,
+            "constraints": null
+          },
+          {
+            "description": "Signals if the comparison should be case sensitive",
+            "name": "caseSensitive",
+            "typeName": "NcBoolean",
+            "isNullable": false,
+            "isSequence": false,
+            "constraints": null
+          },
+          {
+            "description": "TRUE to only return exact matches",
+            "name": "matchWholeString",
+            "typeName": "NcBoolean",
+            "isNullable": false,
+            "isSequence": false,
+            "constraints": null
+          },
+          {
+            "description": "TRUE to search nested blocks",
+            "name": "recurse",
+            "typeName": "NcBoolean",
+            "isNullable": false,
+            "isSequence": false,
+            "constraints": null
+          }
+        ],
+        "isDeprecated": false
+      },
+      {
+        "description": "Finds members with given class id",
+        "id": {"level": 2, "index": 4},
+        "name": "FindMembersByClassId",
+        "resultDatatype": "NcMethodResultBlockMemberDescriptors",
+        "parameters": [
+          {
+            "description": "Class id to search for",
+            "name": "classId",
+            "typeName": "NcClassId",
+            "isNullable": false,
+            "isSequence": false,
+            "constraints": null
+          },
+          {
+            "description": "If TRUE it will also include derived class descriptors",
+            "name": "includeDerived",
+            "typeName": "NcBoolean",
+            "isNullable": false,
+            "isSequence": false,
+            "constraints": null
+          },
+          {
+            "description": "TRUE to search nested blocks",
+            "name": "recurse",
+            "typeName": "NcBoolean",
+            "isNullable": false,
+            "isSequence": false,
+            "constraints": null
+          }
+        ],
+        "isDeprecated": false
+      },
+      {
         "description": "Get property value",
-        "id": {
-          "level": 1,
-          "index": 1
-        },
+        "id": {"level": 1, "index": 1},
         "name": "Get",
         "resultDatatype": "NcMethodResultPropertyValue",
         "parameters": [
@@ -144,10 +245,7 @@
       },
       {
         "description": "Set property value",
-        "id": {
-          "level": 1,
-          "index": 2
-        },
+        "id": {"level": 1, "index": 2},
         "name": "Set",
         "resultDatatype": "NcMethodResult",
         "parameters": [
@@ -172,10 +270,7 @@
       },
       {
         "description": "Get sequence item",
-        "id": {
-          "level": 1,
-          "index": 3
-        },
+        "id": {"level": 1, "index": 3},
         "name": "GetSequenceItem",
         "resultDatatype": "NcMethodResultPropertyValue",
         "parameters": [
@@ -200,10 +295,7 @@
       },
       {
         "description": "Set sequence item value",
-        "id": {
-          "level": 1,
-          "index": 4
-        },
+        "id": {"level": 1, "index": 4},
         "name": "SetSequenceItem",
         "resultDatatype": "NcMethodResult",
         "parameters": [
@@ -236,10 +328,7 @@
       },
       {
         "description": "Add item to sequence",
-        "id": {
-          "level": 1,
-          "index": 5
-        },
+        "id": {"level": 1, "index": 5},
         "name": "AddSequenceItem",
         "resultDatatype": "NcMethodResultId",
         "parameters": [
@@ -264,10 +353,7 @@
       },
       {
         "description": "Delete sequence item",
-        "id": {
-          "level": 1,
-          "index": 6
-        },
+        "id": {"level": 1, "index": 6},
         "name": "RemoveSequenceItem",
         "resultDatatype": "NcMethodResult",
         "parameters": [
@@ -292,10 +378,7 @@
       },
       {
         "description": "Get sequence length",
-        "id": {
-          "level": 1,
-          "index": 7
-        },
+        "id": {"level": 1, "index": 7},
         "name": "GetSequenceLength",
         "resultDatatype": "NcMethodResultLength",
         "parameters": [
@@ -314,10 +397,7 @@
     "events": [
       {
         "description": "Property changed event",
-        "id": {
-          "level": 1,
-          "index": 1
-        },
+        "id": {"level": 1, "index": 1},
         "name": "PropertyChanged",
         "eventDatatype": "NcPropertyChangedEventData",
         "isDeprecated": false

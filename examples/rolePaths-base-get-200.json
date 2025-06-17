@@ -1,8 +1,7 @@
 [
   "root/",
-  "root.ClassManager/",
+  "root.example-controls/",
+  "root.example-controls.example-control-01/",
   "root.DeviceManager/",
-  "root.StereoGain/",
-  "root.StereoGain.LeftChannel/",
-  "root.StereoGain.RightChannel/"
+  "root.ClassManager/"
 ]

@@ -1,31 +1,1104 @@
 {
   "status": 200,
-  "validationFingerprint": null,
-  "values": [
-    {
-      "rolePath": [ "root", "stereo-gain" ],
-      "values": [
-        {
-          "id": {
-            "level": 1,
-            "index": 6
+  "value": {
+    "validationFingerprint": "AMWA NMOS Device Control Mock Application|v1.0",
+    "values": [
+      {
+        "path": ["root"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "id": {"level": 2, "index": 1},
+            "name": "enabled",
+            "typeName": "NcBoolean",
+            "isReadOnly": true,
+            "value": true
           },
-          "name": "userLabel",
-          "typeName": "NcString",
-          "isReadOnly": false,
-          "value": "this is the property value"
-        },
-        {
-          "id": {
-            "level": 2,
-            "index": 1
+          {
+            "id": {"level": 2, "index": 2},
+            "name": "members",
+            "typeName": "NcBlockMemberDescriptor",
+            "isReadOnly": true,
+            "value": [
+              {
+                "description": "The device manager offers information about the product this device is representing",
+                "role": "DeviceManager",
+                "oid": 2,
+                "constantOid": true,
+                "classId": [1, 3, 1],
+                "userLabel": "Device manager",
+                "owner": 1
+              },
+              {
+                "description": "The class manager offers access to control class and data type descriptors",
+                "role": "ClassManager",
+                "oid": 3,
+                "constantOid": true,
+                "classId": [1, 3, 2],
+                "userLabel": "Class manager",
+                "owner": 1
+              },
+              {
+                "description": "Example controls block",
+                "role": "example-controls",
+                "oid": 14,
+                "constantOid": true,
+                "classId": [1, 1],
+                "userLabel": "Example controls",
+                "owner": 1
+              }
+            ]
           },
-          "name": "enabled",
-          "typeName": "NcBoolean",
-          "isReadOnly": false,
-          "value": true
-        }
-      ]
-    }
-  ]
+          {
+            "id": {"level": 1, "index": 1},
+            "name": "classId",
+            "typeName": "NcClassId",
+            "isReadOnly": true,
+            "value": [1, 1]
+          },
+          {
+            "id": {"level": 1, "index": 2},
+            "name": "oid",
+            "typeName": "NcOid",
+            "isReadOnly": true,
+            "value": 1
+          },
+          {
+            "id": {"level": 1, "index": 3},
+            "name": "constantOid",
+            "typeName": "NcBoolean",
+            "isReadOnly": true,
+            "value": true
+          },
+          {
+            "id": {"level": 1, "index": 4},
+            "name": "owner",
+            "typeName": "NcOid",
+            "isReadOnly": true,
+            "value": null
+          },
+          {
+            "id": {"level": 1, "index": 5},
+            "name": "role",
+            "typeName": "NcString",
+            "isReadOnly": true,
+            "value": "root"
+          },
+          {
+            "id": {"level": 1, "index": 6},
+            "name": "userLabel",
+            "typeName": "NcString",
+            "isReadOnly": false,
+            "value": "Root"
+          },
+          {
+            "id": {"level": 1, "index": 7},
+            "name": "touchpoints",
+            "typeName": "NcTouchpoint",
+            "isReadOnly": true,
+            "value": null
+          },
+          {
+            "id": {"level": 1, "index": 8},
+            "name": "runtimePropertyConstraints",
+            "typeName": "NcPropertyConstraints",
+            "isReadOnly": true,
+            "value": null
+          }
+        ],
+        "isRebuildable": false
+      },
+      {
+        "path": ["root", "DeviceManager"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "id": {"level": 3, "index": 1},
+            "name": "ncVersion",
+            "typeName": "NcVersionCode",
+            "isReadOnly": true,
+            "value": "v1.0.0"
+          },
+          {
+            "id": {"level": 3, "index": 2},
+            "name": "manufacturer",
+            "typeName": "NcManufacturer",
+            "isReadOnly": true,
+            "value": {
+              "name"          : "Mock manufacturer",
+              "organizationId": null,
+              "website"       : "https://specs.amwa.tv/nmos/"
+            }
+          },
+          {
+            "id": {"level": 3, "index": 3},
+            "name": "product",
+            "typeName": "NcProduct",
+            "isReadOnly": true,
+            "value": {
+              "name"         : "Mock device",
+              "key"          : "mock-001",
+              "revisionLevel": "1.0.0",
+              "brandName"    : "Mock brand",
+              "uuid"         : "2dcd15f6-aecc-4f01-bf66-b1044c677ef4",
+              "description"  : "Mock device for testing and prototyping"
+            }
+          },
+          {
+            "id": {"level": 3, "index": 4},
+            "name": "serialNumber",
+            "typeName": "NcString",
+            "isReadOnly": true,
+            "value": "123-mock"
+          },
+          {
+            "id": {"level": 3, "index": 5},
+            "name": "userInventoryCode",
+            "typeName": "NcString",
+            "isReadOnly": false,
+            "value": null
+          },
+          {
+            "id": {"level": 3, "index": 6},
+            "name": "deviceName",
+            "typeName": "NcString",
+            "isReadOnly": false,
+            "value": null
+          },
+          {
+            "id": {"level": 3, "index": 7},
+            "name": "deviceRole",
+            "typeName": "NcString",
+            "isReadOnly": false,
+            "value": null
+          },
+          {
+            "id": {"level": 3, "index": 8},
+            "name": "operationalState",
+            "typeName": "NcDeviceOperationalState",
+            "isReadOnly": true,
+            "value": {"generic": 1, "deviceSpecificDetails": null}
+          },
+          {
+            "id": {"level": 3, "index": 9},
+            "name": "resetCause",
+            "typeName": "NcResetCause",
+            "isReadOnly": true,
+            "value": 0
+          },
+          {
+            "id": {"level": 3, "index": 10},
+            "name": "message",
+            "typeName": "NcString",
+            "isReadOnly": true,
+            "value": "Nothing to report"
+          },
+          {
+            "id": {"level": 1, "index": 1},
+            "name": "classId",
+            "typeName": "NcClassId",
+            "isReadOnly": true,
+            "value": [1, 3, 1]
+          },
+          {
+            "id": {"level": 1, "index": 2},
+            "name": "oid",
+            "typeName": "NcOid",
+            "isReadOnly": true,
+            "value": 2
+          },
+          {
+            "id": {"level": 1, "index": 3},
+            "name": "constantOid",
+            "typeName": "NcBoolean",
+            "isReadOnly": true,
+            "value": true
+          },
+          {
+            "id": {"level": 1, "index": 4},
+            "name": "owner",
+            "typeName": "NcOid",
+            "isReadOnly": true,
+            "value": 1
+          },
+          {
+            "id": {"level": 1, "index": 5},
+            "name": "role",
+            "typeName": "NcString",
+            "isReadOnly": true,
+            "value": "DeviceManager"
+          },
+          {
+            "id": {"level": 1, "index": 6},
+            "name": "userLabel",
+            "typeName": "NcString",
+            "isReadOnly": false,
+            "value": "Device manager"
+          },
+          {
+            "id": {"level": 1, "index": 7},
+            "name": "touchpoints",
+            "typeName": "NcTouchpoint",
+            "isReadOnly": true,
+            "value": null
+          },
+          {
+            "id": {"level": 1, "index": 8},
+            "name": "runtimePropertyConstraints",
+            "typeName": "NcPropertyConstraints",
+            "isReadOnly": true,
+            "value": null
+          }
+        ],
+        "isRebuildable": false
+      },
+      {
+        "path": ["root", "ClassManager"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "id": {"level": 3, "index": 1},
+            "name": "controlClasses",
+            "typeName": "NcClassDescriptor",
+            "isReadOnly": true,
+            "value": [
+              {
+                "description": "NcObject class descriptor",
+                "classId": [1],
+                "name": "NcObject",
+                "fixedRole": null,
+                "properties": [
+                  {
+                    "description": "Static value. All instances of the same class will have the same identity value",
+                    "id": {"level": 1, "index": 1},
+                    "name": "classId",
+                    "typeName": "NcClassId",
+                    "isReadOnly": true,
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null,
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Object identifier",
+                    "id": {"level": 1, "index": 2},
+                    "name": "oid",
+                    "typeName": "NcOid",
+                    "isReadOnly": true,
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null,
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "TRUE iff OID is hardwired into device",
+                    "id": {"level": 1, "index": 3},
+                    "name": "constantOid",
+                    "typeName": "NcBoolean",
+                    "isReadOnly": true,
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null,
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "OID of containing block. Can only ever be null for the root block",
+                    "id": {"level": 1, "index": 4},
+                    "name": "owner",
+                    "typeName": "NcOid",
+                    "isReadOnly": true,
+                    "isNullable": true,
+                    "isSequence": false,
+                    "constraints": null,
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "role of obj in containing block",
+                    "id": {"level": 1, "index": 5},
+                    "name": "role",
+                    "typeName": "NcString",
+                    "isReadOnly": true,
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null,
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Scribble strip",
+                    "id": {"level": 1, "index": 6},
+                    "name": "userLabel",
+                    "typeName": "NcString",
+                    "isReadOnly": false,
+                    "isNullable": true,
+                    "isSequence": false,
+                    "constraints": null,
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Touchpoints to other contexts",
+                    "id": {"level": 1, "index": 7},
+                    "name": "touchpoints",
+                    "typeName": "NcTouchpoint",
+                    "isReadOnly": true,
+                    "isNullable": true,
+                    "isSequence": true,
+                    "constraints": null,
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Runtime property constraints",
+                    "id": {"level": 1, "index": 8},
+                    "name": "runtimePropertyConstraints",
+                    "typeName": "NcPropertyConstraints",
+                    "isReadOnly": true,
+                    "isNullable": true,
+                    "isSequence": true,
+                    "constraints": null,
+                    "isDeprecated": false
+                  }
+                ],
+                "methods": [
+                  {
+                    "description": "Get property value",
+                    "id": {"level": 1, "index": 1},
+                    "name": "Get",
+                    "resultDatatype": "NcMethodResultPropertyValue",
+                    "parameters": [
+                      {
+                        "description": "Property id",
+                        "name": "id",
+                        "typeName": "NcPropertyId",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      }
+                    ],
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Set property value",
+                    "id": {"level": 1, "index": 2},
+                    "name": "Set",
+                    "resultDatatype": "NcMethodResult",
+                    "parameters": [
+                      {
+                        "description": "Property id",
+                        "name": "id",
+                        "typeName": "NcPropertyId",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      },
+                      {
+                        "description": "Property value",
+                        "name": "value",
+                        "typeName": null,
+                        "isNullable": true,
+                        "isSequence": false,
+                        "constraints": null
+                      }
+                    ],
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Get sequence item",
+                    "id": {"level": 1, "index": 3},
+                    "name": "GetSequenceItem",
+                    "resultDatatype": "NcMethodResultPropertyValue",
+                    "parameters": [
+                      {
+                        "description": "Property id",
+                        "name": "id",
+                        "typeName": "NcPropertyId",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      },
+                      {
+                        "description": "Index of item in the sequence",
+                        "name": "index",
+                        "typeName": "NcId",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      }
+                    ],
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Set sequence item value",
+                    "id": {"level": 1, "index": 4},
+                    "name": "SetSequenceItem",
+                    "resultDatatype": "NcMethodResult",
+                    "parameters": [
+                      {
+                        "description": "Property id",
+                        "name": "id",
+                        "typeName": "NcPropertyId",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      },
+                      {
+                        "description": "Index of item in the sequence",
+                        "name": "index",
+                        "typeName": "NcId",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      },
+                      {
+                        "description": "Value",
+                        "name": "value",
+                        "typeName": null,
+                        "isNullable": true,
+                        "isSequence": false,
+                        "constraints": null
+                      }
+                    ],
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Add item to sequence",
+                    "id": {"level": 1, "index": 5},
+                    "name": "AddSequenceItem",
+                    "resultDatatype": "NcMethodResultId",
+                    "parameters": [
+                      {
+                        "description": "Property id",
+                        "name": "id",
+                        "typeName": "NcPropertyId",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      },
+                      {
+                        "description": "Value",
+                        "name": "value",
+                        "typeName": null,
+                        "isNullable": true,
+                        "isSequence": false,
+                        "constraints": null
+                      }
+                    ],
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Delete sequence item",
+                    "id": {"level": 1, "index": 6},
+                    "name": "RemoveSequenceItem",
+                    "resultDatatype": "NcMethodResult",
+                    "parameters": [
+                      {
+                        "description": "Property id",
+                        "name": "id",
+                        "typeName": "NcPropertyId",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      },
+                      {
+                        "description": "Index of item in the sequence",
+                        "name": "index",
+                        "typeName": "NcId",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      }
+                    ],
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Get sequence length",
+                    "id": {"level": 1, "index": 7},
+                    "name": "GetSequenceLength",
+                    "resultDatatype": "NcMethodResultLength",
+                    "parameters": [
+                      {
+                        "description": "Property id",
+                        "name": "id",
+                        "typeName": "NcPropertyId",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      }
+                    ],
+                    "isDeprecated": false
+                  }
+                ],
+                "events": [
+                  {
+                    "description": "Property changed event",
+                    "id": {"level": 1, "index": 1},
+                    "name": "PropertyChanged",
+                    "eventDatatype": "NcPropertyChangedEventData",
+                    "isDeprecated": false
+                  }
+                ]
+              },
+              {
+                "description": "NcBlock class descriptor",
+                "classId": [1, 1],
+                "name": "NcBlock",
+                "fixedRole": null,
+                "properties": [
+                  {
+                    "description": "TRUE if block is functional",
+                    "id": {"level": 2, "index": 1},
+                    "name": "enabled",
+                    "typeName": "NcBoolean",
+                    "isReadOnly": true,
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null,
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Descriptors of this block's members",
+                    "id": {"level": 2, "index": 2},
+                    "name": "members",
+                    "typeName": "NcBlockMemberDescriptor",
+                    "isReadOnly": true,
+                    "isNullable": false,
+                    "isSequence": true,
+                    "constraints": null,
+                    "isDeprecated": false
+                  }
+                ],
+                "methods": [
+                  {
+                    "description": "Gets descriptors of members of the block",
+                    "id": {"level": 2, "index": 1},
+                    "name": "GetMemberDescriptors",
+                    "resultDatatype": "NcMethodResultBlockMemberDescriptors",
+                    "parameters": [
+                      {
+                        "description": "If recurse is set to true, nested members can be retrieved",
+                        "name": "recurse",
+                        "typeName": "NcBoolean",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      }
+                    ],
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Finds member(s) by path",
+                    "id": {"level": 2, "index": 2},
+                    "name": "FindMembersByPath",
+                    "resultDatatype": "NcMethodResultBlockMemberDescriptors",
+                    "parameters": [
+                      {
+                        "description": "Relative path to search for (MUST not include the role of the block targeted by oid)",
+                        "name": "path",
+                        "typeName": "NcRolePath",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      }
+                    ],
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Finds members with given role name or fragment",
+                    "id": {"level": 2, "index": 3},
+                    "name": "FindMembersByRole",
+                    "resultDatatype": "NcMethodResultBlockMemberDescriptors",
+                    "parameters": [
+                      {
+                        "description": "Role text to search for",
+                        "name": "role",
+                        "typeName": "NcString",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      },
+                      {
+                        "description": "Signals if the comparison should be case sensitive",
+                        "name": "caseSensitive",
+                        "typeName": "NcBoolean",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      },
+                      {
+                        "description": "TRUE to only return exact matches",
+                        "name": "matchWholeString",
+                        "typeName": "NcBoolean",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      },
+                      {
+                        "description": "TRUE to search nested blocks",
+                        "name": "recurse",
+                        "typeName": "NcBoolean",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      }
+                    ],
+                    "isDeprecated": false
+                  },
+                  {
+                    "description": "Finds members with given class id",
+                    "id": {"level": 2, "index": 4},
+                    "name": "FindMembersByClassId",
+                    "resultDatatype": "NcMethodResultBlockMemberDescriptors",
+                    "parameters": [
+                      {
+                        "description": "Class id to search for",
+                        "name": "classId",
+                        "typeName": "NcClassId",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      },
+                      {
+                        "description": "If TRUE it will also include derived class descriptors",
+                        "name": "includeDerived",
+                        "typeName": "NcBoolean",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      },
+                      {
+                        "description": "TRUE to search nested blocks",
+                        "name": "recurse",
+                        "typeName": "NcBoolean",
+                        "isNullable": false,
+                        "isSequence": false,
+                        "constraints": null
+                      }
+                    ],
+                    "isDeprecated": false
+                  }
+                ],
+                "events": []
+              }
+            ]
+          },
+          {
+            "id": {"level": 3, "index": 2},
+            "name": "datatypes",
+            "typeName": "NcDatatypeDescriptor",
+            "isReadOnly": true,
+            "value": [
+              {
+                "description": "Boolean primitive type",
+                "name": "NcBoolean",
+                "type": 0,
+                "constraints": null
+              },
+              {
+                "description": "short",
+                "name": "NcInt16",
+                "type": 0,
+                "constraints": null
+              },
+              {
+                "description": "long",
+                "name": "NcInt32",
+                "type": 0,
+                "constraints": null
+              },
+              {
+                "description": "longlong",
+                "name": "NcInt64",
+                "type": 0,
+                "constraints": null
+              },
+              {
+                "description": "unsignedshort",
+                "name": "NcUint16",
+                "type": 0,
+                "constraints": null
+              },
+              {
+                "description": "unsignedlong",
+                "name": "NcUint32",
+                "type": 0,
+                "constraints": null
+              },
+              {
+                "description": "unsignedlonglong",
+                "name": "NcUint64",
+                "type": 0,
+                "constraints": null
+              },
+              {
+                "description": "unrestrictedfloat",
+                "name": "NcFloat32",
+                "type": 0,
+                "constraints": null
+              },
+              {
+                "description": "unrestricteddouble",
+                "name": "NcFloat64",
+                "type": 0,
+                "constraints": null
+              },
+              {
+                "description": "UTF-8 string",
+                "name": "NcString",
+                "type": 0,
+                "constraints": null
+              },
+              {
+                "description": "Sequence of class ID fields.",
+                "name": "NcClassId",
+                "type": 1,
+                "constraints": null,
+                "parentType": "NcInt32",
+                "isSequence": true
+              }
+            ]
+          },
+          {
+            "id": {"level": 1, "index": 1},
+            "name": "classId",
+            "typeName": "NcClassId",
+            "isReadOnly": true,
+            "value": [1, 3, 2]
+          },
+          {
+            "id": {"level": 1, "index": 2},
+            "name": "oid",
+            "typeName": "NcOid",
+            "isReadOnly": true,
+            "value": 3
+          },
+          {
+            "id": {"level": 1, "index": 3},
+            "name": "constantOid",
+            "typeName": "NcBoolean",
+            "isReadOnly": true,
+            "value": true
+          },
+          {
+            "id": {"level": 1, "index": 4},
+            "name": "owner",
+            "typeName": "NcOid",
+            "isReadOnly": true,
+            "value": 1
+          },
+          {
+            "id": {"level": 1, "index": 5},
+            "name": "role",
+            "typeName": "NcString",
+            "isReadOnly": true,
+            "value": "ClassManager"
+          },
+          {
+            "id": {"level": 1, "index": 6},
+            "name": "userLabel",
+            "typeName": "NcString",
+            "isReadOnly": false,
+            "value": "Class manager"
+          },
+          {
+            "id": {"level": 1, "index": 7},
+            "name": "touchpoints",
+            "typeName": "NcTouchpoint",
+            "isReadOnly": true,
+            "value": null
+          },
+          {
+            "id": {"level": 1, "index": 8},
+            "name": "runtimePropertyConstraints",
+            "typeName": "NcPropertyConstraints",
+            "isReadOnly": true,
+            "value": null
+          }
+        ],
+        "isRebuildable": false
+      },
+      {
+        "path": ["root", "example-controls"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [ [1, 2, 0, 2] ],
+        "values": [
+          {
+            "id": {"level": 2, "index": 1},
+            "name": "enabled",
+            "typeName": "NcBoolean",
+            "isReadOnly": true,
+            "value": true
+          },
+          {
+            "id": {"level": 2, "index": 2},
+            "name": "members",
+            "typeName": "NcBlockMemberDescriptor",
+            "isReadOnly": true,
+            "value": [
+              {
+                "description": "Example control worker",
+                "role": "example-control-01",
+                "oid": 15,
+                "constantOid": true,
+                "classId": [1, 2, 0, 2],
+                "userLabel": "Example control worker 01",
+                "owner": 14
+              }
+            ]
+          },
+          {
+            "id": {"level": 1, "index": 1},
+            "name": "classId",
+            "typeName": "NcClassId",
+            "isReadOnly": true,
+            "value": [1, 1]
+          },
+          {
+            "id": {"level": 1, "index": 2},
+            "name": "oid",
+            "typeName": "NcOid",
+            "isReadOnly": true,
+            "value": 14
+          },
+          {
+            "id": {"level": 1, "index": 3},
+            "name": "constantOid",
+            "typeName": "NcBoolean",
+            "isReadOnly": true,
+            "value": true
+          },
+          {
+            "id": {"level": 1, "index": 4},
+            "name": "owner",
+            "typeName": "NcOid",
+            "isReadOnly": true,
+            "value": 1
+          },
+          {
+            "id": {"level": 1, "index": 5},
+            "name": "role",
+            "typeName": "NcString",
+            "isReadOnly": true,
+            "value": "example-controls"
+          },
+          {
+            "id": {"level": 1, "index": 6},
+            "name": "userLabel",
+            "typeName": "NcString",
+            "isReadOnly": false,
+            "value": "Example controls"
+          },
+          {
+            "id": {"level": 1, "index": 7},
+            "name": "touchpoints",
+            "typeName": "NcTouchpoint",
+            "isReadOnly": true,
+            "value": null
+          },
+          {
+            "id": {"level": 1, "index": 8},
+            "name": "runtimePropertyConstraints",
+            "typeName": "NcPropertyConstraints",
+            "isReadOnly": true,
+            "value": null
+          }
+        ],
+        "isRebuildable": true
+      },
+      {
+        "path": ["root", "example-controls", "example-control-01"],
+        "dependencyPaths": [ ["root", "example-controls"] ],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "id": {"level": 3, "index": 1},
+            "name": "enumProperty",
+            "typeName": "ExampleEnum",
+            "isReadOnly": false,
+            "value": 0
+          },
+          {
+            "id": {"level": 3, "index": 2},
+            "name": "stringProperty",
+            "typeName": "NcString",
+            "isReadOnly": false,
+            "value": "test"
+          },
+          {
+            "id": {"level": 3, "index": 3},
+            "name": "numberProperty",
+            "typeName": "NcUint64",
+            "isReadOnly": false,
+            "value": 3
+          },
+          {
+            "id": {"level": 3, "index": 4},
+            "name": "booleanProperty",
+            "typeName": "NcBoolean",
+            "isReadOnly": false,
+            "value": false
+          },
+          {
+            "id": {"level": 3, "index": 5},
+            "name": "objectProperty",
+            "typeName": "ExampleDataType",
+            "isReadOnly": false,
+            "value": {
+              "enumProperty": 0,
+              "stringProperty": "default",
+              "numberProperty": 5,
+              "booleanProperty": false
+            }
+          },
+          {
+            "id": {"level": 3, "index": 6},
+            "name": "methodNoArgsCount",
+            "typeName": "NcUint64",
+            "isReadOnly": true,
+            "value": 0
+          },
+          {
+            "id": {"level": 3, "index": 7},
+            "name": "methodSimpleArgsCount",
+            "typeName": "NcUint64",
+            "isReadOnly": true,
+            "value": 0
+          },
+          {
+            "id": {"level": 3, "index": 8},
+            "name": "methodObjectArgCount",
+            "typeName": "NcUint64",
+            "isReadOnly": true,
+            "value": 0
+          },
+          {
+            "id": {"level": 3, "index": 9},
+            "name": "stringSequence",
+            "typeName": "NcString",
+            "isReadOnly": false,
+            "value": ["red", "blue", "green"]
+          },
+          {
+            "id": {"level": 3, "index": 10},
+            "name": "booleanSequence",
+            "typeName": "NcBoolean",
+            "isReadOnly": false,
+            "value": [true, false]
+          },
+          {
+            "id": {"level": 3, "index": 11},
+            "name": "enumSequence",
+            "typeName": "ExampleEnum",
+            "isReadOnly": false,
+            "value": [1, 3]
+          },
+          {
+            "id": {"level": 3, "index": 12},
+            "name": "numberSequence",
+            "typeName": "NcUint64",
+            "isReadOnly": false,
+            "value": [0, 50, 88]
+          },
+          {
+            "id": {"level": 3, "index": 13},
+            "name": "objectSequence",
+            "typeName": "ExampleDataType",
+            "isReadOnly": false,
+            "value": [
+              {
+                "enumProperty": 1,
+                "stringProperty": "example",
+                "numberProperty": 50,
+                "booleanProperty": false
+              },
+              {
+                "enumProperty": 3,
+                "stringProperty": "different",
+                "numberProperty": 75,
+                "booleanProperty": true
+              }
+            ]
+          },
+          {
+            "id": {"level": 3, "index": 14},
+            "name": "receiverMonitorFaultEmulation",
+            "typeName": "ReceiverMonitorFaultEmulation",
+            "isReadOnly": false,
+            "value": 1
+          },
+          {
+            "id": {"level": 3, "index": 15},
+            "name": "senderMonitorFaultEmulation",
+            "typeName": "SenderMonitorFaultEmulation",
+            "isReadOnly": false,
+            "value": 1
+          },
+          {
+            "id": {"level": 2, "index": 1},
+            "name": "enabled",
+            "typeName": "NcBoolean",
+            "isReadOnly": false,
+            "value": true
+          },
+          {
+            "id": {"level": 1, "index": 1},
+            "name": "classId",
+            "typeName": "NcClassId",
+            "isReadOnly": true,
+            "value": [1, 2, 0, 2]
+          },
+          {
+            "id": {"level": 1, "index": 2},
+            "name": "oid",
+            "typeName": "NcOid",
+            "isReadOnly": true,
+            "value": 15
+          },
+          {
+            "id": {"level": 1, "index": 3},
+            "name": "constantOid",
+            "typeName": "NcBoolean",
+            "isReadOnly": true,
+            "value": true
+          },
+          {
+            "id": {"level": 1, "index": 4},
+            "name": "owner",
+            "typeName": "NcOid",
+            "isReadOnly": true,
+            "value": 14
+          },
+          {
+            "id": {"level": 1, "index": 5},
+            "name": "role",
+            "typeName": "NcString",
+            "isReadOnly": true,
+            "value": "example-control-01"
+          },
+          {
+            "id": {"level": 1, "index": 6},
+            "name": "userLabel",
+            "typeName": "NcString",
+            "isReadOnly": false,
+            "value": "Example control worker 01"
+          },
+          {
+            "id": {"level": 1, "index": 7},
+            "name": "touchpoints",
+            "typeName": "NcTouchpoint",
+            "isReadOnly": true,
+            "value": []
+          },
+          {
+            "id": {"level": 1, "index": 8},
+            "name": "runtimePropertyConstraints",
+            "typeName": "NcPropertyConstraints",
+            "isReadOnly": true,
+            "value": null
+          }
+        ],
+        "isRebuildable": true
+      }
+    ]
+  }
 }
