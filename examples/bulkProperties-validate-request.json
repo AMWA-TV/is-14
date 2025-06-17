@@ -4,57 +4,52 @@
       "validationFingerprint": null,
       "values": [
         {
-          "rolePath": [ "root", "stereo-gain" ],
+          "path": ["root", "stereo-gain"],
+          "dependencyPaths": [],
+          "allowedMembersClasses": [],
           "values": [
             {
-              "id": {
-                "level": 1,
-                "index": 6
-              },
+              "id": {"level": 1, "index": 6},
               "name": "userLabel",
               "typeName": "NcString",
               "isReadOnly": false,
               "value": "Stereo Gain Block"
             },
             {
-              "id": {
-                "level": 2,
-                "index": 1
-              },
+              "id": {"level": 2, "index": 1},
               "name": "enabled",
               "typeName": "NcBoolean",
               "isReadOnly": false,
               "value": true
             }
-          ]
+          ],
+          "isRebuildable": false
         },
         {
-          "rolePath": [ "root", "channel-gain" ],
+          "path": ["root", "channel-gain"],
+          "dependencyPaths": [],
+          "allowedMembersClasses": [],
           "values": [
             {
-              "id": {
-                "level": 1,
-                "index": 6
-              },
+              "id": {"level": 1, "index": 6},
               "name": "userLabel",
               "typeName": "NcString",
               "isReadOnly": false,
               "value": "Channel Gain Block"
             },
             {
-              "id": {
-                "level": 2,
-                "index": 1
-              },
+              "id": {"level": 2, "index": 1},
               "name": "enabled",
               "typeName": "NcBoolean",
               "isReadOnly": false,
               "value": true
             }
-          ]
+          ],
+          "isRebuildable": false
         }
       ]
     },
-    "recurse": true
+    "recurse": true,
+    "restoreMode": 0
   }
 }
