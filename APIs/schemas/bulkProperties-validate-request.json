@@ -13,7 +13,7 @@
       "properties": {
         "dataSet": {
           "type": "object",
-          "description": "NcBulkValuesHolder datatype"
+          "description": "NcBulkPropertiesHolder datatype"
         },
         "recurse": {
           "type": "boolean"

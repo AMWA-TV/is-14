@@ -20,7 +20,7 @@ Note that this does not mean that the backup & restore functionality can only be
 
 A `device`, for the purposes of this section, is a physical or logical entity that can be backed up and restored using the procedures described. It may or may not correspond to an IS-04 Device or IS-04 Node.
 
-`Backup data set` is the set of data retrieved from a device using the backup procedures described. This is represented as an [NcBulkValuesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncbulkvaluesholder) object.
+`Backup data set` is the set of data retrieved from a device using the backup procedures described. This is represented as an [NcBulkPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncbulkpropertiesholder) object.
 
 `Backup validation fingerprint` is an optional string in a `backup data set` that can be used to capture the various versions of the hardware, software and/or firmware that made up a device at the time the backup was performed. The format of the string is defined by the vendor and is opaque to other systems. This could contain information such as:
 

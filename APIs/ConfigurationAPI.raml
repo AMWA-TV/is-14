@@ -51,7 +51,7 @@ documentation:
     /bulkProperties:
       displayName: 'Bulk Properties'
       get:
-        description: 'Get Bulk Properties of the object, returned as a NcMethodResultBulkValuesHolder object.'
+        description: 'Get Bulk Properties of the object, returned as a NcMethodResultBulkPropertiesHolder object.'
         queryParameters:
           recurse:
             description: 'True will get Bulk Properties for this object and all child objects'
@@ -79,7 +79,7 @@ documentation:
           200:
           403:
       patch:
-        description: 'Validate an NcBulkValuesHolder object against the Device Model'
+        description: 'Validate an NcBulkPropertiesHolder object against the Device Model'
         body:
           type: !include schemas/bulkProperties-validate-request.json
           example: !include ../examples/bulkProperties-validate-request.json
