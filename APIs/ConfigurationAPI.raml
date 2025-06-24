@@ -81,13 +81,13 @@ documentation:
       patch:
         description: 'Validate an NcBulkPropertiesHolder object against the Device Model'
         body:
-          type: !include schemas/bulkProperties-validate-request.json
-          example: !include ../examples/bulkProperties-validate-request.json
+          type: !include schemas/bulkProperties-patch-request.json
+          example: !include ../examples/bulkProperties-patch-request.json
         responses:
           200:
             body:
               type: !include schemas/bulkProperties-validate-response.json
-              example: !include ../examples/bulkProperties-validate-200.json
+              example: !include ../examples/bulkProperties-patch-200.json
           400:
             description: 'Returned when encountering request validation issues due to client-side errors.'
             body:
@@ -103,13 +103,13 @@ documentation:
       put:
         description: 'Set a Bulk Properties object on the Device Model'
         body:
-          type: !include schemas/bulkProperties-set-request.json
-          example: !include ../examples/bulkProperties-set-request.json
+          type: !include schemas/bulkProperties-put-request.json
+          example: !include ../examples/bulkProperties-put-request.json
         responses:
           200:
             body:
               type: !include schemas/bulkProperties-set-response.json
-              example: !include ../examples/bulkProperties-set-200.json
+              example: !include ../examples/bulkProperties-put-200.json
           400:
             description: 'Returned when encountering request validation issues due to client-side errors.'
             body:
