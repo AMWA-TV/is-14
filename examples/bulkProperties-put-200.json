@@ -1,0 +1,200 @@
+{
+  "status": 200,
+  "value": [
+    {
+      "path": ["root"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 2, "index": 1},
+          "name": "enabled",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 2, "index": 2},
+          "name": "members",
+          "noticeType": 300,
+          "noticeMessage": "Property cannot be changed and will be left untouched"
+        },
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "example-controls"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 2, "index": 1},
+          "name": "enabled",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 2, "index": 2},
+          "name": "members",
+          "noticeType": 300,
+          "noticeMessage": "Property cannot be changed and will be left untouched unless restoreMode is changed to Rebuild"
+        },
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "example-controls", "example-control-01"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 3, "index": 6},
+          "name": "methodNoArgsCount",
+          "noticeType": 300,
+          "noticeMessage": "Property is read only"
+        },
+        {
+          "id": {"level": 3, "index": 7},
+          "name": "methodSimpleArgsCount",
+          "noticeType": 300,
+          "noticeMessage": "Property is read only"
+        },
+        {
+          "id": {"level": 3, "index": 8},
+          "name": "methodObjectArgCount",
+          "noticeType": 300,
+          "noticeMessage": "Property is read only"
+        },
+        {
+          "id": {"level": 3, "index": 14},
+          "name": "receiverMonitorFaultEmulation",
+          "noticeType": 300,
+          "noticeMessage": "Property can only be changed when associated receiver has been Activated"
+        },
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    }
+  ]
+}

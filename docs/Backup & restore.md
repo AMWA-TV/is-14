@@ -99,6 +99,8 @@ Clients MUST issue requests using `root` as the `rolePath` and a `recurse` param
 |:--:|
 | _**Performing a full backup**_ |
 
+An example response after performing a backup is provided as a [snippet](https://specs.amwa.tv/is-14/branches/v1.0-dev/examples/bulkProperties-get-200.html).
+
 Clients MAY retrieve partial backups by choosing other role paths. The scope of backups MAY further be restricted by using a query parameter of `recurse=false` which will only include the properties of the targeted role path.
 
 Devices are RECOMMENDED to populate `dependencyPaths` for objects which have dependencies on other role path objects when returning a backup data set ([see NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder)).
@@ -129,7 +131,11 @@ Clients MUST include the following in the request body:
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Modify` in order to only allow changes to writeable properties)
 
+An example request is provided as a [snippet](https://specs.amwa.tv/is-14/branches/v1.0-dev/examples/bulkProperties-put-request.html).
+
 Devices MUST make the necessary changes to all objects in the `restore scope` which have a validation restore status of `Ok`. If a device requires a system reboot in order to apply the restore, then it MUST perform this immediately after responding to the restore request.
+
+An example restore response is provided as a [snippet](https://specs.amwa.tv/is-14/branches/v1.0-dev/examples/bulkProperties-put-200.html).
 
 The diagram below captures how the `Modify` restore uses the backup data set to transition the device from its current device model to a changed state.
 
@@ -169,7 +175,11 @@ Clients MUST include the following in the request body:
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Rebuild` in order to allow blocks to be repopulated with the same members as per the original device)
 
+An example request is provided as a [snippet](https://specs.amwa.tv/is-14/branches/v1.0-dev/examples/bulkProperties-put-rebuild-request.html).
+
 Devices MUST make the necessary changes to all objects in the `restore scope` which have a validation restore status of `Ok`. If a device requires a system reboot in order to apply the restore, then it MUST perform this immediately after responding to the restore request.
+
+An example restore response is provided as a [snippet](https://specs.amwa.tv/is-14/branches/v1.0-dev/examples/bulkProperties-put-rebuild-200.html).
 
 The diagram below captures how the `Rebuild` restore uses the backup data set to transition the device from its current device model to a changed state. In this case the operation makes a structural change to the device model.
 

@@ -1,60 +1,53 @@
 {
   "status": 200,
   "value": {
-    "description": "Descriptor which is specific to a block member",
-    "name": "NcBlockMemberDescriptor",
+    "description": "Example data type",
+    "name": "ExampleDataType",
     "type": 2,
+    "constraints": null,
     "fields": [
       {
-        "description": "Role of member in its containing block",
-        "name": "role",
+        "description": "Enum property example",
+        "name": "enumProperty",
+        "typeName": "ExampleEnum",
+        "isNullable": false,
+        "isSequence": false,
+        "constraints": null
+      },
+      {
+        "description": "String property example",
+        "name": "stringProperty",
         "typeName": "NcString",
         "isNullable": false,
         "isSequence": false,
-        "constraints": null
+        "constraints": {
+          "defaultValue": null,
+          "maxCharacters": 10,
+          "pattern": null
+        }
       },
       {
-        "description": "OID of member",
-        "name": "oid",
-        "typeName": "NcOid",
+        "description": "Number property example",
+        "name": "numberProperty",
+        "typeName": "NcUint64",
         "isNullable": false,
         "isSequence": false,
-        "constraints": null
+        "constraints": {
+          "defaultValue": null,
+          "maximum": 1000,
+          "minimum": 0,
+          "step": 1
+        }
       },
       {
-        "description": "TRUE iff member's OID is hardwired into device",
-        "name": "constantOid",
+        "description": "Boolean property example",
+        "name": "booleanProperty",
         "typeName": "NcBoolean",
-        "isNullable": false,
-        "isSequence": false,
-        "constraints": null
-      },
-      {
-        "description": "Class ID",
-        "name": "classId",
-        "typeName": "NcClassId",
-        "isNullable": false,
-        "isSequence": false,
-        "constraints": null
-      },
-      {
-        "description": "User label",
-        "name": "userLabel",
-        "typeName": "NcString",
-        "isNullable": true,
-        "isSequence": false,
-        "constraints": null
-      },
-      {
-        "description": "Containing block's OID",
-        "name": "owner",
-        "typeName": "NcOid",
         "isNullable": false,
         "isSequence": false,
         "constraints": null
       }
     ],
-    "parentType": "NcDescriptor",
-    "constraints": null
+    "parentType": null
   }
 }
