@@ -131,7 +131,7 @@ Clients MUST include the following in the request body:
 - a boolean `recurse` argument (set to `true` for validating the entire device model)
 - the `restoreMode` argument (set to `Modify` in order to only allow changes to writeable properties)
 
-An example request is provided as a [snippet](https://specs.amwa.tv/is-14/branches/v1.0-dev/examples/bulkProperties-set-request.html).
+An example request is provided as a [snippet](https://specs.amwa.tv/is-14/branches/v1.0-dev/examples/bulkProperties-put-request.html).
 
 Devices MUST make the necessary changes to all objects in the `restore scope` which have a validation restore status of `Ok`. If a device requires a system reboot in order to apply the restore, then it MUST perform this immediately after responding to the restore request.
 
