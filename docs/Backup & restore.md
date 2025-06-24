@@ -179,7 +179,7 @@ An example request is provided as a [snippet](https://specs.amwa.tv/is-14/branch
 
 Devices MUST make the necessary changes to all objects in the `restore scope` which have a validation restore status of `Ok`. If a device requires a system reboot in order to apply the restore, then it MUST perform this immediately after responding to the restore request.
 
-An example restore response is provided as a [snippet](https://specs.amwa.tv/is-14/branches/v1.0-dev/examples/bulkProperties-set-rebuild-200.html).
+An example restore response is provided as a [snippet](https://specs.amwa.tv/is-14/branches/v1.0-dev/examples/bulkProperties-put-rebuild-200.html).
 
 The diagram below captures how the `Rebuild` restore uses the backup data set to transition the device from its current device model to a changed state. In this case the operation makes a structural change to the device model.
 
