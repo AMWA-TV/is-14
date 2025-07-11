@@ -9,17 +9,31 @@
         "allowedMembersClasses": [],
         "values": [
           {
-            "id": {"level": 2, "index": 1},
-            "name": "enabled",
-            "typeName": "NcBoolean",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "TRUE if block is functional",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": true
           },
           {
-            "id": {"level": 2, "index": 2},
-            "name": "members",
-            "typeName": "NcBlockMemberDescriptor",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Descriptors of this block's members",
+              "id": {"level": 2, "index": 2},
+              "name": "members",
+              "typeName": "NcBlockMemberDescriptor",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [
               {
                 "description": "The device manager offers information about the product this device is representing",
@@ -40,6 +54,33 @@
                 "owner": 1
               },
               {
+                "description": "Receivers block",
+                "role": "receivers",
+                "oid": 9,
+                "constantOid": true,
+                "classId": [1, 1],
+                "userLabel": "Receivers",
+                "owner": 1
+              },
+              {
+                "description": "Senders block",
+                "role": "senders",
+                "oid": 11,
+                "constantOid": true,
+                "classId": [1, 1],
+                "userLabel": "Senders",
+                "owner": 1
+              },
+              {
+                "description": "Stereo gain block",
+                "role": "stereo-gain",
+                "oid": 4,
+                "constantOid": true,
+                "classId": [1, 1],
+                "userLabel": "Stereo gain",
+                "owner": 1
+              },
+              {
                 "description": "Example controls block",
                 "role": "example-controls",
                 "oid": 14,
@@ -47,63 +88,128 @@
                 "classId": [1, 1],
                 "userLabel": "Example controls",
                 "owner": 1
+              },
+              {
+                "description": "Identification beacon",
+                "role": "IdentBeacon",
+                "oid": 13,
+                "constantOid": true,
+                "classId": [1, 2, 1],
+                "userLabel": "Identification beacon",
+                "owner": 1
               }
             ]
           },
           {
-            "id": {"level": 1, "index": 1},
-            "name": "classId",
-            "typeName": "NcClassId",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [1, 1]
           },
           {
-            "id": {"level": 1, "index": 2},
-            "name": "oid",
-            "typeName": "NcOid",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 1
           },
           {
-            "id": {"level": 1, "index": 3},
-            "name": "constantOid",
-            "typeName": "NcBoolean",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": true
           },
           {
-            "id": {"level": 1, "index": 4},
-            "name": "owner",
-            "typeName": "NcOid",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           },
           {
-            "id": {"level": 1, "index": 5},
-            "name": "role",
-            "typeName": "NcString",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "root"
           },
           {
-            "id": {"level": 1, "index": 6},
-            "name": "userLabel",
-            "typeName": "NcString",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "Root"
           },
           {
-            "id": {"level": 1, "index": 7},
-            "name": "touchpoints",
-            "typeName": "NcTouchpoint",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           },
           {
-            "id": {"level": 1, "index": 8},
-            "name": "runtimePropertyConstraints",
-            "typeName": "NcPropertyConstraints",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           }
         ],
@@ -115,17 +221,31 @@
         "allowedMembersClasses": [],
         "values": [
           {
-            "id": {"level": 3, "index": 1},
-            "name": "ncVersion",
-            "typeName": "NcVersionCode",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Version of nc this dev uses",
+              "id": {"level": 3, "index": 1},
+              "name": "ncVersion",
+              "typeName": "NcVersionCode",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "v1.0.0"
           },
           {
-            "id": {"level": 3, "index": 2},
-            "name": "manufacturer",
-            "typeName": "NcManufacturer",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Manufacturer descriptor",
+              "id": {"level": 3, "index": 2},
+              "name": "manufacturer",
+              "typeName": "NcManufacturer",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": {
               "name"          : "Mock manufacturer",
               "organizationId": null,
@@ -133,10 +253,17 @@
             }
           },
           {
-            "id": {"level": 3, "index": 3},
-            "name": "product",
-            "typeName": "NcProduct",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Product descriptor",
+              "id": {"level": 3, "index": 3},
+              "name": "product",
+              "typeName": "NcProduct",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": {
               "name"         : "Mock device",
               "key"          : "mock-001",
@@ -147,108 +274,213 @@
             }
           },
           {
-            "id": {"level": 3, "index": 4},
-            "name": "serialNumber",
-            "typeName": "NcString",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Serial number",
+              "id": {"level": 3, "index": 4},
+              "name": "serialNumber",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "123-mock"
           },
           {
-            "id": {"level": 3, "index": 5},
-            "name": "userInventoryCode",
-            "typeName": "NcString",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Asset tracking identifier (user specified)",
+              "id": {"level": 3, "index": 5},
+              "name": "userInventoryCode",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           },
           {
-            "id": {"level": 3, "index": 6},
-            "name": "deviceName",
-            "typeName": "NcString",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Name of this device in the application. Instance name, not product name.",
+              "id": {"level": 3, "index": 6},
+              "name": "deviceName",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           },
           {
-            "id": {"level": 3, "index": 7},
-            "name": "deviceRole",
-            "typeName": "NcString",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Role of this device in the application.",
+              "id": {"level": 3, "index": 7},
+              "name": "deviceRole",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           },
           {
-            "id": {"level": 3, "index": 8},
-            "name": "operationalState",
-            "typeName": "NcDeviceOperationalState",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Device operational state",
+              "id": {"level": 3, "index": 8},
+              "name": "operationalState",
+              "typeName": "NcDeviceOperationalState",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": {"generic": 1, "deviceSpecificDetails": null}
           },
           {
-            "id": {"level": 3, "index": 9},
-            "name": "resetCause",
-            "typeName": "NcResetCause",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Reason for most recent reset",
+              "id": {"level": 3, "index": 9},
+              "name": "resetCause",
+              "typeName": "NcResetCause",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 0
           },
           {
-            "id": {"level": 3, "index": 10},
-            "name": "message",
-            "typeName": "NcString",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Arbitrary message from dev to controller",
+              "id": {"level": 3, "index": 10},
+              "name": "message",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "Nothing to report"
           },
           {
-            "id": {"level": 1, "index": 1},
-            "name": "classId",
-            "typeName": "NcClassId",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [1, 3, 1]
           },
           {
-            "id": {"level": 1, "index": 2},
-            "name": "oid",
-            "typeName": "NcOid",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 2
           },
           {
-            "id": {"level": 1, "index": 3},
-            "name": "constantOid",
-            "typeName": "NcBoolean",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": true
           },
           {
-            "id": {"level": 1, "index": 4},
-            "name": "owner",
-            "typeName": "NcOid",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 1
           },
           {
-            "id": {"level": 1, "index": 5},
-            "name": "role",
-            "typeName": "NcString",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "DeviceManager"
           },
           {
-            "id": {"level": 1, "index": 6},
-            "name": "userLabel",
-            "typeName": "NcString",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "Device manager"
           },
           {
-            "id": {"level": 1, "index": 7},
-            "name": "touchpoints",
-            "typeName": "NcTouchpoint",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           },
           {
-            "id": {"level": 1, "index": 8},
-            "name": "runtimePropertyConstraints",
-            "typeName": "NcPropertyConstraints",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           }
         ],
@@ -260,10 +492,17 @@
         "allowedMembersClasses": [],
         "values": [
           {
-            "id": {"level": 3, "index": 1},
-            "name": "controlClasses",
-            "typeName": "NcClassDescriptor",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Descriptions of all control classes in the device (descriptors do not contain inherited elements)",
+              "id": {"level": 3, "index": 1},
+              "name": "controlClasses",
+              "typeName": "NcClassDescriptor",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [
               {
                 "description": "NcObject class descriptor",
@@ -683,10 +922,17 @@
             ]
           },
           {
-            "id": {"level": 3, "index": 2},
-            "name": "datatypes",
-            "typeName": "NcDatatypeDescriptor",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Descriptions of all data types in the device (descriptors do not contain inherited elements)",
+              "id": {"level": 3, "index": 2},
+              "name": "datatypes",
+              "typeName": "NcDatatypeDescriptor",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [
               {
                 "description": "Boolean primitive type",
@@ -759,59 +1005,1969 @@
             ]
           },
           {
-            "id": {"level": 1, "index": 1},
-            "name": "classId",
-            "typeName": "NcClassId",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [1, 3, 2]
           },
           {
-            "id": {"level": 1, "index": 2},
-            "name": "oid",
-            "typeName": "NcOid",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 3
           },
           {
-            "id": {"level": 1, "index": 3},
-            "name": "constantOid",
-            "typeName": "NcBoolean",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": true
           },
           {
-            "id": {"level": 1, "index": 4},
-            "name": "owner",
-            "typeName": "NcOid",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 1
           },
           {
-            "id": {"level": 1, "index": 5},
-            "name": "role",
-            "typeName": "NcString",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "ClassManager"
           },
           {
-            "id": {"level": 1, "index": 6},
-            "name": "userLabel",
-            "typeName": "NcString",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "Class manager"
           },
           {
-            "id": {"level": 1, "index": 7},
-            "name": "touchpoints",
-            "typeName": "NcTouchpoint",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           },
           {
-            "id": {"level": 1, "index": 8},
-            "name": "runtimePropertyConstraints",
-            "typeName": "NcPropertyConstraints",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          }
+        ],
+        "isRebuildable": false
+      },
+      {
+        "path": ["root", "receivers"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "descriptor": {
+              "description": "TRUE if block is functional",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "Descriptors of this block's members",
+              "id": {"level": 2, "index": 2},
+              "name": "members",
+              "typeName": "NcBlockMemberDescriptor",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [
+              {
+                "description": "Receiver monitor worker",
+                "role": "monitor-01",
+                "oid": 10,
+                "constantOid": true,
+                "classId": [1, 2, 2, 1],
+                "userLabel": "Receiver monitor 01",
+                "owner": 9
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [1, 1]
+          },
+          {
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 9
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 1
+          },
+          {
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "receivers"
+          },
+          {
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "Receivers"
+          },
+          {
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          }
+        ],
+        "isRebuildable": false
+      },
+      {
+        "path": ["root", "receivers", "monitor-01"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "descriptor": {
+              "description": "Link status property",
+              "id": {"level": 4, "index": 1},
+              "name": "linkStatus",
+              "typeName": "NcLinkStatus",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 1
+          },
+          {
+            "descriptor": {
+              "description": "Link status message property",
+              "id": {"level": 4, "index": 2},
+              "name": "linkStatusMessage",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "Link status transition counter property",
+              "id": {"level": 4, "index": 3},
+              "name": "linkStatusTransitionCounter",
+              "typeName": "NcUint64",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "Connection status property",
+              "id": {"level": 4, "index": 4},
+              "name": "connectionStatus",
+              "typeName": "NcConnectionStatus",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "Connection status message property",
+              "id": {"level": 4, "index": 5},
+              "name": "connectionStatusMessage",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "Connection status transition counter property",
+              "id": {"level": 4, "index": 6},
+              "name": "connectionStatusTransitionCounter",
+              "typeName": "NcUint64",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "External synchronization status property",
+              "id": {"level": 4, "index": 7},
+              "name": "externalSynchronizationStatus",
+              "typeName": "NcSynchronizationStatus",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 1
+          },
+          {
+            "descriptor": {
+              "description": "External synchronization status message property",
+              "id": {"level": 4, "index": 8},
+              "name": "externalSynchronizationStatusMessage",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "External synchronization status transition counter property",
+              "id": {"level": 4, "index": 9},
+              "name": "externalSynchronizationStatusTransitionCounter",
+              "typeName": "NcUint64",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "Synchronization source id property",
+              "id": {"level": 4, "index": 10},
+              "name": "synchronizationSourceId",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "00:0c:ec:ff:fe:0a:2b:a1 on NIC1"
+          },
+          {
+            "descriptor": {
+              "description": "Stream status property",
+              "id": {"level": 4, "index": 11},
+              "name": "streamStatus",
+              "typeName": "NcStreamStatus",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "Stream status message property",
+              "id": {"level": 4, "index": 12},
+              "name": "streamStatusMessage",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "Stream status transition counter property",
+              "id": {"level": 4, "index": 13},
+              "name": "streamStatusTransitionCounter",
+              "typeName": "NcUint64",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "Automatic reset counters and status messages property (default: true)",
+              "id": {"level": 4, "index": 14},
+              "name": "autoResetCountersAndMessages",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "Overall status property",
+              "id": {"level": 3, "index": 1},
+              "name": "overallStatus",
+              "typeName": "NcOverallStatus",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "Overall status message property",
+              "id": {"level": 3, "index": 2},
+              "name": "overallStatusMessage",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "Status reporting delay property (in seconds, default is 3s and 0 means no delay)",
+              "id": {"level": 3, "index": 3},
+              "name": "statusReportingDelay",
+              "typeName": "NcUint32",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 3
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff worker is enabled",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [1, 2, 2, 1]
+          },
+          {
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 10
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 9
+          },
+          {
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "monitor-01"
+          },
+          {
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "Receiver monitor 01"
+          },
+          {
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [
+              {
+                "contextNamespace": "x-nmos",
+                "resource": {
+                  "resourceType": "receiver",
+                  "id"          : "18eae0e9-dcf4-40ff-88a3-cb553993d1b8"
+                }
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          }
+        ],
+        "isRebuildable": false
+      },
+      {
+        "path": ["root", "senders"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "descriptor": {
+              "description": "TRUE if block is functional",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "Descriptors of this block's members",
+              "id": {"level": 2, "index": 2},
+              "name": "members",
+              "typeName": "NcBlockMemberDescriptor",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [
+              {
+                "description": "Sender monitor worker",
+                "role": "monitor-01",
+                "oid": 12,
+                "constantOid": true,
+                "classId": [1, 2, 2, 2],
+                "userLabel": "Sender monitor 01",
+                "owner": 11
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [1, 1]
+          },
+          {
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 11
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 1
+          },
+          {
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "senders"
+          },
+          {
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "Senders"
+          },
+          {
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          }
+        ],
+        "isRebuildable": false
+      },
+      {
+        "path": ["root", "senders", "monitor-01"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "descriptor": {
+              "description": "Link status property",
+              "id": {"level": 4, "index": 1},
+              "name": "linkStatus",
+              "typeName": "NcLinkStatus",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 1
+          },
+          {
+            "descriptor": {
+              "description": "Link status message property",
+              "id": {"level": 4, "index": 2},
+              "name": "linkStatusMessage",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "Link status transition counter property",
+              "id": {"level": 4, "index": 3},
+              "name": "linkStatusTransitionCounter",
+              "typeName": "NcUint64",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "Transmission status property",
+              "id": {"level": 4, "index": 4},
+              "name": "transmissionStatus",
+              "typeName": "NcTransmissionStatus",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 1
+          },
+          {
+            "descriptor": {
+              "description": "Transmission status message property",
+              "id": {"level": 4, "index": 5},
+              "name": "transmissionStatusMessage",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "Transmission status transition counter property",
+              "id": {"level": 4, "index": 6},
+              "name": "transmissionStatusTransitionCounter",
+              "typeName": "NcUint64",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "External synchronization status property",
+              "id": {"level": 4, "index": 7},
+              "name": "externalSynchronizationStatus",
+              "typeName": "NcSynchronizationStatus",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 1
+          },
+          {
+            "descriptor": {
+              "description": "External synchronization status message property",
+              "id": {"level": 4, "index": 8},
+              "name": "externalSynchronizationStatusMessage",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "External synchronization status transition counter property",
+              "id": {"level": 4, "index": 9},
+              "name": "externalSynchronizationStatusTransitionCounter",
+              "typeName": "NcUint64",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "Synchronization source id property",
+              "id": {"level": 4, "index": 10},
+              "name": "synchronizationSourceId",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "00:0c:ec:ff:fe:0a:2b:a1 on NIC1"
+          },
+          {
+            "descriptor": {
+              "description": "Essence status property",
+              "id": {"level": 4, "index": 11},
+              "name": "essenceStatus",
+              "typeName": "NcEssenceStatus",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 1
+          },
+          {
+            "descriptor": {
+              "description": "Essence status message property",
+              "id": {"level": 4, "index": 12},
+              "name": "essenceStatusMessage",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "Essence status transition counter property",
+              "id": {"level": 4, "index": 13},
+              "name": "essenceStatusTransitionCounter",
+              "typeName": "NcUint64",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "Automatic reset counters and status messages property (default: true)",
+              "id": {"level": 4, "index": 14},
+              "name": "autoResetCountersAndMessages",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "Overall status property",
+              "id": {"level": 3, "index": 1},
+              "name": "overallStatus",
+              "typeName": "NcOverallStatus",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 1
+          },
+          {
+            "descriptor": {
+              "description": "Overall status message property",
+              "id": {"level": 3, "index": 2},
+              "name": "overallStatusMessage",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "Status reporting delay property (in seconds, default is 3s and 0 means no delay)",
+              "id": {"level": 3, "index": 3},
+              "name": "statusReportingDelay",
+              "typeName": "NcUint32",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 3
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff worker is enabled",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [1, 2, 2, 2]
+          },
+          {
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 12
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 11
+          },
+          {
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "monitor-01"
+          },
+          {
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "Sender monitor 01"
+          },
+          {
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [
+              {
+                "contextNamespace": "x-nmos",
+                "resource": {
+                  "resourceType": "sender",
+                  "id"          : "f741f9cb-c75e-4968-a0b6-30ebc5ccbd83"
+                }
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          }
+        ],
+        "isRebuildable": false
+      },
+      {
+        "path": ["root", "stereo-gain"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "descriptor": {
+              "description": "TRUE if block is functional",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "Descriptors of this block's members",
+              "id": {"level": 2, "index": 2},
+              "name": "members",
+              "typeName": "NcBlockMemberDescriptor",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [
+              {
+                "description": "Channel gain block",
+                "role": "channel-gain",
+                "oid": 5,
+                "constantOid": true,
+                "classId": [1, 1],
+                "userLabel": "Channel gain",
+                "owner": 4
+              },
+              {
+                "description": "Master gain",
+                "role": "master-gain",
+                "oid": 8,
+                "constantOid": true,
+                "classId": [1, 2, 0, 1],
+                "userLabel": "Master gain",
+                "owner": 4
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [1, 1]
+          },
+          {
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 4
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 1
+          },
+          {
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "stereo-gain"
+          },
+          {
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "Stereo gain"
+          },
+          {
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          }
+        ],
+        "isRebuildable": false
+      },
+      {
+        "path": ["root", "stereo-gain", "channel-gain"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "descriptor": {
+              "description": "TRUE if block is functional",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "Descriptors of this block's members",
+              "id": {"level": 2, "index": 2},
+              "name": "members",
+              "typeName": "NcBlockMemberDescriptor",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [
+              {
+                "description": "Left channel gain",
+                "role": "left-gain",
+                "oid": 6,
+                "constantOid": true,
+                "classId": [1, 2, 0, 1],
+                "userLabel": "Left gain",
+                "owner": 5
+              },
+              {
+                "description": "Right channel gain",
+                "role": "right-gain",
+                "oid": 7,
+                "constantOid": true,
+                "classId": [1, 2, 0, 1],
+                "userLabel": "Right gain",
+                "owner": 5
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [1, 1]
+          },
+          {
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 5
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 4
+          },
+          {
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "channel-gain"
+          },
+          {
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "Channel gain"
+          },
+          {
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          },
+          {
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          }
+        ],
+        "isRebuildable": false
+      },
+      {
+        "path": ["root", "stereo-gain", "channel-gain", "left-gain"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "descriptor": {
+              "description": "Gain value",
+              "id": {"level": 3, "index": 1},
+              "name": "gainValue",
+              "typeName": "NcFloat32",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff worker is enabled",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [1, 2, 0, 1]
+          },
+          {
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 6
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 5
+          },
+          {
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "left-gain"
+          },
+          {
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "Left gain"
+          },
+          {
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": []
+          },
+          {
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          }
+        ],
+        "isRebuildable": false
+      },
+      {
+        "path": ["root", "stereo-gain", "channel-gain", "right-gain"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "descriptor": {
+              "description": "Gain value",
+              "id": {"level": 3, "index": 1},
+              "name": "gainValue",
+              "typeName": "NcFloat32",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff worker is enabled",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [1, 2, 0, 1]
+          },
+          {
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 7
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 5
+          },
+          {
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "right-gain"
+          },
+          {
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "Right gain"
+          },
+          {
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": []
+          },
+          {
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          }
+        ],
+        "isRebuildable": false
+      },
+      {
+        "path": ["root", "stereo-gain", "master-gain"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "descriptor": {
+              "description": "Gain value",
+              "id": {"level": 3, "index": 1},
+              "name": "gainValue",
+              "typeName": "NcFloat32",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 0
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff worker is enabled",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [1, 2, 0, 1]
+          },
+          {
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 8
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 4
+          },
+          {
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "master-gain"
+          },
+          {
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "Master gain"
+          },
+          {
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": []
+          },
+          {
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           }
         ],
@@ -823,17 +2979,31 @@
         "allowedMembersClasses": [ [1, 2, 0, 2] ],
         "values": [
           {
-            "id": {"level": 2, "index": 1},
-            "name": "enabled",
-            "typeName": "NcBoolean",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "TRUE if block is functional",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": true
           },
           {
-            "id": {"level": 2, "index": 2},
-            "name": "members",
-            "typeName": "NcBlockMemberDescriptor",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Descriptors of this block's members",
+              "id": {"level": 2, "index": 2},
+              "name": "members",
+              "typeName": "NcBlockMemberDescriptor",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [
               {
                 "description": "Example control worker",
@@ -847,59 +3017,115 @@
             ]
           },
           {
-            "id": {"level": 1, "index": 1},
-            "name": "classId",
-            "typeName": "NcClassId",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [1, 1]
           },
           {
-            "id": {"level": 1, "index": 2},
-            "name": "oid",
-            "typeName": "NcOid",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 14
           },
           {
-            "id": {"level": 1, "index": 3},
-            "name": "constantOid",
-            "typeName": "NcBoolean",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": true
           },
           {
-            "id": {"level": 1, "index": 4},
-            "name": "owner",
-            "typeName": "NcOid",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 1
           },
           {
-            "id": {"level": 1, "index": 5},
-            "name": "role",
-            "typeName": "NcString",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "example-controls"
           },
           {
-            "id": {"level": 1, "index": 6},
-            "name": "userLabel",
-            "typeName": "NcString",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "Example controls"
           },
           {
-            "id": {"level": 1, "index": 7},
-            "name": "touchpoints",
-            "typeName": "NcTouchpoint",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           },
           {
-            "id": {"level": 1, "index": 8},
-            "name": "runtimePropertyConstraints",
-            "typeName": "NcPropertyConstraints",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           }
         ],
@@ -911,38 +3137,82 @@
         "allowedMembersClasses": [],
         "values": [
           {
-            "id": {"level": 3, "index": 1},
-            "name": "enumProperty",
-            "typeName": "ExampleEnum",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Example enum property",
+              "id": {"level": 3, "index": 1},
+              "name": "enumProperty",
+              "typeName": "ExampleEnum",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 0
           },
           {
-            "id": {"level": 3, "index": 2},
-            "name": "stringProperty",
-            "typeName": "NcString",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Example string property",
+              "id": {"level": 3, "index": 2},
+              "name": "stringProperty",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": {
+                "defaultValue" : null,
+                "maxCharacters":   10,
+                "pattern"      : null
+              },
+              "isDeprecated": false
+            },
             "value": "test"
           },
           {
-            "id": {"level": 3, "index": 3},
-            "name": "numberProperty",
-            "typeName": "NcUint64",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Example numeric property",
+              "id": {"level": 3, "index": 3},
+              "name": "numberProperty",
+              "typeName": "NcUint64",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": {
+                "defaultValue":    3,
+                "maximum"     : 1000,
+                "minimum"     :    0,
+                "step"        :    1
+              },
+              "isDeprecated": false
+            },
             "value": 3
           },
           {
-            "id": {"level": 3, "index": 4},
-            "name": "booleanProperty",
-            "typeName": "NcBoolean",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Example boolean property",
+              "id": {"level": 3, "index": 4},
+              "name": "booleanProperty",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": false
           },
           {
-            "id": {"level": 3, "index": 5},
-            "name": "objectProperty",
-            "typeName": "ExampleDataType",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Example object property",
+              "id": {"level": 3, "index": 5},
+              "name": "objectProperty",
+              "typeName": "ExampleDataType",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": {
               "enumProperty": 0,
               "stringProperty": "default",
@@ -951,59 +3221,115 @@
             }
           },
           {
-            "id": {"level": 3, "index": 6},
-            "name": "methodNoArgsCount",
-            "typeName": "NcUint64",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Method no args invoke counter",
+              "id": {"level": 3, "index": 6},
+              "name": "methodNoArgsCount",
+              "typeName": "NcUint64",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 0
           },
           {
-            "id": {"level": 3, "index": 7},
-            "name": "methodSimpleArgsCount",
-            "typeName": "NcUint64",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Method simple args invoke counter",
+              "id": {"level": 3, "index": 7},
+              "name": "methodSimpleArgsCount",
+              "typeName": "NcUint64",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 0
           },
           {
-            "id": {"level": 3, "index": 8},
-            "name": "methodObjectArgCount",
-            "typeName": "NcUint64",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Method obj arg invoke counter",
+              "id": {"level": 3, "index": 8},
+              "name": "methodObjectArgCount",
+              "typeName": "NcUint64",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 0
           },
           {
-            "id": {"level": 3, "index": 9},
-            "name": "stringSequence",
-            "typeName": "NcString",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Example string sequence property",
+              "id": {"level": 3, "index": 9},
+              "name": "stringSequence",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": ["red", "blue", "green"]
           },
           {
-            "id": {"level": 3, "index": 10},
-            "name": "booleanSequence",
-            "typeName": "NcBoolean",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Example boolean sequence property",
+              "id": {"level": 3, "index": 10},
+              "name": "booleanSequence",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [true, false]
           },
           {
-            "id": {"level": 3, "index": 11},
-            "name": "enumSequence",
-            "typeName": "ExampleEnum",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Example enum sequence property",
+              "id": {"level": 3, "index": 11},
+              "name": "enumSequence",
+              "typeName": "ExampleEnum",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [1, 3]
           },
           {
-            "id": {"level": 3, "index": 12},
-            "name": "numberSequence",
-            "typeName": "NcUint64",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Example number sequence property",
+              "id": {"level": 3, "index": 12},
+              "name": "numberSequence",
+              "typeName": "NcUint64",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [0, 50, 88]
           },
           {
-            "id": {"level": 3, "index": 13},
-            "name": "objectSequence",
-            "typeName": "ExampleDataType",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Example object sequence property",
+              "id": {"level": 3, "index": 13},
+              "name": "objectSequence",
+              "typeName": "ExampleDataType",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [
               {
                 "enumProperty": 1,
@@ -1020,84 +3346,309 @@
             ]
           },
           {
-            "id": {"level": 3, "index": 14},
-            "name": "receiverMonitorFaultEmulation",
-            "typeName": "ReceiverMonitorFaultEmulation",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Receiver monitor fault emulation property",
+              "id": {"level": 3, "index": 14},
+              "name": "receiverMonitorFaultEmulation",
+              "typeName": "ReceiverMonitorFaultEmulation",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 1
           },
           {
-            "id": {"level": 3, "index": 15},
-            "name": "senderMonitorFaultEmulation",
-            "typeName": "SenderMonitorFaultEmulation",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Sender monitor fault emulation property",
+              "id": {"level": 3, "index": 15},
+              "name": "senderMonitorFaultEmulation",
+              "typeName": "SenderMonitorFaultEmulation",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 1
           },
           {
-            "id": {"level": 2, "index": 1},
-            "name": "enabled",
-            "typeName": "NcBoolean",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "TRUE iff worker is enabled",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": true
           },
           {
-            "id": {"level": 1, "index": 1},
-            "name": "classId",
-            "typeName": "NcClassId",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": [1, 2, 0, 2]
           },
           {
-            "id": {"level": 1, "index": 2},
-            "name": "oid",
-            "typeName": "NcOid",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 15
           },
           {
-            "id": {"level": 1, "index": 3},
-            "name": "constantOid",
-            "typeName": "NcBoolean",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": true
           },
           {
-            "id": {"level": 1, "index": 4},
-            "name": "owner",
-            "typeName": "NcOid",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": 14
           },
           {
-            "id": {"level": 1, "index": 5},
-            "name": "role",
-            "typeName": "NcString",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "example-control-01"
           },
           {
-            "id": {"level": 1, "index": 6},
-            "name": "userLabel",
-            "typeName": "NcString",
-            "isReadOnly": false,
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": "Example control worker 01"
           },
           {
-            "id": {"level": 1, "index": 7},
-            "name": "touchpoints",
-            "typeName": "NcTouchpoint",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": []
           },
           {
-            "id": {"level": 1, "index": 8},
-            "name": "runtimePropertyConstraints",
-            "typeName": "NcPropertyConstraints",
-            "isReadOnly": true,
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
             "value": null
           }
         ],
         "isRebuildable": true
+      },
+      {
+        "path": ["root", "IdentBeacon"],
+        "dependencyPaths": [],
+        "allowedMembersClasses": [],
+        "values": [
+          {
+            "descriptor": {
+              "description": "Indicator active state",
+              "id": {"level": 3, "index": 1},
+              "name": "active",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": false
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff worker is enabled",
+              "id": {"level": 2, "index": 1},
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "Static value. All instances of the same class will have the same identity value",
+              "id": {"level": 1, "index": 1},
+              "name": "classId",
+              "typeName": "NcClassId",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": [1, 2, 1]
+          },
+          {
+            "descriptor": {
+              "description": "Object identifier",
+              "id": {"level": 1, "index": 2},
+              "name": "oid",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 13
+          },
+          {
+            "descriptor": {
+              "description": "TRUE iff OID is hardwired into device",
+              "id": {"level": 1, "index": 3},
+              "name": "constantOid",
+              "typeName": "NcBoolean",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": true
+          },
+          {
+            "descriptor": {
+              "description": "OID of containing block. Can only ever be null for the root block",
+              "id": {"level": 1, "index": 4},
+              "name": "owner",
+              "typeName": "NcOid",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": 1
+          },
+          {
+            "descriptor": {
+              "description": "role of obj in containing block",
+              "id": {"level": 1, "index": 5},
+              "name": "role",
+              "typeName": "NcString",
+              "isReadOnly": true,
+              "isNullable": false,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "IdentBeacon"
+          },
+          {
+            "descriptor": {
+              "description": "Scribble strip",
+              "id": {"level": 1, "index": 6},
+              "name": "userLabel",
+              "typeName": "NcString",
+              "isReadOnly": false,
+              "isNullable": true,
+              "isSequence": false,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": "Identification beacon"
+          },
+          {
+            "descriptor": {
+              "description": "Touchpoints to other contexts",
+              "id": {"level": 1, "index": 7},
+              "name": "touchpoints",
+              "typeName": "NcTouchpoint",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": []
+          },
+          {
+            "descriptor": {
+              "description": "Runtime property constraints",
+              "id": {"level": 1, "index": 8},
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "constraints": null,
+              "isDeprecated": false
+            },
+            "value": null
+          }
+        ],
+        "isRebuildable": false
       }
     ]
   }
