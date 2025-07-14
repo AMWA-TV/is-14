@@ -56,6 +56,9 @@ documentation:
           recurse:
             description: 'True will get Bulk Properties for this object and all child objects'
             type: boolean
+          includeDescriptors:
+            description: 'True will include property descriptors in the property holders. For a full backup a value of true also means it will include the ClassManager role path. When set to false, property holders will have descriptors set to null and for bull backups the ClassManager role path is omitted'
+            type: boolean
         responses:
           200:
             body:
