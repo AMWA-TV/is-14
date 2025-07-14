@@ -9,6 +9,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE if block is functional",
               "id": {"level": 2, "index": 1},
@@ -23,6 +24,7 @@
             "value": true
           },
           {
+            "id": {"level": 2, "index": 2},
             "descriptor": {
               "description": "Descriptors of this block's members",
               "id": {"level": 2, "index": 2},
@@ -101,6 +103,7 @@
             ]
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -115,6 +118,7 @@
             "value": [1, 1]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -129,6 +133,7 @@
             "value": 1
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -143,6 +148,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -157,6 +163,7 @@
             "value": null
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -171,6 +178,7 @@
             "value": "root"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -185,6 +193,7 @@
             "value": "Root"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -199,6 +208,7 @@
             "value": null
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -221,6 +231,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 3, "index": 1},
             "descriptor": {
               "description": "Version of nc this dev uses",
               "id": {"level": 3, "index": 1},
@@ -235,6 +246,7 @@
             "value": "v1.0.0"
           },
           {
+            "id": {"level": 3, "index": 2},
             "descriptor": {
               "description": "Manufacturer descriptor",
               "id": {"level": 3, "index": 2},
@@ -253,6 +265,7 @@
             }
           },
           {
+            "id": {"level": 3, "index": 3},
             "descriptor": {
               "description": "Product descriptor",
               "id": {"level": 3, "index": 3},
@@ -274,6 +287,7 @@
             }
           },
           {
+            "id": {"level": 3, "index": 4},
             "descriptor": {
               "description": "Serial number",
               "id": {"level": 3, "index": 4},
@@ -288,6 +302,7 @@
             "value": "123-mock"
           },
           {
+            "id": {"level": 3, "index": 5},
             "descriptor": {
               "description": "Asset tracking identifier (user specified)",
               "id": {"level": 3, "index": 5},
@@ -302,6 +317,7 @@
             "value": null
           },
           {
+            "id": {"level": 3, "index": 6},
             "descriptor": {
               "description": "Name of this device in the application. Instance name, not product name.",
               "id": {"level": 3, "index": 6},
@@ -316,6 +332,7 @@
             "value": null
           },
           {
+            "id": {"level": 3, "index": 7},
             "descriptor": {
               "description": "Role of this device in the application.",
               "id": {"level": 3, "index": 7},
@@ -330,6 +347,7 @@
             "value": null
           },
           {
+            "id": {"level": 3, "index": 8},
             "descriptor": {
               "description": "Device operational state",
               "id": {"level": 3, "index": 8},
@@ -344,6 +362,7 @@
             "value": {"generic": 1, "deviceSpecificDetails": null}
           },
           {
+            "id": {"level": 3, "index": 9},
             "descriptor": {
               "description": "Reason for most recent reset",
               "id": {"level": 3, "index": 9},
@@ -358,6 +377,7 @@
             "value": 0
           },
           {
+            "id": {"level": 3, "index": 10},
             "descriptor": {
               "description": "Arbitrary message from dev to controller",
               "id": {"level": 3, "index": 10},
@@ -372,6 +392,7 @@
             "value": "Nothing to report"
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -386,6 +407,7 @@
             "value": [1, 3, 1]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -400,6 +422,7 @@
             "value": 2
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -414,6 +437,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -428,6 +452,7 @@
             "value": 1
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -442,6 +467,7 @@
             "value": "DeviceManager"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -456,6 +482,7 @@
             "value": "Device manager"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -470,6 +497,7 @@
             "value": null
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -492,6 +520,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 3, "index": 1},
             "descriptor": {
               "description": "Descriptions of all control classes in the device (descriptors do not contain inherited elements)",
               "id": {"level": 3, "index": 1},
@@ -922,6 +951,7 @@
             ]
           },
           {
+            "id": {"level": 3, "index": 2},
             "descriptor": {
               "description": "Descriptions of all data types in the device (descriptors do not contain inherited elements)",
               "id": {"level": 3, "index": 2},
@@ -1005,6 +1035,7 @@
             ]
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -1019,6 +1050,7 @@
             "value": [1, 3, 2]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -1033,6 +1065,7 @@
             "value": 3
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -1047,6 +1080,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -1061,6 +1095,7 @@
             "value": 1
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -1075,6 +1110,7 @@
             "value": "ClassManager"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -1089,6 +1125,7 @@
             "value": "Class manager"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -1103,6 +1140,7 @@
             "value": null
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -1125,6 +1163,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE if block is functional",
               "id": {"level": 2, "index": 1},
@@ -1139,6 +1178,7 @@
             "value": true
           },
           {
+            "id": {"level": 2, "index": 2},
             "descriptor": {
               "description": "Descriptors of this block's members",
               "id": {"level": 2, "index": 2},
@@ -1163,6 +1203,7 @@
             ]
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -1177,6 +1218,7 @@
             "value": [1, 1]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -1191,6 +1233,7 @@
             "value": 9
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -1205,6 +1248,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -1219,6 +1263,7 @@
             "value": 1
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -1233,6 +1278,7 @@
             "value": "receivers"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -1247,6 +1293,7 @@
             "value": "Receivers"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -1261,6 +1308,7 @@
             "value": null
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -1283,6 +1331,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 4, "index": 1},
             "descriptor": {
               "description": "Link status property",
               "id": {"level": 4, "index": 1},
@@ -1297,6 +1346,7 @@
             "value": 1
           },
           {
+            "id": {"level": 4, "index": 2},
             "descriptor": {
               "description": "Link status message property",
               "id": {"level": 4, "index": 2},
@@ -1311,6 +1361,7 @@
             "value": null
           },
           {
+            "id": {"level": 4, "index": 3},
             "descriptor": {
               "description": "Link status transition counter property",
               "id": {"level": 4, "index": 3},
@@ -1325,6 +1376,7 @@
             "value": 0
           },
           {
+            "id": {"level": 4, "index": 4},
             "descriptor": {
               "description": "Connection status property",
               "id": {"level": 4, "index": 4},
@@ -1339,6 +1391,7 @@
             "value": 0
           },
           {
+            "id": {"level": 4, "index": 5},
             "descriptor": {
               "description": "Connection status message property",
               "id": {"level": 4, "index": 5},
@@ -1353,6 +1406,7 @@
             "value": null
           },
           {
+            "id": {"level": 4, "index": 6},
             "descriptor": {
               "description": "Connection status transition counter property",
               "id": {"level": 4, "index": 6},
@@ -1367,6 +1421,7 @@
             "value": 0
           },
           {
+            "id": {"level": 4, "index": 7},
             "descriptor": {
               "description": "External synchronization status property",
               "id": {"level": 4, "index": 7},
@@ -1381,6 +1436,7 @@
             "value": 1
           },
           {
+            "id": {"level": 4, "index": 8},
             "descriptor": {
               "description": "External synchronization status message property",
               "id": {"level": 4, "index": 8},
@@ -1395,6 +1451,7 @@
             "value": null
           },
           {
+            "id": {"level": 4, "index": 9},
             "descriptor": {
               "description": "External synchronization status transition counter property",
               "id": {"level": 4, "index": 9},
@@ -1409,6 +1466,7 @@
             "value": 0
           },
           {
+            "id": {"level": 4, "index": 10},
             "descriptor": {
               "description": "Synchronization source id property",
               "id": {"level": 4, "index": 10},
@@ -1423,6 +1481,7 @@
             "value": "00:0c:ec:ff:fe:0a:2b:a1 on NIC1"
           },
           {
+            "id": {"level": 4, "index": 11},
             "descriptor": {
               "description": "Stream status property",
               "id": {"level": 4, "index": 11},
@@ -1437,6 +1496,7 @@
             "value": 0
           },
           {
+            "id": {"level": 4, "index": 12},
             "descriptor": {
               "description": "Stream status message property",
               "id": {"level": 4, "index": 12},
@@ -1451,6 +1511,7 @@
             "value": null
           },
           {
+            "id": {"level": 4, "index": 13},
             "descriptor": {
               "description": "Stream status transition counter property",
               "id": {"level": 4, "index": 13},
@@ -1465,6 +1526,7 @@
             "value": 0
           },
           {
+            "id": {"level": 4, "index": 14},
             "descriptor": {
               "description": "Automatic reset counters and status messages property (default: true)",
               "id": {"level": 4, "index": 14},
@@ -1479,6 +1541,7 @@
             "value": true
           },
           {
+            "id": {"level": 3, "index": 1},
             "descriptor": {
               "description": "Overall status property",
               "id": {"level": 3, "index": 1},
@@ -1493,6 +1556,7 @@
             "value": 0
           },
           {
+            "id": {"level": 3, "index": 2},
             "descriptor": {
               "description": "Overall status message property",
               "id": {"level": 3, "index": 2},
@@ -1507,6 +1571,7 @@
             "value": null
           },
           {
+            "id": {"level": 3, "index": 3},
             "descriptor": {
               "description": "Status reporting delay property (in seconds, default is 3s and 0 means no delay)",
               "id": {"level": 3, "index": 3},
@@ -1521,6 +1586,7 @@
             "value": 3
           },
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE iff worker is enabled",
               "id": {"level": 2, "index": 1},
@@ -1535,6 +1601,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -1549,6 +1616,7 @@
             "value": [1, 2, 2, 1]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -1563,6 +1631,7 @@
             "value": 10
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -1577,6 +1646,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -1591,6 +1661,7 @@
             "value": 9
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -1605,6 +1676,7 @@
             "value": "monitor-01"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -1619,6 +1691,7 @@
             "value": "Receiver monitor 01"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -1641,6 +1714,7 @@
             ]
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -1663,6 +1737,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE if block is functional",
               "id": {"level": 2, "index": 1},
@@ -1677,6 +1752,7 @@
             "value": true
           },
           {
+            "id": {"level": 2, "index": 2},
             "descriptor": {
               "description": "Descriptors of this block's members",
               "id": {"level": 2, "index": 2},
@@ -1701,6 +1777,7 @@
             ]
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -1715,6 +1792,7 @@
             "value": [1, 1]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -1729,6 +1807,7 @@
             "value": 11
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -1743,6 +1822,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -1757,6 +1837,7 @@
             "value": 1
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -1771,6 +1852,7 @@
             "value": "senders"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -1785,6 +1867,7 @@
             "value": "Senders"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -1799,6 +1882,7 @@
             "value": null
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -1821,6 +1905,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 4, "index": 1},
             "descriptor": {
               "description": "Link status property",
               "id": {"level": 4, "index": 1},
@@ -1835,6 +1920,7 @@
             "value": 1
           },
           {
+            "id": {"level": 4, "index": 2},
             "descriptor": {
               "description": "Link status message property",
               "id": {"level": 4, "index": 2},
@@ -1849,6 +1935,7 @@
             "value": null
           },
           {
+            "id": {"level": 4, "index": 3},
             "descriptor": {
               "description": "Link status transition counter property",
               "id": {"level": 4, "index": 3},
@@ -1863,6 +1950,7 @@
             "value": 0
           },
           {
+            "id": {"level": 4, "index": 4},
             "descriptor": {
               "description": "Transmission status property",
               "id": {"level": 4, "index": 4},
@@ -1877,6 +1965,7 @@
             "value": 1
           },
           {
+            "id": {"level": 4, "index": 5},
             "descriptor": {
               "description": "Transmission status message property",
               "id": {"level": 4, "index": 5},
@@ -1891,6 +1980,7 @@
             "value": null
           },
           {
+            "id": {"level": 4, "index": 6},
             "descriptor": {
               "description": "Transmission status transition counter property",
               "id": {"level": 4, "index": 6},
@@ -1905,6 +1995,7 @@
             "value": 0
           },
           {
+            "id": {"level": 4, "index": 7},
             "descriptor": {
               "description": "External synchronization status property",
               "id": {"level": 4, "index": 7},
@@ -1919,6 +2010,7 @@
             "value": 1
           },
           {
+            "id": {"level": 4, "index": 8},
             "descriptor": {
               "description": "External synchronization status message property",
               "id": {"level": 4, "index": 8},
@@ -1933,6 +2025,7 @@
             "value": null
           },
           {
+            "id": {"level": 4, "index": 9},
             "descriptor": {
               "description": "External synchronization status transition counter property",
               "id": {"level": 4, "index": 9},
@@ -1947,6 +2040,7 @@
             "value": 0
           },
           {
+            "id": {"level": 4, "index": 10},
             "descriptor": {
               "description": "Synchronization source id property",
               "id": {"level": 4, "index": 10},
@@ -1961,6 +2055,7 @@
             "value": "00:0c:ec:ff:fe:0a:2b:a1 on NIC1"
           },
           {
+            "id": {"level": 4, "index": 11},
             "descriptor": {
               "description": "Essence status property",
               "id": {"level": 4, "index": 11},
@@ -1975,6 +2070,7 @@
             "value": 1
           },
           {
+            "id": {"level": 4, "index": 12},
             "descriptor": {
               "description": "Essence status message property",
               "id": {"level": 4, "index": 12},
@@ -1989,6 +2085,7 @@
             "value": null
           },
           {
+            "id": {"level": 4, "index": 13},
             "descriptor": {
               "description": "Essence status transition counter property",
               "id": {"level": 4, "index": 13},
@@ -2003,6 +2100,7 @@
             "value": 0
           },
           {
+            "id": {"level": 4, "index": 14},
             "descriptor": {
               "description": "Automatic reset counters and status messages property (default: true)",
               "id": {"level": 4, "index": 14},
@@ -2017,6 +2115,7 @@
             "value": true
           },
           {
+            "id": {"level": 3, "index": 1},
             "descriptor": {
               "description": "Overall status property",
               "id": {"level": 3, "index": 1},
@@ -2031,6 +2130,7 @@
             "value": 1
           },
           {
+            "id": {"level": 3, "index": 2},
             "descriptor": {
               "description": "Overall status message property",
               "id": {"level": 3, "index": 2},
@@ -2045,6 +2145,7 @@
             "value": null
           },
           {
+            "id": {"level": 3, "index": 3},
             "descriptor": {
               "description": "Status reporting delay property (in seconds, default is 3s and 0 means no delay)",
               "id": {"level": 3, "index": 3},
@@ -2059,6 +2160,7 @@
             "value": 3
           },
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE iff worker is enabled",
               "id": {"level": 2, "index": 1},
@@ -2073,6 +2175,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -2087,6 +2190,7 @@
             "value": [1, 2, 2, 2]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -2101,6 +2205,7 @@
             "value": 12
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -2115,6 +2220,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -2129,6 +2235,7 @@
             "value": 11
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -2143,6 +2250,7 @@
             "value": "monitor-01"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -2157,6 +2265,7 @@
             "value": "Sender monitor 01"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -2179,6 +2288,7 @@
             ]
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -2201,6 +2311,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE if block is functional",
               "id": {"level": 2, "index": 1},
@@ -2215,6 +2326,7 @@
             "value": true
           },
           {
+            "id": {"level": 2, "index": 2},
             "descriptor": {
               "description": "Descriptors of this block's members",
               "id": {"level": 2, "index": 2},
@@ -2248,6 +2360,7 @@
             ]
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -2262,6 +2375,7 @@
             "value": [1, 1]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -2276,6 +2390,7 @@
             "value": 4
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -2290,6 +2405,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -2304,6 +2420,7 @@
             "value": 1
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -2318,6 +2435,7 @@
             "value": "stereo-gain"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -2332,6 +2450,7 @@
             "value": "Stereo gain"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -2346,6 +2465,7 @@
             "value": null
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -2368,6 +2488,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE if block is functional",
               "id": {"level": 2, "index": 1},
@@ -2382,6 +2503,7 @@
             "value": true
           },
           {
+            "id": {"level": 2, "index": 2},
             "descriptor": {
               "description": "Descriptors of this block's members",
               "id": {"level": 2, "index": 2},
@@ -2415,6 +2537,7 @@
             ]
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -2429,6 +2552,7 @@
             "value": [1, 1]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -2443,6 +2567,7 @@
             "value": 5
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -2457,6 +2582,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -2471,6 +2597,7 @@
             "value": 4
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -2485,6 +2612,7 @@
             "value": "channel-gain"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -2499,6 +2627,7 @@
             "value": "Channel gain"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -2513,6 +2642,7 @@
             "value": null
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -2535,6 +2665,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 3, "index": 1},
             "descriptor": {
               "description": "Gain value",
               "id": {"level": 3, "index": 1},
@@ -2549,6 +2680,7 @@
             "value": 0
           },
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE iff worker is enabled",
               "id": {"level": 2, "index": 1},
@@ -2563,6 +2695,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -2577,6 +2710,7 @@
             "value": [1, 2, 0, 1]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -2591,6 +2725,7 @@
             "value": 6
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -2605,6 +2740,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -2619,6 +2755,7 @@
             "value": 5
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -2633,6 +2770,7 @@
             "value": "left-gain"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -2647,6 +2785,7 @@
             "value": "Left gain"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -2661,6 +2800,7 @@
             "value": []
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -2683,6 +2823,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 3, "index": 1},
             "descriptor": {
               "description": "Gain value",
               "id": {"level": 3, "index": 1},
@@ -2697,6 +2838,7 @@
             "value": 0
           },
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE iff worker is enabled",
               "id": {"level": 2, "index": 1},
@@ -2711,6 +2853,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -2725,6 +2868,7 @@
             "value": [1, 2, 0, 1]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -2739,6 +2883,7 @@
             "value": 7
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -2753,6 +2898,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -2767,6 +2913,7 @@
             "value": 5
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -2781,6 +2928,7 @@
             "value": "right-gain"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -2795,6 +2943,7 @@
             "value": "Right gain"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -2809,6 +2958,7 @@
             "value": []
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -2831,6 +2981,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 3, "index": 1},
             "descriptor": {
               "description": "Gain value",
               "id": {"level": 3, "index": 1},
@@ -2845,6 +2996,7 @@
             "value": 0
           },
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE iff worker is enabled",
               "id": {"level": 2, "index": 1},
@@ -2859,6 +3011,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -2873,6 +3026,7 @@
             "value": [1, 2, 0, 1]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -2887,6 +3041,7 @@
             "value": 8
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -2901,6 +3056,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -2915,6 +3071,7 @@
             "value": 4
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -2929,6 +3086,7 @@
             "value": "master-gain"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -2943,6 +3101,7 @@
             "value": "Master gain"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -2957,6 +3116,7 @@
             "value": []
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -2979,6 +3139,7 @@
         "allowedMembersClasses": [ [1, 2, 0, 2] ],
         "values": [
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE if block is functional",
               "id": {"level": 2, "index": 1},
@@ -2993,6 +3154,7 @@
             "value": true
           },
           {
+            "id": {"level": 2, "index": 2},
             "descriptor": {
               "description": "Descriptors of this block's members",
               "id": {"level": 2, "index": 2},
@@ -3017,6 +3179,7 @@
             ]
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -3031,6 +3194,7 @@
             "value": [1, 1]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -3045,6 +3209,7 @@
             "value": 14
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -3059,6 +3224,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -3073,6 +3239,7 @@
             "value": 1
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -3087,6 +3254,7 @@
             "value": "example-controls"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -3101,6 +3269,7 @@
             "value": "Example controls"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -3115,6 +3284,7 @@
             "value": null
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -3137,6 +3307,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 3, "index": 1},
             "descriptor": {
               "description": "Example enum property",
               "id": {"level": 3, "index": 1},
@@ -3151,6 +3322,7 @@
             "value": 0
           },
           {
+            "id": {"level": 3, "index": 2},
             "descriptor": {
               "description": "Example string property",
               "id": {"level": 3, "index": 2},
@@ -3169,6 +3341,7 @@
             "value": "test"
           },
           {
+            "id": {"level": 3, "index": 3},
             "descriptor": {
               "description": "Example numeric property",
               "id": {"level": 3, "index": 3},
@@ -3188,6 +3361,7 @@
             "value": 3
           },
           {
+            "id": {"level": 3, "index": 4},
             "descriptor": {
               "description": "Example boolean property",
               "id": {"level": 3, "index": 4},
@@ -3202,6 +3376,7 @@
             "value": false
           },
           {
+            "id": {"level": 3, "index": 5},
             "descriptor": {
               "description": "Example object property",
               "id": {"level": 3, "index": 5},
@@ -3221,6 +3396,7 @@
             }
           },
           {
+            "id": {"level": 3, "index": 6},
             "descriptor": {
               "description": "Method no args invoke counter",
               "id": {"level": 3, "index": 6},
@@ -3235,6 +3411,7 @@
             "value": 0
           },
           {
+            "id": {"level": 3, "index": 7},
             "descriptor": {
               "description": "Method simple args invoke counter",
               "id": {"level": 3, "index": 7},
@@ -3249,6 +3426,7 @@
             "value": 0
           },
           {
+            "id": {"level": 3, "index": 8},
             "descriptor": {
               "description": "Method obj arg invoke counter",
               "id": {"level": 3, "index": 8},
@@ -3263,6 +3441,7 @@
             "value": 0
           },
           {
+            "id": {"level": 3, "index": 9},
             "descriptor": {
               "description": "Example string sequence property",
               "id": {"level": 3, "index": 9},
@@ -3277,6 +3456,7 @@
             "value": ["red", "blue", "green"]
           },
           {
+            "id": {"level": 3, "index": 10},
             "descriptor": {
               "description": "Example boolean sequence property",
               "id": {"level": 3, "index": 10},
@@ -3291,6 +3471,7 @@
             "value": [true, false]
           },
           {
+            "id": {"level": 3, "index": 11},
             "descriptor": {
               "description": "Example enum sequence property",
               "id": {"level": 3, "index": 11},
@@ -3305,6 +3486,7 @@
             "value": [1, 3]
           },
           {
+            "id": {"level": 3, "index": 12},
             "descriptor": {
               "description": "Example number sequence property",
               "id": {"level": 3, "index": 12},
@@ -3319,6 +3501,7 @@
             "value": [0, 50, 88]
           },
           {
+            "id": {"level": 3, "index": 13},
             "descriptor": {
               "description": "Example object sequence property",
               "id": {"level": 3, "index": 13},
@@ -3346,6 +3529,7 @@
             ]
           },
           {
+            "id": {"level": 3, "index": 14},
             "descriptor": {
               "description": "Receiver monitor fault emulation property",
               "id": {"level": 3, "index": 14},
@@ -3360,6 +3544,7 @@
             "value": 1
           },
           {
+            "id": {"level": 3, "index": 15},
             "descriptor": {
               "description": "Sender monitor fault emulation property",
               "id": {"level": 3, "index": 15},
@@ -3374,6 +3559,7 @@
             "value": 1
           },
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE iff worker is enabled",
               "id": {"level": 2, "index": 1},
@@ -3388,6 +3574,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -3402,6 +3589,7 @@
             "value": [1, 2, 0, 2]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -3416,6 +3604,7 @@
             "value": 15
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -3430,6 +3619,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -3444,6 +3634,7 @@
             "value": 14
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -3458,6 +3649,7 @@
             "value": "example-control-01"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -3472,6 +3664,7 @@
             "value": "Example control worker 01"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -3486,6 +3679,7 @@
             "value": []
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
@@ -3508,6 +3702,7 @@
         "allowedMembersClasses": [],
         "values": [
           {
+            "id": {"level": 3, "index": 1},
             "descriptor": {
               "description": "Indicator active state",
               "id": {"level": 3, "index": 1},
@@ -3522,6 +3717,7 @@
             "value": false
           },
           {
+            "id": {"level": 2, "index": 1},
             "descriptor": {
               "description": "TRUE iff worker is enabled",
               "id": {"level": 2, "index": 1},
@@ -3536,6 +3732,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 1},
             "descriptor": {
               "description": "Static value. All instances of the same class will have the same identity value",
               "id": {"level": 1, "index": 1},
@@ -3550,6 +3747,7 @@
             "value": [1, 2, 1]
           },
           {
+            "id": {"level": 1, "index": 2},
             "descriptor": {
               "description": "Object identifier",
               "id": {"level": 1, "index": 2},
@@ -3564,6 +3762,7 @@
             "value": 13
           },
           {
+            "id": {"level": 1, "index": 3},
             "descriptor": {
               "description": "TRUE iff OID is hardwired into device",
               "id": {"level": 1, "index": 3},
@@ -3578,6 +3777,7 @@
             "value": true
           },
           {
+            "id": {"level": 1, "index": 4},
             "descriptor": {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {"level": 1, "index": 4},
@@ -3592,6 +3792,7 @@
             "value": 1
           },
           {
+            "id": {"level": 1, "index": 5},
             "descriptor": {
               "description": "role of obj in containing block",
               "id": {"level": 1, "index": 5},
@@ -3606,6 +3807,7 @@
             "value": "IdentBeacon"
           },
           {
+            "id": {"level": 1, "index": 6},
             "descriptor": {
               "description": "Scribble strip",
               "id": {"level": 1, "index": 6},
@@ -3620,6 +3822,7 @@
             "value": "Identification beacon"
           },
           {
+            "id": {"level": 1, "index": 7},
             "descriptor": {
               "description": "Touchpoints to other contexts",
               "id": {"level": 1, "index": 7},
@@ -3634,6 +3837,7 @@
             "value": []
           },
           {
+            "id": {"level": 1, "index": 8},
             "descriptor": {
               "description": "Runtime property constraints",
               "id": {"level": 1, "index": 8},
