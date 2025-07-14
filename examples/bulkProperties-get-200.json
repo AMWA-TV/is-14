@@ -861,7 +861,7 @@
                     "resultDatatype": "NcMethodResultBlockMemberDescriptors",
                     "parameters": [
                       {
-                        "description": "Relative path to search for (MUST not include the role of the block targeted by oid)",
+                        "description": "Relative path to search for (MUST NOT include the role of the block targeted by oid)",
                         "name": "path",
                         "typeName": "NcRolePath",
                         "isNullable": false,
