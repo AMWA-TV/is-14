@@ -63,6 +63,827 @@
       "statusMessage": "Some properties have notices"
     },
     {
+      "path": ["root", "DeviceManager"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 3, "index": 1},
+          "name": "ncVersion",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 3, "index": 2},
+          "name": "manufacturer",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 3, "index": 3},
+          "name": "product",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 3, "index": 4},
+          "name": "serialNumber",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 3, "index": 8},
+          "name": "operationalState",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 3, "index": 9},
+          "name": "resetCause",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 3, "index": 10},
+          "name": "message",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "ClassManager"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 3, "index": 1},
+          "name": "controlClasses",
+          "noticeType": 300,
+          "noticeMessage": "Property does not exist in object"
+        },
+        {
+          "id": {"level": 3, "index": 2},
+          "name": "datatypes",
+          "noticeType": 300,
+          "noticeMessage": "Property does not exist in object"
+        },
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "receivers"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 2, "index": 1},
+          "name": "enabled",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 2, "index": 2},
+          "name": "members",
+          "noticeType": 300,
+          "noticeMessage": "Property cannot be changed and will be left untouched"
+        },
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "receivers", "monitor-01"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 4, "index": 1},
+          "name": "linkStatus",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 2},
+          "name": "linkStatusMessage",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 3},
+          "name": "linkStatusTransitionCounter",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 4},
+          "name": "connectionStatus",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 5},
+          "name": "connectionStatusMessage",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 6},
+          "name": "connectionStatusTransitionCounter",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 7},
+          "name": "externalSynchronizationStatus",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 8},
+          "name": "externalSynchronizationStatusMessage",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 9},
+          "name": "externalSynchronizationStatusTransitionCounter",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 10},
+          "name": "synchronizationSourceId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 11},
+          "name": "streamStatus",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 12},
+          "name": "streamStatusMessage",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 13},
+          "name": "streamStatusTransitionCounter",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 3, "index": 1},
+          "name": "overallStatus",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 3, "index": 2},
+          "name": "overallStatusMessage",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "senders"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 2, "index": 1},
+          "name": "enabled",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 2, "index": 2},
+          "name": "members",
+          "noticeType": 300,
+          "noticeMessage": "Property cannot be changed and will be left untouched"
+        },
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "senders", "monitor-01"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 4, "index": 1},
+          "name": "linkStatus",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 2},
+          "name": "linkStatusMessage",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 3},
+          "name": "linkStatusTransitionCounter",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 4},
+          "name": "transmissionStatus",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 5},
+          "name": "transmissionStatusMessage",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 6},
+          "name": "transmissionStatusTransitionCounter",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 7},
+          "name": "externalSynchronizationStatus",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 8},
+          "name": "externalSynchronizationStatusMessage",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 9},
+          "name": "externalSynchronizationStatusTransitionCounter",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 10},
+          "name": "synchronizationSourceId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 11},
+          "name": "essenceStatus",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 12},
+          "name": "essenceStatusMessage",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 4, "index": 13},
+          "name": "essenceStatusTransitionCounter",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 3, "index": 1},
+          "name": "overallStatus",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 3, "index": 2},
+          "name": "overallStatusMessage",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "stereo-gain"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 2, "index": 1},
+          "name": "enabled",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 2, "index": 2},
+          "name": "members",
+          "noticeType": 300,
+          "noticeMessage": "Property cannot be changed and will be left untouched"
+        },
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "stereo-gain", "channel-gain"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 2, "index": 1},
+          "name": "enabled",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 2, "index": 2},
+          "name": "members",
+          "noticeType": 300,
+          "noticeMessage": "Property cannot be changed and will be left untouched"
+        },
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "stereo-gain", "channel-gain", "left-gain"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "stereo-gain", "channel-gain", "right-gain"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "stereo-gain", "master-gain"],
+      "status": 200,
+      "notices": [
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
       "path": ["root", "example-controls"],
       "status": 200,
       "notices": [
@@ -151,6 +972,55 @@
           "noticeType": 300,
           "noticeMessage": "Property can only be changed when associated receiver has been Activated"
         },
+        {
+          "id": {"level": 1, "index": 1},
+          "name": "classId",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 2},
+          "name": "oid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 3},
+          "name": "constantOid",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 4},
+          "name": "owner",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 5},
+          "name": "role",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 7},
+          "name": "touchpoints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        },
+        {
+          "id": {"level": 1, "index": 8},
+          "name": "runtimePropertyConstraints",
+          "noticeType": 300,
+          "noticeMessage": "Property is readonly"
+        }
+      ],
+      "statusMessage": "Some properties have notices"
+    },
+    {
+      "path": ["root", "IdentBeacon"],
+      "status": 200,
+      "notices": [
         {
           "id": {"level": 1, "index": 1},
           "name": "classId",

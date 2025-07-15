@@ -57,7 +57,7 @@ The `restore scope` consists of the intersection of objects contained in the rol
 If an existing device model object isn't included in the restore data set it is excluded from the `restore scope`, but will remain in the device model without any changes.  
 If an object is added or modified indirectly by the device as a consequence of a modification to an object already in the `restore scope`, then this object also becomes part of the `restore scope`.  
 If the restore operation includes structural block changes which add new object members, these also become part of the `restore scope`.  
-When performing a restore operation or validating a restore operation, devices MUST always generate [ObjectPropertiesSetValidation](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder) entries for each object which is part of the `restore scope`.
+When performing a restore operation or validating a restore operation, devices MUST always generate [ObjectPropertiesSetValidation](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiessetvalidation) entries for each object which is part of the `restore scope`.
 
 | ![Restore scope](images/restore-scope.png) |
 |:--:|
