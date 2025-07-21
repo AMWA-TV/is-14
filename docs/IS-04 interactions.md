@@ -1,9 +1,6 @@
 # IS-04 interactions
 
-The NMOS Device Configuration specification shares a data model with the NMOS IS-04 specification, and as a result is designed to be used alongside it.
-The following implementation notes identify correct behavior for doing this.
-
-When this API is used alongside IS-04 in a deployment, the IS-04 APIs SHOULD operate at version 1.1 or greater in order to ensure full interoperability.
+When this API is used alongside IS-04 in a deployment, the IS-04 APIs MUST operate at version 1.1 or greater in order to ensure full interoperability.
 
 ## Discovery
 
