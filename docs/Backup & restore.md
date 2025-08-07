@@ -128,7 +128,7 @@ Clients MUST issue requests using `root` as the `rolePath` in order to restore t
 Clients MUST include the following in the request body:
 
 - the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
-- a boolean `recurse` argument (set to `true` for validating the entire device model)
+- a boolean `recurse` argument (set to `true` for targeting the entire device model)
 - the `restoreMode` argument (set to `Modify` in order to only allow changes to writeable properties)
 
 An example request is provided as a [snippet](https://specs.amwa.tv/is-14/branches/v1.0-dev/examples/bulkProperties-put-request.html).
@@ -172,7 +172,7 @@ Clients MUST issue requests using `root` as the `rolePath` in order to restore t
 Clients MUST include the following in the request body:
 
 - the backup dataSet containing a collection of [NcObjectPropertiesHolder](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncobjectpropertiesholder) entries with unique role paths
-- a boolean `recurse` argument (set to `true` for validating the entire device model)
+- a boolean `recurse` argument (set to `true` for targeting the entire device model)
 - the `restoreMode` argument (set to `Rebuild` in order to allow blocks to be repopulated with the same members as per the original device)
 
 An example request is provided as a [snippet](https://specs.amwa.tv/is-14/branches/v1.0-dev/examples/bulkProperties-put-rebuild-request.html).
