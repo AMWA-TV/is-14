@@ -1,4 +1,4 @@
-# \[Work In Progress\] AMWA NMOS Device Configuration Specification
+# AMWA NMOS Device Configuration Specification
 
 [![Lint Status](https://github.com/AMWA-TV/is-14/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/is-14/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/is-14/workflows/Render/badge.svg)](https://github.com/AMWA-TV/is-14/actions?query=workflow%3ARender)
