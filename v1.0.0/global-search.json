@@ -1,0 +1,330 @@
+{
+  "version": 1,
+  "repository": "AMWA-TV/is-14",
+  "documents": [
+    {
+      "title": "API requests",
+      "url": "https://specs.amwa.tv/new/is-14/latest/API%20requests/",
+      "text": "API requests API requests Control session URL and usage GET Getting a property Getting the class descriptor of an object Getting the datatype descriptor of a property Getting all the properties of a role path PUT Changing a property Setting bulk properties for a role path PATCH Invoking a method Validating bulk properties for a role path API requests - AMWA NMOS Device Configuration Specification Skip to content API requests The endpoints are documented in the Configuration API . Control session Concurrency control is left to specific device implementations, however devices MUST always return relevant error response messages and statuses when there are conflicts, errors or other noteworthy states. URL and usage Clients MUST use the 'control' endpoint URL provided in the IS-04 device as the base URL for all subsequent requests. As described in the Configuration API, the rolePaths endpoint MUST return all the device model's role paths. Each rolePath MUST be created by appending NcObject roles starting with the root block and using . as the delimiter. Consequently the . character MUST NOT be used inside individual object roles. It is RECOMMENDED for device model objects roles to use Unreserved Characters as described in RFC 3986 - 2.3. Unreserved Characters . When Reserved Characters are used in an object role, they MUST be URL encoded when included in the rolePaths endpoint and subsequently in a URL. Device model object roles are case sensitive and thus any rolePaths and URLs which include them are also case sensitive as described in RFC 7230 . Property identifiers used as part of a URL MUST be represented as a string of the format {propertyLevel}p{propertyIndex} where: propertyLevel - number representing the inheritance level of the class containing the property (see Control Classes ) propertyIndex - number representing the index level of the property within the specified inheritance level (see Control Classes ) Method identifiers used as part of a URL MUST be represented as a string of the format {methodLevel}m{methodIndex} where: methodLevel - number representing the inheritance level of the class containing the method (see Control Classes ) methodIndex - number representing the index level of the method within the specified inheritance level (see Control Classes ) As an example, for a given base URL, clients can target the root block by using {baseUrl}/root as the URL. Furthermore, clients can target the userLabel of the root block by using {baseUrl}/rolePaths/root/properties/1p6/value as the URL. The following subsections define common use cases for the applicable HTTP verbs where resources are located using their associated rolePath . Verb Scenario URL format Body Response GET Get a property baseUrl/rolePaths/{rolePath}/properties/{propertyId}/value N/A NcMethodResultPropertyValue with the contents of the property GET Get class descriptor baseUrl/rolePaths/{rolePath}/descriptor N/A NcMethodResultClassDescriptor GET Get datatype descriptor baseUrl/rolePaths/{rolePath}/properties/{propertyId}/descriptor N/A NcMethodResultDatatypeDescriptor GET Getting all the properties of a role path baseUrl/rolePaths/{rolePath}/bulkProperties?recurse={value}&includeDescriptors={value} N/A NcMethodResultBulkPropertiesHolder PUT Modify a property baseUrl/rolePaths/{rolePath}/properties/{propertyId}/value property-value-put-request NcMethodResult PUT Setting bulk properties for a role path baseUrl/rolePaths/{rolePath}/bulkProperties bulkProperties-put-request NcMethodResultObjectPropertiesSetValidation PATCH Invoke a method baseUrl/rolePaths/{rolePath}/methods/{methodId} method-patch-request NcMethodResult PATCH Validating bulk properties for a role path baseUrl/rolePaths/{rolePath}/bulkProperties bulkProperties-patch-request NcMethodResultObjectPropertiesSetValidation GET Getting a property Getting a property Clients MUST target a specific property of an object by locating the object using its role path and the property using its property identifier and building a URL as per the following format baseUrl/rolePaths/{rolePath}/properties/{propertyId}/value . Devices MUST return a response of type NcMethodResultPropertyValue containing the value of that property when successful. If the request encountered an error then devices MUST return a response of type NcMethodResultError or a derived datatype and include an error message. Note that this is equivalent to invoking the generic Get method on the specific object for the required property. Getting the class descriptor of an object Getting class descriptor Clients MUST target a specific object in the device model and build a URL as per the following format baseUrl/rolePaths/{rolePath}/descriptor . Devices MUST return a response of type NcMethodResultClassDescriptor including a descriptor which has all inherited elements. If the request encountered an error then devices MUST return a response of type NcMethodResultError or a derived datatype and include an error message. Note that this is equivalent to invoking the GetControlClass method on the Class Manager object and including all inherited elements. Getting the datatype descriptor of a property Getting datatype descriptor Clients MUST target a specific property of an object by locating the object using its role path and the property using its property identifier and building a URL as per the following format baseUrl/rolePaths/{rolePath}/properties/{propertyId}/descriptor . Devices MUST return a response of type NcMethodResultDatatypeDescriptor including a descriptor which has all inherited elements. If the request encountered an error then devices MUST return a response of type NcMethodResultError or a derived datatype and include an error message. Note that this is equivalent to invoking the GetDatatype method on the Class Manager object and including inherited elements. Getting all the properties of a role path Getting bulk properties Clients MUST target a specific role path in the device model by locat",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "ConfigurationAPI",
+      "url": "https://specs.amwa.tv/new/is-14/latest/APIs/ConfigurationAPI/",
+      "text": "ConfigurationAPI ConfigurationAPI ConfigurationAPI - AMWA NMOS Device Configuration Specification Skip to content ConfigurationAPI The Configuration API is exposed by each NMOS Device in a system that supports the AMWA NMOS Device Configuration Specification. The API is used to access the NMOS Device's Device Model which is defined according to the AMWA NMOS Control Architecture and AMWA NMOS Control Framework . Open ConfigurationAPI API documentation",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "Configuration version v1.0",
+      "url": "https://specs.amwa.tv/new/is-14/latest/APIs/ConfigurationAPI/",
+      "text": "Configuration version v1.0 Configuration version v1.0 Overview Further Documentation Base HTTP status code 200 Body Role Paths HTTP status code 200 Body URI Parameters HTTP status code 200 Body HTTP status code 404 Body URI Parameters Query Parameters HTTP status code 200 Body HTTP status code 400 Body HTTP status code 404 Body HTTP status code 500 Body URI Parameters HTTP status code 200 HTTP status code 403 URI Parameters Body HTTP status code 200 Body HTTP status code 400 Body HTTP status code 404 Body HTTP status code 500 Body URI Parameters Body HTTP status code 200 Body HTTP status code 400 Body HTTP status code 404 Body HTTP status code 500 Body URI Parameters HTTP status code 200 Body HTTP status code 404 Body HTTP status code 500 Body URI Parameters HTTP status code 200 Body HTTP status code 404 Body HTTP status code 500 Body URI Parameters HTTP status code 200 HTTP status code 403 URI Parameters Body HTTP status code 200 Body HTTP status code 400 Body HTTP status code 404 Body HTTP status code 500 Body URI Parameters HTTP status code 200 Body HTTP status code 404 Body HTTP status code 500 Body URI Parameters HTTP status code 200 Body HTTP status code 404 Body HTTP status code 500 Body URI Parameters HTTP status code 200 Body HTTP status code 404 Body HTTP status code 500 Body URI Parameters HTTP status code 200 Body HTTP status code 404 Body HTTP status code 500 Body URI Parameters HTTP status code 200 HTTP status code 403 URI Parameters Body HTTP status code 200 Body HTTP status code 400 Body HTTP status code 404 Body HTTP status code 500 Body Configuration Configuration version v1.0 http://api.example.com/x-nmos/configuration/{version} version : required (v1.0) Overview The Configuration API is exposed by each NMOS Device in a system that supports the AMWA NMOS Device Configuration Specification. The API is used to access the NMOS Device's Device Model which is defined according to the AMWA NMOS Control Architecture and AMWA NMOS Control Framework . Further Documentation Further normative documentation covering the behaviour of this API is contained in the docs folder of this repository. Base / get get List of paths available from this API × get / List of paths available from this API Response HTTP status code 200 Body Media type : application/json Type : { \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"type\": \"array\", \"description\": \"Describes the Configuration API base resource\", \"title\": \"Configuration API base resource\", \"items\": { \"type\": \"string\", \"enum\": [ \"rolePaths/\" ] }, \"minItems\": 1, \"maxItems\": 1, \"uniqueItems\": true } Example : [ \"rolePaths/\" ] Role Paths /rolePaths get get Returns the Role Paths of the Device Model. Each rolePath is created by appending NcObject roles starting with the root block and using \".\" as the delimiter × get /rolePaths Returns the Role Paths of the Device Model. Each rolePath is created by appending NcObject roles starting with the root block and using \".\" as the delimiter Response HTTP status code 200 Body Media type : application/json Type : { \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"type\": \"array\", \"description\": \"Describes the Configuration API /rolePaths base\", \"title\": \"Configuration API /rolePaths base\", \"items\": { \"type\": \"string\" }, \"uniqueItems\": true } Example : [ \"root/\", \"root.example-controls/\", \"root.example-controls.example-control-01/\", \"root.DeviceManager/\", \"root.ClassManager/\" ] /rolePaths /{rolePath} get get Get attributes of the object specified by rolePath × get /rolePaths /{rolePath} Get attributes of the object specified by rolePath Request Response URI Parameters rolePath : required (string) HTTP status code 200 Body Media type : application/json Type : { \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"type\": \"array\", \"description\": \"Describes the Configuration API /rolePaths/{rolePath}\", \"title\": \"Configuration API /rolePaths/{rolePath}\", \"items\": { \"type\": \"string\", \"enum\": [ \"bulkProperties/\", \"descriptor/\", \"methods/\", \"properties/\" ] }, \"minItems\": 4, \"maxItems\": 4, \"uniqueItems\": true } Example : [ \"bulkProperties/\", \"descriptor/\", \"methods/\", \"properties/\" ] HTTP status code 404 Returned when the requested Role Path does not exist. Body Media type : application/json Type : { \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"type\": \"object\", \"description\": \"Object of type NcMethodResultError or a type derived from NcMethodResultError\", \"title\": \"Request error\" } /rolePaths/{rolePath} /bulkProperties get options patch put get Get Bulk Properties of the object, returned as a NcMethodResultBulkPropertiesHolder object. options A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes patch Validate an NcBulkPropertiesHolder object against the Device Model put Set a Bulk Properties object on the Device Model × get /rolePaths/{rolePath} /bulkProperties Get Bulk Properties of the object, returned as a NcMethodResultBulkPropertiesHolder object. Request Response URI Parameters rolePath : required (string) Query Parameters recurse : required (boolean) True will get Bulk Properties for this object and all child objects includeDescriptors : required (boolean) True will include property descriptors in the property holders. For a full backup a value of true also means it will include the ClassManager role path. When set to false, property holders will have descriptors set to null and for full backups the ClassManager role path is omitted HTTP status code 200 Body Media type : application/json Type : { \"$schema\": \"http://json-schema.org/draft-04/schema#\", \"type\": \"object\", \"description\": \"Returns a NcMethodResultBulkPropertiesHolder from a bulkProperties GET\", \"title\": \"NcMethodResultBulkPropertiesHolder\" } Example : { \"status\": 200, \"value\": { \"validationFingerprint\": \"AMWA NMOS Device Control Mock Application|v1.0\", \"values\": [ { \"path\": [\"root\"], \"dependencyPaths\": [], \"allowedMembersClasses\": [], \"values\": [ { \"id\": {\"level\": 2, \"index\": 1}, \"descriptor\": {",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "APIs",
+      "url": "https://specs.amwa.tv/new/is-14/latest/APIs/",
+      "text": "APIs APIs APIs - AMWA NMOS Device Configuration Specification Skip to content APIs ConfigurationAPI",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "Backup & restore",
+      "url": "https://specs.amwa.tv/new/is-14/latest/Backup%20%26%20restore/",
+      "text": "Backup & restore Backup & restore Definitions General concepts Performing a backup Performing a Modify restore Performing a Rebuild restore Backup & restore - AMWA NMOS Device Configuration Specification Skip to content Backup & restore Supporting backup & restore is a key feature of IS-14. To discuss the various possible combinations of backup and restore, this section utilizes terms explained in the Definitions section. The Configuration API defines a bulkProperties endpoint which allows: Getting all the properties of a role path Setting bulk properties for a role path Validating bulk properties for a role path These mechanisms are used for enabling backup and restore functionality and this section of the specification aims to cover the expectations, behaviour and requirements for the following scenarios: Performing a backup Performing a Modify restore Performing a Rebuild restore Note that this does not mean that the backup & restore functionality can only be used in these scenarios. Definitions A device , for the purposes of this section, is a physical or logical entity that can be backed up and restored using the procedures described. It may or may not correspond to an IS-04 Device or IS-04 Node. Backup data set is the set of data retrieved from a device using the backup procedures described. This is represented as an NcBulkPropertiesHolder object. Backup validation fingerprint is an optional string in a backup data set that can be used to capture the various versions of the hardware, software and/or firmware that made up a device at the time the backup was performed. The format of the string is defined by the vendor and is opaque to other systems. This could contain information such as: Manufacturer key Product key Software versions Hardware revisions Backup response hash Timestamp Whether its a full device model backup or a partial backup A device model in the context of this specification refers to all the objects and their properties which are exposed in the configuration API. A full backup is a backup data set that includes all properties for all role paths of a device model. This is achieved by using the /bulkProperties endpoint . A partial backup is a backup data set that includes only a subset of role paths of a device model. This is achieved by using the /bulkProperties endpoint . A modified backup is a full backup or partial backup where the backup data set has been modified by a client. Examples of modified backups include: updating values of existing backup data set properties, adding/removing device model role paths from the backup data set. General concepts Role path objects within a backup data set contain a boolean property called isRebuildable . If the object is a non-block object, isRebuildable means the object's readonly properties can be modified. However, structural properties such as classId , role , owner can only be changed when the containing parent block object is rebuildable. If the object is a block, isRebuildable determines it can be modified as mentioned before but also that its members can be added or removed (new instances of rebuildable objects can be created in a rebuildable parent block). When a parent block object is not rebuildable but a member child is rebuildable the implication is that the child cannot change its role within that block when being rebuilt through a restore. Members of a rebuildable block which are not rebuildable cannot be removed. The restore mechanism achieved by Setting bulk properties for a role path affects the device model by either rebuilding it or modifying it. Validating a restore operation before applying it is achieved by Validating bulk properties for a role path . Devices MUST perform the same checks and offer the same response as if the restore was being applied without actually performing changes to the device model objects. A restore operation or validating a restore operation creates a restore scope . The restore scope consists of the intersection of objects contained in the role path targeted and any nested role paths if the recurse flag is set to true, and the objects offered in the backup data set. If an existing device model object isn't included in the restore data set it is excluded from the restore scope , but will remain in the device model without any changes. If an object is added or modified indirectly by the device as a consequence of a modification to an object already in the restore scope , then this object also becomes part of the restore scope . If the restore operation includes structural block changes which add new object members, these also become part of the restore scope . When performing a restore operation or validating a restore operation, devices MUST always generate ObjectPropertiesSetValidation entries for each object which is part of the restore scope . Restore scope When performing a restore with the restore mode set to Modify , devices MUST only be allowed to make changes to existing writeable properties of existing device model objects and MUST NOT modify the device model in a structural way (cannot cause the addition or removal of objects from blocks). Furthermore, devices are RECOMMENDED to evaluate a Modify restore (validate if the restore can happen) even when the backup data set contains readonly properties, since writeable properties might result in the desired changes being applied, and the readonly properties will result in notices in the response returned. When performing a restore with the restore mode set to Rebuild , devices MUST allow the following operations: make changes to existing writeable properties of existing device model objects add new members to rebuildable block objects by constructing new member objects (perform structural changes) remove existing members from rebuildable block objects by deconstructing the member objects (perform structural changes) reconstruct existing rebuildable objects (constructing fresh objects which can accept changes even to its ",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "Datatype marshalling",
+      "url": "https://specs.amwa.tv/new/is-14/latest/Data%20type%20marshalling/",
+      "text": "Datatype marshalling Datatype marshalling Datatype marshalling - AMWA NMOS Device Configuration Specification Skip to content Datatype marshalling Clients and devices MUST map the following MS-05-02 datatypes to the corresponding JSON representations when sending requests and responses. Datatype type JSON representation enums Integer associated enum value NcString string NcBoolean boolean NcInt16 number NcInt32 number NcInt64 number NcUint16 number (must be unsigned) NcUint32 number (must be unsigned) NcUint64 number (must be unsigned) NcFloat32 number (must be floating point) NcFloat64 number (must be floating point) struct types object sequences of primitive types array of primitive types sequences of struct types array of objects For specific datatype definitions consult the NMOS Control Framework .",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "Getting block members",
+      "url": "https://specs.amwa.tv/new/is-14/latest/Getting%20block%20members/",
+      "text": "Getting block members Getting block members Getting block members - AMWA NMOS Device Configuration Specification Skip to content Getting block members",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "IS-04 interactions",
+      "url": "https://specs.amwa.tv/new/is-14/latest/IS-04%20interactions/",
+      "text": "IS-04 interactions IS-04 interactions Discovery IS-04 interactions - AMWA NMOS Device Configuration Specification Skip to content IS-04 interactions When this API is used alongside IS-04 in a deployment, the IS-04 APIs MUST operate at version 1.1 or greater in order to ensure full interoperability. Discovery Devices MUST advertise the Configuration API as a control endpoint when publishing a compliant NMOS Device. Control endpoints MUST use the URN urn:x-nmos:control:configuration to identify all Devices which implement the Configuration API, and the URLs required to access them. For more details see NMOS Device Control Types . Example 1 : The controls attribute of the NMOS Device of a simple Node with a single Configuration API endpoint. { ... \"senders\" : [ \"a65c15a4-a52e-4960-8cd2-e05c31196e5f\" , \"68f519a3-5523-4b2c-b72d-ec23cc80207d\" ], \"receivers\" : [ \"8a7bb1c1-4a82-4fd9-a4fb-96f68f560831\" , \"ab450c07-ce54-44da-9ea9-c3e62e7b06d0\" ], \"controls\" : [ { \"type\" : \"urn:x-nmos:control:configuration/v1.0\" , \"href\" : \"http://192.168.10.3/x-nmos/configuration/v1.0/\" } ], \"tags\" : {}, \"type\" : \"urn:x-nmos:device:generic\" , \"label\" : \"NMOS Device\" , \"version\" : \"1529676926:000000000\" , \"node_id\" : \"d1713110-7343-4d9e-b3f4-456c8f6ce765\" , \"id\" : \"58f6b536-ca4c-43fd-880a-9df2501fc125\" , \"description\" : \"NMOS Device\" ... } Example 2: The controls attribute of an NMOS Device of a Node which advertises a different Configuration API endpoint for each device. ... \"controls\" : [ { \"type\" : \"urn:x-nmos:control:configuration/v1.0\" , \"href\" : \"http://192.168.10.3/x-nmos/configuration/v1.0/slot2B/\" } ] ... In example 2, the path segment 'slot2B' is an <api selector> identifier as defined in API Paths . Note that the API version is included in both the 'type', and in the 'href'. As new versions of the Configuration API are published, Devices MAY advertise further control endpoints which support multiple versions simultaneously.",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "AMWA IS-14 NMOS Device Configuration Specification: Overview",
+      "url": "https://specs.amwa.tv/new/is-14/latest/Overview/",
+      "text": "AMWA IS-14 NMOS Device Configuration Specification: Overview AMWA IS-14 NMOS Device Configuration Specification: Overview Introduction Use of Normative Language Definitions Overview - AMWA NMOS Device Configuration Specification Skip to content AMWA IS-14 NMOS Device Configuration Specification: Overview (c) AMWA 2023, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0) Introduction This document aims to give a general description of the NMOS Device Configuration API. This API defines how NMOS Control models (described in the NMOS Control Framework) can be exposed and consumed in a standardized way when using HTTP. This document relies on previous familiarity with the following existing documents: AMWA MS-05-01 NMOS Control Architecture AMWA MS-05-02 NMOS Control Framework This API does not support subscriptions and notifications. For subscriptions and notifications support see AMWA IS-12 . Use of Normative Language The key words \"MUST\", \"MUST NOT\", \"REQUIRED\", \"SHALL\", \"SHALL NOT\", \"SHOULD\", \"SHOULD NOT\", \"RECOMMENDED\", \"MAY\", and \"OPTIONAL\" in this document are to be interpreted as described in RFC-2119 . Definitions The NMOS term 'Device' is used as defined in the NMOS Glossary .",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "Security and authorization",
+      "url": "https://specs.amwa.tv/new/is-14/latest/Security%20and%20authorization/",
+      "text": "Security and authorization Security and authorization Security and authorization - AMWA NMOS Device Configuration Specification Skip to content Security and authorization Authorization and transport security features described in the BCP-003 family and in IS-10 are used to secure and authorize this API. The relevant documents can be found here: AMWA BCP-003-01 Secure Communication in NMOS Systems AMWA BCP-003-02 Authorization in NMOS Systems AMWA BCP-003-03 Certificate Provisioning in NMOS Systems AMWA IS-10 NMOS Authorization Specification More specifically BCP-003-02 has a dedicated section for how JSON Web Tokens can be created for this API. Note that the . character is specifically used as a delimiter in role paths included in the read/write claims, so it cannot be used inside object roles.",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "Transport and message encoding",
+      "url": "https://specs.amwa.tv/new/is-14/latest/Transport%20and%20message%20encoding/",
+      "text": "Transport and message encoding Transport and message encoding Transport and message encoding - AMWA NMOS Device Configuration Specification Skip to content Transport and message encoding Implementations MUST use HTTP or HTTPS as the communication transport. Implementations MUST use JSON as the message encoding data format.",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "base-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/base-get-200/",
+      "text": "base-get-200.json base-get-200.json base-get-200.json - AMWA NMOS Device Configuration Specification Skip to content base-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/bulkProperties-get-200/",
+      "text": "bulkProperties-get-200.json bulkProperties-get-200.json bulkProperties-get-200.json - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-get-no-descriptors-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/bulkProperties-get-no-descriptors-200/",
+      "text": "bulkProperties-get-no-descriptors-200.json bulkProperties-get-no-descriptors-200.json bulkProperties-get-no-descriptors-200.json - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-get-no-descriptors-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-patch-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/bulkProperties-patch-200/",
+      "text": "bulkProperties-patch-200.json bulkProperties-patch-200.json bulkProperties-patch-200.json - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-patch-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-patch-request.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/bulkProperties-patch-request/",
+      "text": "bulkProperties-patch-request.json bulkProperties-patch-request.json bulkProperties-patch-request.json - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-patch-request.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-put-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/bulkProperties-put-200/",
+      "text": "bulkProperties-put-200.json bulkProperties-put-200.json bulkProperties-put-200.json - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-put-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-put-rebuild-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/bulkProperties-put-rebuild-200/",
+      "text": "bulkProperties-put-rebuild-200.json bulkProperties-put-rebuild-200.json bulkProperties-put-rebuild-200.json - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-put-rebuild-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-put-rebuild-request.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/bulkProperties-put-rebuild-request/",
+      "text": "bulkProperties-put-rebuild-request.json bulkProperties-put-rebuild-request.json bulkProperties-put-rebuild-request.json - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-put-rebuild-request.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-put-request.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/bulkProperties-put-request/",
+      "text": "bulkProperties-put-request.json bulkProperties-put-request.json bulkProperties-put-request.json - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-put-request.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "class-descriptor-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/class-descriptor-get-200/",
+      "text": "class-descriptor-get-200.json class-descriptor-get-200.json class-descriptor-get-200.json - AMWA NMOS Device Configuration Specification Skip to content class-descriptor-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "Examples",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/",
+      "text": "Examples Examples Examples - AMWA NMOS Device Configuration Specification Skip to content Examples base-get-200.json bulkProperties-get-200.json bulkProperties-get-no-descriptors-200.json bulkProperties-patch-200.json bulkProperties-patch-request.json bulkProperties-put-200.json bulkProperties-put-rebuild-200.json bulkProperties-put-rebuild-request.json bulkProperties-put-request.json class-descriptor-get-200.json method-patch-200.json method-patch-request.json methods-base-get-200.json properties-base-get-200.json property-descriptor-get-200.json property-get-200.json property-value-get-200.json property-value-put-200.json property-value-put-request.json rolePath-get-200.json rolePaths-base-get-200.json",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "method-patch-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/method-patch-200/",
+      "text": "method-patch-200.json method-patch-200.json method-patch-200.json - AMWA NMOS Device Configuration Specification Skip to content method-patch-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "method-patch-request.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/method-patch-request/",
+      "text": "method-patch-request.json method-patch-request.json method-patch-request.json - AMWA NMOS Device Configuration Specification Skip to content method-patch-request.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "methods-base-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/methods-base-get-200/",
+      "text": "methods-base-get-200.json methods-base-get-200.json methods-base-get-200.json - AMWA NMOS Device Configuration Specification Skip to content methods-base-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "properties-base-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/properties-base-get-200/",
+      "text": "properties-base-get-200.json properties-base-get-200.json properties-base-get-200.json - AMWA NMOS Device Configuration Specification Skip to content properties-base-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "property-descriptor-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/property-descriptor-get-200/",
+      "text": "property-descriptor-get-200.json property-descriptor-get-200.json property-descriptor-get-200.json - AMWA NMOS Device Configuration Specification Skip to content property-descriptor-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "property-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/property-get-200/",
+      "text": "property-get-200.json property-get-200.json property-get-200.json - AMWA NMOS Device Configuration Specification Skip to content property-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "property-value-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/property-value-get-200/",
+      "text": "property-value-get-200.json property-value-get-200.json property-value-get-200.json - AMWA NMOS Device Configuration Specification Skip to content property-value-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "property-value-put-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/property-value-put-200/",
+      "text": "property-value-put-200.json property-value-put-200.json property-value-put-200.json - AMWA NMOS Device Configuration Specification Skip to content property-value-put-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "property-value-put-request.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/property-value-put-request/",
+      "text": "property-value-put-request.json property-value-put-request.json property-value-put-request.json - AMWA NMOS Device Configuration Specification Skip to content property-value-put-request.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "rolePath-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/rolePath-get-200/",
+      "text": "rolePath-get-200.json rolePath-get-200.json rolePath-get-200.json - AMWA NMOS Device Configuration Specification Skip to content rolePath-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "rolePaths-base-get-200.json",
+      "url": "https://specs.amwa.tv/new/is-14/latest/examples/rolePaths-base-get-200/",
+      "text": "rolePaths-base-get-200.json rolePaths-base-get-200.json rolePaths-base-get-200.json - AMWA NMOS Device Configuration Specification Skip to content rolePaths-base-get-200.json View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "AMWA NMOS Device Configuration Specification",
+      "url": "https://specs.amwa.tv/new/is-14/latest/",
+      "text": "AMWA NMOS Device Configuration Specification AMWA NMOS Device Configuration Specification What does it do? Why does it matter? How does it work? Getting started AMWA NMOS Device Configuration Specification - AMWA NMOS Device Configuration Specification Skip to content AMWA NMOS Device Configuration Specification This repository holds the source for this Specification, part of the family of Networked Media Open Specifications from the Advanced Media Workflow Association What does it do? Enables the configuration of an NMOS Nodes' MS-05-02 model using a backup and restore API. Why does it matter? Defines a standard way of backing up and restoring MS-05-02 models, as well as defining a way to manage dynamically configurable MS-05-02 models. How does it work? It specifies an HTTP API for backing up an NMOS Nodes' MS-05-02 model as a JSON backup dataset. The API can be used to restore that backup dataset to the NMOS Node. The API can be used to change the structure of 'rebuildable' parts of the MS-05-02 model dynamically, if the NMOS Node allows. Getting started An open source media node framework is available in the form of nmos-cpp . An example mock application is available in the form of the NMOS Device Control Mock Application . A testing tool is available in the form of the NMOS API Testing Tool .",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "base",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/base/",
+      "text": "base base base - AMWA NMOS Device Configuration Specification Skip to content base With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-get-response",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/bulkProperties-get-response/",
+      "text": "bulkProperties-get-response bulkProperties-get-response bulkProperties-get-response - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-get-response With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-patch-request",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/bulkProperties-patch-request/",
+      "text": "bulkProperties-patch-request bulkProperties-patch-request bulkProperties-patch-request - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-patch-request With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-patch-response",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/bulkProperties-patch-response/",
+      "text": "bulkProperties-patch-response bulkProperties-patch-response bulkProperties-patch-response - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-patch-response With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-put-request",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/bulkProperties-put-request/",
+      "text": "bulkProperties-put-request bulkProperties-put-request bulkProperties-put-request - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-put-request With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "bulkProperties-put-response",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/bulkProperties-put-response/",
+      "text": "bulkProperties-put-response bulkProperties-put-response bulkProperties-put-response - AMWA NMOS Device Configuration Specification Skip to content bulkProperties-put-response With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "descriptor-get",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/descriptor-get/",
+      "text": "descriptor-get descriptor-get descriptor-get - AMWA NMOS Device Configuration Specification Skip to content descriptor-get With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "JSON Schemas",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/",
+      "text": "JSON Schemas JSON Schemas JSON Schemas - AMWA NMOS Device Configuration Specification Skip to content JSON Schemas base bulkProperties-get-response bulkProperties-patch-request bulkProperties-patch-response bulkProperties-put-request bulkProperties-put-response descriptor-get method-patch-request method-patch-response methods-base ms05-error properties-base property-descriptor property-value-get property-value-put-request property-value-put-response property rolePath rolePaths-base",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "method-patch-request",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/method-patch-request/",
+      "text": "method-patch-request method-patch-request method-patch-request - AMWA NMOS Device Configuration Specification Skip to content method-patch-request With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "method-patch-response",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/method-patch-response/",
+      "text": "method-patch-response method-patch-response method-patch-response - AMWA NMOS Device Configuration Specification Skip to content method-patch-response With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "methods-base",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/methods-base/",
+      "text": "methods-base methods-base methods-base - AMWA NMOS Device Configuration Specification Skip to content methods-base With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "ms05-error",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/ms05-error/",
+      "text": "ms05-error ms05-error ms05-error - AMWA NMOS Device Configuration Specification Skip to content ms05-error With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "properties-base",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/properties-base/",
+      "text": "properties-base properties-base properties-base - AMWA NMOS Device Configuration Specification Skip to content properties-base With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "property",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/property/",
+      "text": "property property property - AMWA NMOS Device Configuration Specification Skip to content property With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "property-descriptor",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/property-descriptor/",
+      "text": "property-descriptor property-descriptor property-descriptor - AMWA NMOS Device Configuration Specification Skip to content property-descriptor With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "property-value-get",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/property-value-get/",
+      "text": "property-value-get property-value-get property-value-get - AMWA NMOS Device Configuration Specification Skip to content property-value-get With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "property-value-put-request",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/property-value-put-request/",
+      "text": "property-value-put-request property-value-put-request property-value-put-request - AMWA NMOS Device Configuration Specification Skip to content property-value-put-request With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "property-value-put-response",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/property-value-put-response/",
+      "text": "property-value-put-response property-value-put-response property-value-put-response - AMWA NMOS Device Configuration Specification Skip to content property-value-put-response With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "rolePath",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/rolePath/",
+      "text": "rolePath rolePath rolePath - AMWA NMOS Device Configuration Specification Skip to content rolePath With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    },
+    {
+      "title": "rolePaths-base",
+      "url": "https://specs.amwa.tv/new/is-14/latest/schemas/rolePaths-base/",
+      "text": "rolePaths-base rolePaths-base rolePaths-base - AMWA NMOS Device Configuration Specification Skip to content rolePaths-base With refs Resolved View: Folding Raw Expand all Collapse all View: Folding Raw Expand all Collapse all",
+      "repository": "AMWA-TV/is-14"
+    }
+  ]
+}

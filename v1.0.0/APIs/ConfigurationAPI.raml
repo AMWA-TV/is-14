@@ -1,0 +1,291 @@
+#%RAML 1.0
+
+# AMWA NMOS Device Connection Management Specification: Connection API
+# (c) AMWA 2024
+
+title: Configuration
+baseUri: http://api.example.com/x-nmos/configuration/{version}
+version: v1.0
+mediaType: application/json
+
+documentation:
+  - title: 'Overview'
+    content: |
+      The Configuration API is exposed by each NMOS Device in a system that supports the AMWA NMOS Device Configuration Specification. The API is used to access the NMOS Device's Device Model which is defined according to the [AMWA NMOS Control Architecture](https://specs.amwa.tv/ms-05-01/) and [AMWA NMOS Control Framework](https://specs.amwa.tv/ms-05-02/).
+  - title: 'Further Documentation'
+    content: |
+      Further normative documentation covering the behaviour of this API is contained in the [docs](../docs) folder of this repository.
+/:
+  displayName: 'Base'
+  get:
+    description: 'List of paths available from this API'
+    responses:
+      200:
+        body:
+          example: !include ../examples/base-get-200.json
+          type: !include schemas/base.json
+/rolePaths:
+  displayName: 'Role Paths'
+  get:
+    description: 'Returns the Role Paths of the Device Model. Each rolePath is created by appending NcObject roles starting with the root block and using "." as the delimiter'
+    responses:
+      200:
+        body:
+          example: !include ../examples/rolePaths-base-get-200.json
+          type: !include schemas/rolePaths-base.json
+  /{rolePath}:
+    uriParameters:
+        rolePath:
+            type: string
+    get:
+      description: 'Get attributes of the object specified by rolePath'
+      responses:
+        200:
+          body:
+            example: !include ../examples/rolePath-get-200.json
+            type: !include schemas/rolePath.json
+        404:
+          description: 'Returned when the requested Role Path does not exist.'
+          body:
+            type: !include schemas/ms05-error.json
+    /bulkProperties:
+      displayName: 'Bulk Properties'
+      get:
+        description: 'Get Bulk Properties of the object, returned as a NcMethodResultBulkPropertiesHolder object.'
+        queryParameters:
+          recurse:
+            description: 'True will get Bulk Properties for this object and all child objects'
+            type: boolean
+          includeDescriptors:
+            description: 'True will include property descriptors in the property holders. For a full backup a value of true also means it will include the ClassManager role path. When set to false, property holders will have descriptors set to null and for full backups the ClassManager role path is omitted'
+            type: boolean
+        responses:
+          200:
+            body:
+              type: !include schemas/bulkProperties-get-response.json
+              example: !include ../examples/bulkProperties-get-200.json
+          400:
+            description: 'Returned when encountering request validation issues due to client-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
+          404:
+            description: 'Returned when the requested Role Path does not exist.'
+            body:
+              type: !include schemas/ms05-error.json
+          500:
+            description: 'Returned when the request cannot be processed due to server-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
+      options:
+        description: A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes
+        responses:
+          200:
+          403:
+      patch:
+        description: 'Validate an NcBulkPropertiesHolder object against the Device Model'
+        body:
+          type: !include schemas/bulkProperties-patch-request.json
+          example: !include ../examples/bulkProperties-patch-request.json
+        responses:
+          200:
+            body:
+              type: !include schemas/bulkProperties-patch-response.json
+              example: !include ../examples/bulkProperties-patch-200.json
+          400:
+            description: 'Returned when encountering request validation issues due to client-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
+          404:
+            description: 'Returned when the requested Role Path does not exist.'
+            body:
+              type: !include schemas/ms05-error.json
+          500:
+            description: 'Returned when the request cannot be processed due to server-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
+      put:
+        description: 'Set a Bulk Properties object on the Device Model'
+        body:
+          type: !include schemas/bulkProperties-put-request.json
+          example: !include ../examples/bulkProperties-put-request.json
+        responses:
+          200:
+            body:
+              type: !include schemas/bulkProperties-put-response.json
+              example: !include ../examples/bulkProperties-put-200.json
+          400:
+            description: 'Returned when encountering request validation issues due to client-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
+          404:
+            description: 'Returned when the requested Role Path does not exist.'
+            body:
+              type: !include schemas/ms05-error.json
+          500:
+            description: 'Returned when the request cannot be processed due to server-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
+    /descriptor:
+      displayName: 'Class Descriptor'
+      get:
+        description: 'Get MS-05 Class Descriptor of this object. This descriptor includes all inherited elements'
+        responses:
+          200:
+            body:
+              example: !include ../examples/class-descriptor-get-200.json
+              type: !include schemas/descriptor-get.json
+          404:
+            description: 'Returned when the requested Role Path does not exist.'
+            body:
+              type: !include schemas/ms05-error.json
+          500:
+            description: 'Returned when the request cannot be processed due to server-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
+    /methods:
+      displayName: 'Methods'
+      get:
+        description: 'Get Methods of this object. This response includes all object methods including all the inherited methods'
+        responses:
+          200:
+            body:
+              example: !include ../examples/methods-base-get-200.json
+              type: !include schemas/methods-base.json
+          404:
+            description: 'Returned when the requested Role Path does not exist.'
+            body:
+              type: !include schemas/ms05-error.json
+          500:
+            description: 'Returned when the request cannot be processed due to server-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
+      /{methodId}:
+        uriParameters:
+            methodId:
+                type: string
+                pattern: "^[0-9]+m[0-9]+"
+        options:
+          description: A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes
+          responses:
+            200:
+            403:
+        patch:
+          description: 'Invoke method.'
+          body:
+            example: !include ../examples/method-patch-request.json
+            type: !include schemas/method-patch-request.json
+          responses:
+            200:
+              body:
+                example: !include ../examples/method-patch-200.json
+                type: !include schemas/method-patch-response.json
+            400:
+              description: 'Returned when encountering request validation issues due to client-side errors.'
+              body:
+                type: !include schemas/ms05-error.json
+            404:
+              description: 'Returned when the requested Role Path does not exist or when the requested Method does not exist.'
+              body:
+                type: !include schemas/ms05-error.json
+            500:
+              description: 'Returned when the request cannot be processed due to server-side errors.'
+              body:
+                type: !include schemas/ms05-error.json
+    /properties:
+      displayName: 'Properties'
+      get:
+        description: 'Get Properties of the object. This response includes all object properties including all the inherited properties'
+        responses:
+          200:
+            body:
+              example: !include ../examples/properties-base-get-200.json
+              type: !include schemas/properties-base.json
+          404:
+            description: 'Returned when the requested Role Path does not exist.'
+            body:
+              type: !include schemas/ms05-error.json
+          500:
+            description: 'Returned when the request cannot be processed due to server-side errors.'
+            body:
+              type: !include schemas/ms05-error.json
+      /{propertyId}:
+        uriParameters:
+            propertyId:
+                type: string
+                pattern: "^[0-9]+p[0-9]+"
+        get:
+          description: 'Get attributes of a Property'
+          responses:
+            200:
+              body:
+                example: !include ../examples/property-get-200.json
+                type: !include schemas/property.json
+            404:
+              description: 'Returned when the requested Role Path does not exist or when the requested Property does not exist.'
+              body:
+                type: !include schemas/ms05-error.json
+            500:
+              description: 'Returned when the request cannot be processed due to server-side errors.'
+              body:
+                type: !include schemas/ms05-error.json
+        /descriptor:
+          displayName: 'Datatype Descriptor of property'
+          get:
+            description: 'Get MS-05 Datatype Descriptor of property. This descriptor MUST include all inherited elements'
+            responses:
+              200:
+                body:
+                  example: !include ../examples/property-descriptor-get-200.json
+                  type: !include schemas/property-descriptor.json
+              404:
+                description: 'Returned when the requested Role Path does not exist or when the requested Property does not exist.'
+                body:
+                  type: !include schemas/ms05-error.json
+              500:
+                description: 'Returned when the request cannot be processed due to server-side errors.'
+                body:
+                  type: !include schemas/ms05-error.json
+        /value:
+          displayName: 'Value of a Property'
+          get:
+            description: 'Get value of a Property'
+            responses:
+              200:
+                body:
+                  example: !include ../examples/property-value-get-200.json
+                  type: !include schemas/property-value-get.json
+              404:
+                description: 'Returned when the requested Role Path does not exist or when the requested Property does not exist.'
+                body:
+                  type: !include schemas/ms05-error.json
+              500:
+                description: 'Returned when the request cannot be processed due to server-side errors.'
+                body:
+                  type: !include schemas/ms05-error.json
+          options:
+            description: A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes
+            responses:
+              200:
+              403:
+          put:
+            descriptions: 'Put value of a Property'
+            body:
+              example: !include ../examples/property-value-put-request.json
+              type: !include schemas/property-value-put-request.json
+            responses:
+              200:
+                body:
+                  example: !include ../examples/property-value-put-200.json
+                  type: !include schemas/property-value-put-response.json
+              400:
+                description: 'Returned when encountering request validation issues due to client-side errors.'
+                body:
+                  type: !include schemas/ms05-error.json
+              404:
+                description: 'Returned when the requested Role Path does not exist or when the requested Property does not exist.'
+                body:
+                  type: !include schemas/ms05-error.json
+              500:
+                description: 'Returned when the request cannot be processed due to server-side errors.'
+                body:
+                  type: !include schemas/ms05-error.json
