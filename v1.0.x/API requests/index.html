@@ -1,0 +1,2647 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://specs.amwa.tv/new/is-14/v1.0.x/API%20requests/">
+      
+      
+        <link rel="prev" href="../APIs/">
+      
+      
+        <link rel="next" href="../Data%20type%20marshalling/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.62">
+    
+    
+      
+        <title>API requests - AMWA NMOS Device Configuration Specification</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.ce62732f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/amwa-branding.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-requests" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="AMWA NMOS Device Configuration Specification" class="md-header__button md-logo" aria-label="AMWA NMOS Device Configuration Specification" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AMWA NMOS Device Configuration Specification
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API requests
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/AMWA-TV/is-14" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AMWA-TV/is-14
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="AMWA NMOS Device Configuration Specification" class="md-nav__button md-logo" aria-label="AMWA NMOS Device Configuration Specification" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    AMWA NMOS Device Configuration Specification
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AMWA-TV/is-14" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AMWA-TV/is-14
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  AMWA NMOS Device Configuration Specification
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Introduction
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Introduction
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Specification
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Specification
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Transport%20and%20message%20encoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Transport and message encoding
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security%20and%20authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Security and authorization
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../APIs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  APIs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  API requests
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  API requests
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#control-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Control session
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-and-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        URL and usage
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GET
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-a-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Getting a property
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-the-class-descriptor-of-an-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Getting the class descriptor of an object
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-the-datatype-descriptor-of-a-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Getting the datatype descriptor of a property
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-all-the-properties-of-a-role-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Getting all the properties of a role path
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#put" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        PUT
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PUT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-a-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Changing a property
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-bulk-properties-for-a-role-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Setting bulk properties for a role path
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        PATCH
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PATCH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invoking-a-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Invoking a method
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validating-bulk-properties-for-a-role-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Validating bulk properties for a role path
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20type%20marshalling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Datatype marshalling
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IS-04%20interactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  IS-04 interactions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup%20%26%20restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backup & restore
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  API Definitions
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  API Definitions
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../APIs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  APIs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../APIs/ConfigurationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  ConfigurationAPI
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  JSON Schemas
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  JSON Schemas
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  JSON Schemas
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  base
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/bulkProperties-get-response/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-get-response
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/bulkProperties-patch-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-patch-request
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/bulkProperties-patch-response/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-patch-response
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/bulkProperties-put-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-put-request
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/bulkProperties-put-response/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-put-response
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/descriptor-get/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  descriptor-get
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/method-patch-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  method-patch-request
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/method-patch-response/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  method-patch-response
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/methods-base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  methods-base
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/ms05-error/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  ms05-error
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/properties-base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  properties-base
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/property-descriptor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  property-descriptor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/property-value-get/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  property-value-get
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/property-value-put-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  property-value-put-request
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/property-value-put-response/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  property-value-put-response
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  property
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/rolePath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  rolePath
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/rolePaths-base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  rolePaths-base
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Examples
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/base-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  base-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/bulkProperties-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/bulkProperties-get-no-descriptors-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-get-no-descriptors-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/bulkProperties-patch-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-patch-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/bulkProperties-patch-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-patch-request.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/bulkProperties-put-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-put-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/bulkProperties-put-rebuild-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-put-rebuild-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/bulkProperties-put-rebuild-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-put-rebuild-request.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/bulkProperties-put-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  bulkProperties-put-request.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/class-descriptor-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  class-descriptor-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/method-patch-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  method-patch-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/method-patch-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  method-patch-request.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/methods-base-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  methods-base-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/properties-base-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  properties-base-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/property-descriptor-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  property-descriptor-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/property-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  property-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/property-value-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  property-value-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/property-value-put-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  property-value-put-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/property-value-put-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  property-value-put-request.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/rolePath-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  rolePath-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/rolePaths-base-get-200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  rolePaths-base-get-200.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#control-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Control session
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-and-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        URL and usage
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GET
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-a-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Getting a property
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-the-class-descriptor-of-an-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Getting the class descriptor of an object
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-the-datatype-descriptor-of-a-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Getting the datatype descriptor of a property
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-all-the-properties-of-a-role-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Getting all the properties of a role path
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#put" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        PUT
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PUT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-a-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Changing a property
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-bulk-properties-for-a-role-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Setting bulk properties for a role path
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        PATCH
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PATCH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invoking-a-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Invoking a method
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validating-bulk-properties-for-a-role-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Validating bulk properties for a role path
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="api-requests">API requests</h1>
+<p>The endpoints are documented in the <a href="https://specs.amwa.tv/is-14/branches/v1.0-dev/APIs/ConfigurationAPI.html">Configuration API</a>.</p>
+<h2 id="control-session">Control session</h2>
+<p>Concurrency control is left to specific device implementations, however devices MUST always return relevant error response messages and statuses when there are conflicts, errors or other noteworthy states.</p>
+<h2 id="url-and-usage">URL and usage</h2>
+<p>Clients MUST use the 'control' endpoint URL provided in the <a href="../IS-04%20interactions/">IS-04 device</a> as the base URL for all subsequent requests.</p>
+<p>As described in the Configuration API, the <a href="https://specs.amwa.tv/is-14/branches/v1.0-dev/APIs/ConfigurationAPI.html#rolepaths_get">rolePaths</a> endpoint MUST return all the device model's role paths. Each <code>rolePath</code> MUST be created by appending <a href="https://specs.amwa.tv/ms-05-02/latest/docs/NcObject.html">NcObject roles</a> starting with the <code>root block</code> and using <code>.</code> as the delimiter. Consequently the <code>.</code> character MUST NOT be used inside individual object roles.</p>
+<p>It is RECOMMENDED for device model objects roles to use <code>Unreserved Characters</code> as described in <a href="https://www.ietf.org/rfc/rfc3986.txt">RFC 3986 - 2.3. Unreserved Characters</a>. When <code>Reserved Characters</code> are used in an object role, they MUST be URL encoded when included in the <code>rolePaths</code> endpoint and subsequently in a URL.</p>
+<p>Device model object roles are case sensitive and thus any <code>rolePaths</code> and URLs which include them are also case sensitive as described in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-2.7.3">RFC 7230</a>.</p>
+<p>Property identifiers used as part of a URL MUST be represented as a string of the format <code>{propertyLevel}p{propertyIndex}</code> where:</p>
+<ul>
+<li>propertyLevel - number representing the inheritance level of the class containing the property (see <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#control-classes">Control Classes</a>)</li>
+<li>propertyIndex - number representing the index level of the property within the specified inheritance level (see <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#control-classes">Control Classes</a>)</li>
+</ul>
+<p>Method identifiers used as part of a URL MUST be represented as a string of the format <code>{methodLevel}m{methodIndex}</code> where:</p>
+<ul>
+<li>methodLevel - number representing the inheritance level of the class containing the method (see <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#control-classes">Control Classes</a>)</li>
+<li>methodIndex - number representing the index level of the method within the specified inheritance level (see <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#control-classes">Control Classes</a>)</li>
+</ul>
+<p>As an example, for a given base URL, clients can target the <code>root</code> block by using <code>{baseUrl}/root</code> as the URL. Furthermore, clients can target the <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncobject">userLabel</a> of the <code>root</code> block by using <code>{baseUrl}/rolePaths/root/properties/1p6/value</code> as the URL.</p>
+<p>The following subsections define common use cases for the applicable HTTP verbs where resources are located using their associated <code>rolePath</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Verb</th>
+<th>Scenario</th>
+<th>URL format</th>
+<th>Body</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><a href="#getting-a-property">Get a property</a></td>
+<td>baseUrl/rolePaths/{rolePath}/properties/{propertyId}/value</td>
+<td>N/A</td>
+<td><a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresultpropertyvalue">NcMethodResultPropertyValue</a> with the contents of the property</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><a href="#getting-the-class-descriptor-of-an-object">Get class descriptor</a></td>
+<td>baseUrl/rolePaths/{rolePath}/descriptor</td>
+<td>N/A</td>
+<td><a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresultclassdescriptor">NcMethodResultClassDescriptor</a></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><a href="#getting-the-datatype-descriptor-of-a-property">Get datatype descriptor</a></td>
+<td>baseUrl/rolePaths/{rolePath}/properties/{propertyId}/descriptor</td>
+<td>N/A</td>
+<td><a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresultdatatypedescriptor">NcMethodResultDatatypeDescriptor</a></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><a href="#getting-all-the-properties-of-a-role-path">Getting all the properties of a role path</a></td>
+<td>baseUrl/rolePaths/{rolePath}/bulkProperties?recurse={value}&amp;includeDescriptors={value}</td>
+<td>N/A</td>
+<td><a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncmethodresultbulkpropertiesholder">NcMethodResultBulkPropertiesHolder</a></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><a href="#changing-a-property">Modify a property</a></td>
+<td>baseUrl/rolePaths/{rolePath}/properties/{propertyId}/value</td>
+<td><a href="https://specs.amwa.tv/is-14/branches/v1.0-dev/APIs/schemas/property-value-put-request.json">property-value-put-request</a></td>
+<td><a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresult">NcMethodResult</a></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><a href="#setting-bulk-properties-for-a-role-path">Setting bulk properties for a role path</a></td>
+<td>baseUrl/rolePaths/{rolePath}/bulkProperties</td>
+<td><a href="https://specs.amwa.tv/is-14/branches/v1.0-dev/APIs/schemas/bulkProperties-put-request.json">bulkProperties-put-request</a></td>
+<td><a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncmethodresultobjectpropertiessetvalidation">NcMethodResultObjectPropertiesSetValidation</a></td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><a href="#invoking-a-method">Invoke a method</a></td>
+<td>baseUrl/rolePaths/{rolePath}/methods/{methodId}</td>
+<td><a href="https://specs.amwa.tv/is-14/branches/v1.0-dev/APIs/schemas/method-patch-request.json">method-patch-request</a></td>
+<td><a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresult">NcMethodResult</a></td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><a href="#validating-bulk-properties-for-a-role-path">Validating bulk properties for a role path</a></td>
+<td>baseUrl/rolePaths/{rolePath}/bulkProperties</td>
+<td><a href="https://specs.amwa.tv/is-14/branches/v1.0-dev/APIs/schemas/bulkProperties-patch-request.json">bulkProperties-patch-request</a></td>
+<td><a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncmethodresultobjectpropertiessetvalidation">NcMethodResultObjectPropertiesSetValidation</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="get">GET</h2>
+<h3 id="getting-a-property">Getting a property</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img alt="Getting a property" src="../images/getting-a-property.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><em><strong>Getting a property</strong></em></td>
+</tr>
+</tbody>
+</table>
+<p>Clients MUST target a specific property of an object by locating the object using its role path and the property using its property identifier and building a URL as per the following format <code>baseUrl/rolePaths/{rolePath}/properties/{propertyId}/value</code>. Devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresultpropertyvalue">NcMethodResultPropertyValue</a> containing the value of that property when successful. If the request encountered an error then devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresulterror">NcMethodResultError</a> or a derived datatype and include an error message.</p>
+<p>Note that this is equivalent to invoking the generic <a href="https://specs.amwa.tv/ms-05-02/latest/docs/NcObject.html#generic-getter-and-setter">Get method</a> on the specific object for the required property.</p>
+<h3 id="getting-the-class-descriptor-of-an-object">Getting the class descriptor of an object</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img alt="Getting class descriptor" src="../images/getting-class-descriptor.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><em><strong>Getting class descriptor</strong></em></td>
+</tr>
+</tbody>
+</table>
+<p>Clients MUST target a specific object in the device model and build a URL as per the following format <code>baseUrl/rolePaths/{rolePath}/descriptor</code>. Devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresultclassdescriptor">NcMethodResultClassDescriptor</a> including a descriptor which has all inherited elements. If the request encountered an error then devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresulterror">NcMethodResultError</a> or a derived datatype and include an error message.</p>
+<p>Note that this is equivalent to invoking the <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncclassmanager">GetControlClass method</a> on the <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Managers.html#class-manager">Class Manager object</a> and including all inherited elements.</p>
+<h3 id="getting-the-datatype-descriptor-of-a-property">Getting the datatype descriptor of a property</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img alt="Getting datatype descriptor" src="../images/getting-datatype-descriptor.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><em><strong>Getting datatype descriptor</strong></em></td>
+</tr>
+</tbody>
+</table>
+<p>Clients MUST target a specific property of an object by locating the object using its role path and the property using its property identifier and building a URL as per the following format <code>baseUrl/rolePaths/{rolePath}/properties/{propertyId}/descriptor</code>. Devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresultdatatypedescriptor">NcMethodResultDatatypeDescriptor</a> including a descriptor which has all inherited elements. If the request encountered an error then devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresulterror">NcMethodResultError</a> or a derived datatype and include an error message.</p>
+<p>Note that this is equivalent to invoking the <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncclassmanager">GetDatatype method</a> on the <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Managers.html#class-manager">Class Manager object</a> and including inherited elements.</p>
+<h3 id="getting-all-the-properties-of-a-role-path">Getting all the properties of a role path</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img alt="Getting bulk properties" src="../images/getting-bulk-properties.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><em><strong>Getting bulk properties</strong></em></td>
+</tr>
+</tbody>
+</table>
+<p>Clients MUST target a specific role path in the device model by locating the object using its role path and building a URL (optionally specifying the <code>recurse</code> and <code>includeDescriptors</code> parameters) as per the following format <code>baseUrl/rolePaths/{rolePath}/bulkProperties?recurse={true|false}&amp;includeDescriptors={true|false}</code>. Not including the query parameters MUST be treated as providing a value of <code>true</code> to both of them. Devices MUST return a response of type <a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncmethodresultbulkpropertiesholder">NcMethodResultBulkPropertiesHolder</a> and MUST include all the properties of the target role path, including inherited properties, as a <a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncbulkpropertiesholder">bulk properties holder</a>. If the <code>recurse</code> argument is set to <code>true</code> then devices MUST include all the properties of the target role path as well as any nested role paths in the response. If the <code>includeDescriptors</code> argument is set to <code>true</code> devices MUST set the descriptor of each <a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyholder">property holder</a> to a non-null value and MUST include an entry for the ClassManager role path if it was in scope of the backup. Alternatively, if the <code>includeDescriptors</code> argument is set to <code>false</code> devices MUST set the descriptor of each <a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncpropertyholder">property holder</a> to a null value and MUST NOT include an entry for the ClassManager role path even if it was in scope of the backup. If the request encountered an error then devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresulterror">NcMethodResultError</a> or a derived datatype and include an error message.</p>
+<p>Note that this is equivalent to invoking the <code>GetPropertiesByPath</code> method on the <a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncbulkpropertiesmanager">Bulk properties manager object</a>.</p>
+<p>Note that if the target role path used is the ClassManager's role path, and the <code>includeDescriptors</code> argument is set to <code>false</code>, the response will include a <a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncbulkpropertiesholder">bulk properties holder</a> with an empty values collection.</p>
+<p>Clients MAY perform a <code>full backup</code> or a <code>partial backup</code> by retrieving properties through the <code>bulkProperties</code> endpoint.</p>
+<p>A <code>full backup</code> is a <a href="../Backup%20&amp;%20restore/#definitions">backup data set</a> returned by a <code>GET</code> operation on the <code>/bulkProperties</code> endpoint of the root block with the <code>recurse</code> parameter set to <code>true</code>.</p>
+<p>A <code>partial backup</code> is a <a href="../Backup%20&amp;%20restore/#definitions">backup data set</a> returned by a <code>GET</code> operation on the <code>/bulkProperties</code> endpoint of any object of the device model, other than the root block. A partial backup can also be generated by a <code>GET</code> operation on the <code>/bulkProperties</code> endpoint of the root block with the <code>recurse</code> query parameter set to <code>false</code>; however this will only result in a backup of the root block.</p>
+<p>Note that a <code>full backup</code> with its descriptors filtered out is still considered a <code>full backup</code>, as it only excludes descriptors which are readonly metadata that do not affect device operation.</p>
+<h2 id="put">PUT</h2>
+<h3 id="changing-a-property">Changing a property</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img alt="Putting a property" src="../images/putting-a-property.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><em><strong>Putting a property</strong></em></td>
+</tr>
+</tbody>
+</table>
+<p>Clients MUST use the PUT verb when setting individual object properties.</p>
+<p>Clients MUST target a specific property of an object by locating the object using its role path and the property using its property identifier and building a URL as per the following format <code>baseUrl/rolePaths/{rolePath}/properties/{propertyId}/value</code>. Devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresult">NcMethodResult</a>. If the request encountered an error then devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresulterror">NcMethodResultError</a> or a derived datatype and include an error message.</p>
+<p>Clients MUST include an object which contains the new value of the property in the body of the request as per the <a href="https://specs.amwa.tv/is-14/branches/v1.0-dev/APIs/schemas/property-value-put-request.json">property-value-put-request</a> schema.</p>
+<p>Note that this is equivalent to invoking the generic <a href="https://specs.amwa.tv/ms-05-02/latest/docs/NcObject.html#generic-getter-and-setter">Set method</a> on the specific object for the required property.</p>
+<h3 id="setting-bulk-properties-for-a-role-path">Setting bulk properties for a role path</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img alt="Setting bulk properties" src="../images/set-bulk-properties.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><em><strong>Setting bulk properties</strong></em></td>
+</tr>
+</tbody>
+</table>
+<p>Clients MUST use the PUT verb for setting a bulk properties data set.</p>
+<p>Clients MUST target a specific role path in the device model by locating the object using its role path and building a URL as per the following format <code>baseUrl/rolePaths/{rolePath}/bulkProperties</code>.</p>
+<p>Clients MUST include an object which contains an <code>arguments</code> object with <code>dataSet</code>, <code>recurse</code> and <code>restoreMode</code> sub elements in the body of the request as per the <a href="https://specs.amwa.tv/is-14/branches/v1.0-dev/APIs/schemas/bulkProperties-put-request.json">bulkProperties-put-request</a> schema.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"dataSet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="err">...</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">"recurse"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"restoreMode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>In their attempt to use the provided <code>dataSet</code>, devices MUST target the properties of the target role path and all nested role paths when the body of the request contains the <code>recurse</code> value set to <code>true</code>.</p>
+<p>Devices MUST return a response of type <a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncmethodresultobjectpropertiessetvalidation">NcMethodResultObjectPropertiesSetValidation</a>. If the request encountered an error then devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresulterror">NcMethodResultError</a> or a derived datatype and include an error message.</p>
+<p>Note that this is equivalent to invoking the <code>SetPropertiesByPath</code> method inside the <a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncbulkpropertiesmanager">Bulk properties manager object</a>.</p>
+<p>Setting properties through the <code>bulkProperties</code> endpoint allows a user to perform a restore.</p>
+<h2 id="patch">PATCH</h2>
+<h3 id="invoking-a-method">Invoking a method</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img alt="Invoking a method" src="../images/invoking-a-method.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><em><strong>Invoking a method</strong></em></td>
+</tr>
+</tbody>
+</table>
+<p>Clients MUST use the PATCH verb when invoking object methods.</p>
+<p>Clients MUST target a specific method of an object by locating the object using its role path and the method using its method identifier and building a URL as per the following format <code>baseUrl/rolePaths/{rolePath}/methods/{methodId}</code>.</p>
+<p>Clients MUST include an object which contains an <code>arguments</code> object in the body of the request as per the <a href="https://specs.amwa.tv/is-14/branches/v1.0-dev/APIs/schemas/method-patch-request.json">method-patch-request</a> schema. For methods which do not have arguments defined clients MUST include an empty <code>arguments</code> object in the request body.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="err">...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresult">NcMethodResult</a>. If the request encountered an error then devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresulterror">NcMethodResultError</a> or a derived datatype and include an error message.</p>
+<p>Note that this is equivalent to invoking the specified method.</p>
+<h3 id="validating-bulk-properties-for-a-role-path">Validating bulk properties for a role path</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img alt="Validating bulk properties" src="../images/validate-bulk-properties.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><em><strong>Validating bulk properties</strong></em></td>
+</tr>
+</tbody>
+</table>
+<p>Clients MUST use the PATCH verb for validating a bulk properties data set.</p>
+<p>Clients MUST target a specific role path in the device model by locating the object using its role path and building a URL as per the following format <code>baseUrl/rolePaths/{rolePath}/bulkProperties</code>.</p>
+<p>Clients MUST include an object which contains an <code>arguments</code> object with <code>dataSet</code>, <code>recurse</code> and <code>restoreMode</code> sub elements in the body of the request as per the <a href="https://specs.amwa.tv/is-14/branches/v1.0-dev/APIs/schemas/bulkProperties-patch-request.json">bulkProperties-patch-request</a> schema.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"dataSet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="err">...</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">"recurse"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"restoreMode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>In their attempt to use the provided <code>dataSet</code>, devices MUST target the properties of the target role path and all nested role paths when the body of the request contains the <code>recurse</code> value set to <code>true</code>.</p>
+<p>Devices MUST return a response of type <a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncmethodresultobjectpropertiessetvalidation">NcMethodResultObjectPropertiesSetValidation</a>. If the request encountered an error then devices MUST return a response of type <a href="https://specs.amwa.tv/ms-05-02/latest/docs/Framework.html#ncmethodresulterror">NcMethodResultError</a> or a derived datatype and include an error message.</p>
+<p>Devices MUST NOT make any changes to the device model when validating bulk properties.</p>
+<p>Note that this is equivalent to invoking the <code>ValidateSetPropertiesByPath</code> method inside the <a href="https://specs.amwa.tv/nmos-control-feature-sets/branches/main/device-configuration/#ncbulkpropertiesmanager">Bulk properties manager object</a>.</p>
+<p>Clients MAY use this validation mechanism before attempting to perform a restore by applying <a href="#setting-bulk-properties-for-a-role-path">bulk properties</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":[],"redirect":null,"search":"../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.8dcc8e9c.min.js"></script>
+      
+        <script src="../javascripts/json-viewer.js"></script>
+      
+        <script src="../javascripts/amwa-branding.js"></script>
+      
+    
+  </body>
+</html>

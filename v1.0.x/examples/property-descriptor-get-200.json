@@ -1,0 +1,53 @@
+{
+  "status": 200,
+  "value": {
+    "description": "Example data type",
+    "name": "ExampleDataType",
+    "type": 2,
+    "constraints": null,
+    "fields": [
+      {
+        "description": "Enum property example",
+        "name": "enumProperty",
+        "typeName": "ExampleEnum",
+        "isNullable": false,
+        "isSequence": false,
+        "constraints": null
+      },
+      {
+        "description": "String property example",
+        "name": "stringProperty",
+        "typeName": "NcString",
+        "isNullable": false,
+        "isSequence": false,
+        "constraints": {
+          "defaultValue": null,
+          "maxCharacters": 10,
+          "pattern": null
+        }
+      },
+      {
+        "description": "Number property example",
+        "name": "numberProperty",
+        "typeName": "NcUint64",
+        "isNullable": false,
+        "isSequence": false,
+        "constraints": {
+          "defaultValue": null,
+          "maximum": 1000,
+          "minimum": 0,
+          "step": 1
+        }
+      },
+      {
+        "description": "Boolean property example",
+        "name": "booleanProperty",
+        "typeName": "NcBoolean",
+        "isNullable": false,
+        "isSequence": false,
+        "constraints": null
+      }
+    ],
+    "parentType": null
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "amwa_id": "IS-14",
+  "url": "https://specs.amwa.tv/is-14",
+  "name": "Device Configuration",
+  "status": "AMWA Specification",
+  "repo_name": "is-14",
+  "alt_repo_name": "nmos-device-configuration",
+  "repo_url": "https://github.com/AMWA-TV/is-14",
+  "releases": "v1.0.0",
+  "default_branch": "v1.0.x",
+  "show_in_index": true,
+  "intro": {
+    "how_does_it_work": [
+      "It specifies an HTTP API for backing up an NMOS Nodes' [MS-05-02](https://specs.amwa.tv/ms-05-02/) model as a JSON backup dataset.",
+      "The API can be used to restore that backup dataset to the NMOS Node.",
+      "The API can be used to change the structure of 'rebuildable' parts of the [MS-05-02](https://specs.amwa.tv/ms-05-02/) model dynamically, if the NMOS Node allows."
+    ]
+  }
+}
